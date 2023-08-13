@@ -1,0 +1,26 @@
+/* Projects.css */
+
+/* Define the fade-in animation */
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Define the fade-in animation for the hover state */
+  .fade-in-animation {
+    animation: fade-in 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Apply the hover animation */
+  .fade-in-animation:hover {
+    transform: scale(1.03); /* Increase size on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add box shadow on hover */
+  }
+  

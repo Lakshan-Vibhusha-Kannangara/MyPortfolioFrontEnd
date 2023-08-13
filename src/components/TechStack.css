@@ -1,0 +1,59 @@
+/* Add this CSS to your stylesheets or use a CSS-in-JS solution */
+.tech-stack {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columns */
+    gap: 20px; /* Gap between columns */
+  }
+  
+  .tech-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* TechStack.css */
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add any other styling you need for the grid layout and cards here */
+/* You can customize the animations and transitions as needed */
+/* TechStack.css */
+.tech-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tech-card-inner {
+  transition: transform 0.3s ease-in-out;
+}
+
+.tech-card:hover {
+  transform: scale(1.05); /* Scale up by 5% on hover */
+}
+
+.tech-card-inner:hover {
+  transform: scale(1.05); /* Scale up by 5% on hover */
+}
+
+/* Add any other styling you need for the grid layout and cards here */
+/* You can customize the animations and transitions as needed */
