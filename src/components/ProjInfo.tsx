@@ -21,7 +21,7 @@ function ProjInfo() {
 
   const fetchProjectData = async () => {
     try {
-      const response = await fetch('http://3.27.140.194:4002/projinfo');
+      const response = await fetch('http://52.65.35.114:4002/projinfo');
       const jsonData = await response.json();
       setProjlData(jsonData.projinfo);
       console.log('Fetched projdata:', jsonData.projinfo);

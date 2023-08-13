@@ -33,7 +33,7 @@ export default function UserProfile() {
 
   const fetchInfoData = async () => {
     try {
-      const response = await fetch('http://3.27.140.194:4002/info'); // Replace with your specific endpoint
+      const response = await fetch('http://52.65.35.114:4002/info'); // Replace with your specific endpoint
       const jsonData = await response.json();
       setInfoData(jsonData.info[0]);
       console.log('Fetched info data:', jsonData);
@@ -44,7 +44,7 @@ export default function UserProfile() {
 
   const fetchTechnicalData = async () => {
     try {
-      const response = await fetch('http://3.27.140.194:4002/technical'); // Replace with your specific endpoint
+      const response = await fetch('http://52.65.35.114:4002/technical'); // Replace with your specific endpoint
       const jsonData = await response.json();
       setTechnicalData(jsonData);
       console.log('Fetched technical data:', jsonData);
