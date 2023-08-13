@@ -50,7 +50,7 @@ const Courses: React.FC = () => {
 
   useEffect(() => {
     // Fetch technology data from the backend
-    fetch('http://localhost:4002/courses') // Assuming the API endpoint is '/api/technologyData'
+    fetch('http://3.27.60.205:4002/courses') // Assuming the API endpoint is '/api/technologyData'
       .then((response) => response.json())
       .then((data) => {
         console.log("course data here ....",data)

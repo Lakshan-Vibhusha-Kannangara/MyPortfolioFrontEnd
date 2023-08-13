@@ -15,7 +15,7 @@ const TechStack: React.FC = () => {
 
   useEffect(() => {
     // Fetch technology data from the backend
-    fetch('http://localhost:4002/technologies') // Assuming the API endpoint is '/api/technologyData'
+    fetch('http://3.27.60.205:4002/technologies') // Assuming the API endpoint is '/api/technologyData'
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
