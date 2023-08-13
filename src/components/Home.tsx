@@ -62,14 +62,14 @@ const PortfolioHomepage = () => {
   };
 
   const fetchEssentials = async () => {
-    await fetchData('http://3.27.60.205:4002/essential', (jsonData) =>
+    await fetchData('http://3.27.140.194:4002/essential', (jsonData) =>
       setEssentialData(jsonData.essential[0])
     );
   };
 
   useEffect(() => {
     fetchEssentials();
-    fetchData('http://3.27.60.205:4002/interests', setData);
+    fetchData('http://3.27.140.194:4002/interests', setData);
     if (scrollToBottomClicked) {
       // Scroll to the bottom when scrollToBottomClicked becomes true
       window.scrollTo(0, document.body.scrollHeight);

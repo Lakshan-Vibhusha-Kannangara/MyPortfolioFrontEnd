@@ -12,7 +12,7 @@ const ContactForm = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://3.27.60.205:4002/submit-message', { message });
+      const response = await axios.post('http://3.27.140.194:4002/submit-message', { message });
       console.log('Message sent successfully', response.data);
     } catch (error) {
       console.error('Error sending message', error);
