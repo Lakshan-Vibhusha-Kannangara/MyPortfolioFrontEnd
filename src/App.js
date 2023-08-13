@@ -18,7 +18,7 @@ function App() {
   });
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:4002/projects'); 
+      const response = await fetch('http://52.65.35.114:4002/projects'); 
       const jsonData = await response.json();
       setData(jsonData);
       console.log('Fetched data:', jsonData);
@@ -30,7 +30,7 @@ function App() {
 
   const fetchEssentials = async () => {
     try {
-      const response = await fetch('http://localhost:4002/essential'); 
+      const response = await fetch('http://52.65.35.114:4002/essential'); 
       const jsonData = await response.json();
       setEssentialData(jsonData);
       console.log('Fetched essential data:', jsonData);
