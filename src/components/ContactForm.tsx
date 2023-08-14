@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const ContactForm = () => {
   const [message, setMessage] = useState('');
+  const [messageSent, setMessageSent] = useState(false);
 
   const handleTextareaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(event.target.value);
@@ -14,6 +15,7 @@ const ContactForm = () => {
     try {
       const response = await axios.post('http://52.65.35.114:4002/submit-message', { message });
       console.log('Message sent successfully', response.data);
+      setMessageSent(true);
     } catch (error) {
       console.error('Error sending message', error);
     }
@@ -39,6 +41,11 @@ const ContactForm = () => {
               Send
             </button>
           </form>
+          {messageSent && (
+            <div className="mt-3 text-success">
+              Message sent successfully!
+            </div>
+          )}
         </div>
       </div>
     </div>

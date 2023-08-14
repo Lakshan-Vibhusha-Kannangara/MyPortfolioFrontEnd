@@ -1,0 +1,42 @@
+/* Power.css */
+.power-card,
+.power-card-center {
+  max-width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Keyframes for automatic enlarging animation */
+@keyframes enlarge {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Enlarge the card */
+  }
+}
+
+/* Keyframes for automatic shrinking animation */
+@keyframes shrink {
+  0%, 100% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1); /* Shrink the card */
+  }
+}
+
+.power-card {
+  animation: enlarge 10s infinite; /* Apply automatic enlarging animation */
+}
+
+.power-card-center {
+  position: relative;
+  bottom: 160%;
+
+}
+
+/* Apply animation to card image on hover */
+.power-card:hover .card-img-top,
+.power-card-center:hover .card-img-top {
+  animation: shrink 10s alternate infinite; /* Apply automatic shrinking animation */
+}

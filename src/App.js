@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import '/node_modules/bootstrap/dist/css/bootstrap.css';
 import { Route, Switch } from 'react-router-dom';
@@ -10,6 +9,7 @@ import Courses from './components/Courses.tsx'
 import React, { useState, useEffect } from 'react';
 import PdfViewer from './components/PdfViewer.tsx';
 import TechStack from './components/TechStack';
+import Powered from './components/Powered'
 function App() {
   const [data, setData] = useState(null);
   const [essentiakData, setEssentialData] = useState({
@@ -62,6 +62,7 @@ function App() {
           <Route path="/pdfviewer" component={PdfViewer}></Route>
           <Route path="/techstack" component={TechStack}></Route>
           <Route path="/courses" component={Courses}></Route>
+          <Route path="/powered" component={Powered}></Route>
           <Route
             path="/projects"
             render={(props) => <Projects {...props} data={data} />}
