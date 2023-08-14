@@ -12,6 +12,8 @@ import React, { useState, useEffect } from "react";
 import PdfViewer from "./components/PdfViewer/PdfViewer";
 import TechStack from "./components/TechStack/TechStack";
 import Powered from "./components/Powered/Powered";
+
+import Blog from "./components/Blog/Blog.tsx"
 function App() {
   const [data, setData] = useState(null);
   const [essentialData, setEssentialData] = useState({});
@@ -170,6 +172,11 @@ const [technologyData, setTechnologyData] = useState([]);
           <Route
             path="/projects"
             render={(props) => <Projects {...props} data={data} />}
+          ></Route>
+
+<Route
+            path="/blog"
+            render={(props) => <Blog {...props} data={data} />}
           ></Route>
         </Switch>
       </div>

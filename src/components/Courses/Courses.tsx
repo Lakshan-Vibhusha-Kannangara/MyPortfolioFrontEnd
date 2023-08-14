@@ -11,8 +11,8 @@ const TechnologyCard: React.FC<{
   };
   progress: number;
 }> = ({ technology, progress }) => (
-  <div className="col-md-6 mb-4">
-    <div className="card h-100">
+  <div className="col-md-5 mb-5">
+    <div className="card h-200">
       <div className="row g-0">
         <div className="col-md-4">
           <img
@@ -57,9 +57,10 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
   }
 
   return (
-    <div>
+    <div style={{margin:'2px',top:'30px',left:"40px",position:"relative"}}>
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {courses.map((tech, index) => (
+          
           <TechnologyCard
             key={index}
             technology={{

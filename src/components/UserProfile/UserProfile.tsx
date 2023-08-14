@@ -45,7 +45,7 @@ export default function UserProfile(props: any) {
                   src={data.image}
                   alt="avatar"
                   className="rounded-circle"
-                  style={{ width: '150px' }}
+                  style={{ width: '250px' }}
                   fluid />
                 <p className="text-muted mb-1">{data.degree}</p>
                 <p className="text-muted mb-4">{data.university}</p>

@@ -77,9 +77,15 @@ const TopNavbar = () => {
                 <Link to='/powered'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link">Powered By</a></Link>
               </div>
             </li>
+
+            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <div style={containerStyle}>
+                <Link to='/blog'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link">Blog</a></Link>
+              </div>
+            </li>
           </ul>
           
-          <button type="button" className="btn btn-primary" style={{left:'600px',position:'relative',background:'orange',borderColor:'orange'}}> <a className="nav-link" target="_blank" href='https://github.com/Lakshan-Vibhusha-Kannangara?tab=repositories' >Source Code</a>
+          <button type="button" className="btn btn-primary" style={{left:'350px',position:'relative',background:'orange',borderColor:'orange'}}> <a className="nav-link" target="_blank" href='https://github.com/Lakshan-Vibhusha-Kannangara?tab=repositories' >Source Code</a>
            </button>
         </div>
       </div>
