@@ -1,6 +1,6 @@
 import React from "react";
 import "./Projects.css";
-import Post from "../Post/Post.tsx";
+import Post from "../Post/Post";
 
 // Define the type for a single project
 interface Project {
@@ -30,15 +30,13 @@ function Projects({ data }: ProjectsProps) {
 
   return (
     <div className="mb-4 mb-lg-0">
-      <p className="large text-muted mb-3 h1" style={{ padding: 15 }}>
-        My Projects
-      </p>
-      <div style={{ padding: 20 }}>
+      <p className="large text-muted mb-3 h1">My Projects</p>
+      <div>
         {chunkedProjects.map((projectChunk, chunkIndex) => (
           <div key={chunkIndex} className="row mb-4">
             {projectChunk.map((project, projectIndex) => (
               <div
-                key={project.id}
+                key={project.id} // Add a unique key here
                 className="col-lg-4 fade-in-animation"
                 style={{
                   animationDelay: `${chunkIndex * 0.2 + projectIndex * 0.1}s`,

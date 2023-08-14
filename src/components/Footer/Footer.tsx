@@ -1,5 +1,5 @@
 import React from "react";
-import ContactForm from "../ContactForm/ContactForm.tsx";
+import ContactForm from "../ContactForm/ContactForm";
 function Footer() {
     return ( <div className="footer">
     <div className="container">

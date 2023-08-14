@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import Technical from "../Technical/Technical.tsx";
-import ProjInfo from "../ProjInfo/ProjInfo.tsx";
+import Technical from "../Technical/Technical";
+import ProjInfo from "../ProjInfo/ProjInfo";
 
 
 import {

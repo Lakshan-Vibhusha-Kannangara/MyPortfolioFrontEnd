@@ -30,7 +30,7 @@ const [technologyData, setTechnologyData] = useState([]);
       const response = await fetch("http://52.65.35.114:4002/info");
       const jsonData = await response.json();
       setUserData(jsonData);
-      console.log("Fetched user data:", jsonData);
+
     } catch (error) {
       console.error("Error fetching user data:", error);
     }
@@ -50,7 +50,7 @@ const [technologyData, setTechnologyData] = useState([]);
       const response = await fetch("http://52.65.35.114:4002/essential");
       const jsonData = await response.json();
       setEssentialData(jsonData);
-      console.log("Fetched essential data:", jsonData);
+
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -70,7 +70,7 @@ const [technologyData, setTechnologyData] = useState([]);
       const response = await fetch("http://52.65.35.114:4002/technical");
       const jsonData = await response.json();
       setTechnicalData(jsonData);
-      console.log("Fetched technical data:", jsonData);
+
     } catch (error) {
       console.error("Error fetching technical data:", error);
     }
@@ -80,7 +80,7 @@ const [technologyData, setTechnologyData] = useState([]);
       const response = await fetch('http://52.65.35.114:4002/info'); // Replace with your specific endpoint
       const jsonData = await response.json();
       setInfoData(jsonData.info[0]);
-      console.log('Fetched info data:', jsonData);
+
     } catch (error) {
       console.error('Error fetching info data:', error);
     }
@@ -110,17 +110,14 @@ const [technologyData, setTechnologyData] = useState([]);
 
     
   }, []); // Fetch data when the component mounts
-  const predefinedUserData = {
-    name: "Vibhusha Kannangara",
-    email:" vibhhooshakannangara@gmail.com",
-  };
+
 
   const fetchProjectData = async () => {
     try {
       const response = await fetch("http://52.65.35.114:4002/projinfo");
       const jsonData = await response.json();
       setProjlData(jsonData.projinfo);
-      console.log("Fetched projdata:", jsonData.projinfo);
+
     } catch (error) {
       console.error("Error fetching project data:", error);
     } finally {
@@ -128,7 +125,7 @@ const [technologyData, setTechnologyData] = useState([]);
     }
   };
 
-  console.log("shoud work",technologyData)
+
   return (
     <div
       style={{
@@ -181,7 +178,9 @@ const [technologyData, setTechnologyData] = useState([]);
         </Switch>
       </div>
     </div>
-  );
+ 
+ 
+ );
 }
 
 export default App;

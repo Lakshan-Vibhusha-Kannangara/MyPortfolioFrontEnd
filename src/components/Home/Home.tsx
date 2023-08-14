@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Interest from "../Interest/Interest.tsx";
-import CarouselPage from "../Carousel/Carousel.tsx";
-import Footer from "../Footer/Footer.tsx"
+import Interest from "../Interest/Interest";
+import CarouselPage from "../Carousel/Carousel";
+import Footer from "../Footer/Footer"
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -23,7 +23,7 @@ function Home(essential:any) {
   let essentialData={name:"",image:"",address:"",title:"",about:"",images:[]}
 
   essentialData=essential.essential
-  console.log(essential.essential)
+
   const [data, setData] = useState<any>(null);
   const [scrollToBottomClicked, setScrollToBottomClicked] = useState(false);
   
@@ -63,7 +63,7 @@ function Home(essential:any) {
     setScrollToBottomClicked(true);
   };
 
-  console.log("the props here  ...",essentialData);
+
   if(false){
     return(<div>Null</div>)
       }
