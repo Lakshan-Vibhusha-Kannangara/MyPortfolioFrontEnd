@@ -4,7 +4,7 @@ import './TechStack.css'; // Import the CSS file
 // TechCard component
 const TechCard: React.FC<{ technology: { name: string; image: string } }> = ({ technology }) => (
   <div className="tech-card">
-    <img src={technology.image} alt={technology.name} />
+    <img src={technology.image} alt={technology.name} className="tech-card-image" />
     <p>{technology.name}</p>
   </div>
 );
@@ -15,11 +15,10 @@ const TechStack: React.FC = () => {
 
   useEffect(() => {
     // Fetch technology data from the backend
-    fetch('http://52.65.35.114:4002/technologies') // Assuming the API endpoint is '/api/technologyData'
+    fetch('http://52.65.35.114:4002/technologies')
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          // If the response indicates success, set the technologyData state with the technology array
           setTechnologyData(data.technology);
         } else {
           console.error('Failed to fetch technology data:', data);
@@ -28,11 +27,10 @@ const TechStack: React.FC = () => {
       .catch((error) => {
         console.error('Error fetching technology data:', error);
       });
-  }, []); // The empty array as the second argument ensures this effect runs once, similar to componentDidMount
+  }, []);
 
   return (
-   <div style={{margin:'10px'}}>
-     <div className="tech-stack">
+    <div className="tech-stack">
       <div className="grid-container">
         {technologyData.map((tech, index) => (
           <div key={index} className="grid-item">
@@ -41,7 +39,6 @@ const TechStack: React.FC = () => {
         ))}
       </div>
     </div>
-   </div>
   );
 };
 

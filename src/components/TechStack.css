@@ -57,3 +57,17 @@
 
 /* Add any other styling you need for the grid layout and cards here */
 /* You can customize the animations and transitions as needed */
+/* TechCard styles */
+.tech-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+/* Fixed size for the card images */
+.tech-card-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* Maintain aspect ratio while filling the container */
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Courses.css'; // Import the CSS file
 
 // TechnologyCard component
 const TechnologyCard: React.FC<{
@@ -9,7 +10,7 @@ const TechnologyCard: React.FC<{
     <div className="card h-100">
       <div className="row g-0">
         <div className="col-md-4">
-          <img src={technology.image} alt={technology.name} className="img-fluid p-3" />
+          <img src={technology.image} alt={technology.name} className="img-fluid p-3 card-image" />
         </div>
         <div className="col-md-8">
           <div className="card-body">
@@ -49,24 +50,21 @@ const Courses: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch technology data from the backend
-    fetch('http://52.65.35.114:4002/courses') // Assuming the API endpoint is '/api/technologyData'
+    fetch('http://52.65.35.114:4002/courses')
       .then((response) => response.json())
       .then((data) => {
-        console.log("course data here ....",data)
         if (data.success) {
-          // If the response indicates success, set the technologyData state with the technology array
           setTechnologyData(data.course);
         } else {
           console.error('Failed to fetch technology data:', data);
         }
-        setLoading(false); // Data fetching completed, set loading to false
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching technology data:', error);
-        setLoading(false); // Data fetching completed, set loading to false even on error
+        setLoading(false);
       });
-  }, []); // The empty array as the second argument ensures this effect runs once, similar to componentDidMount
+  }, []);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -77,7 +75,7 @@ const Courses: React.FC = () => {
   }
 
   return (
-    <div style={{ margin: '40px' }}>
+    <div>
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {technologyData.map((tech, index) => (
           <TechnologyCard
