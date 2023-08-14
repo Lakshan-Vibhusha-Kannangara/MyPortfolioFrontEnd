@@ -1,5 +1,0 @@
-
-class Message extends Component{
-    
-    
-}

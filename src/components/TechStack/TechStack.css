@@ -1,22 +1,22 @@
 /* Add this CSS to your stylesheets or use a CSS-in-JS solution */
 .tech-stack {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 columns */
-    gap: 20px; /* Gap between columns */
-  }
-  
-  .tech-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  /* TechStack.css */
+  display: flex;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 columns */
+  gap: 20px; /* Gap between columns */
+}
+
+.tech-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+/* TechStack.css */
 .fade-in {
   opacity: 0;
   animation: fadeInAnimation 1s ease-in forwards;

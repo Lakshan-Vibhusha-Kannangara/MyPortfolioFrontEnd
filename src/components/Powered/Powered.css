@@ -7,7 +7,8 @@
 
 /* Keyframes for automatic enlarging animation */
 @keyframes enlarge {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -17,7 +18,8 @@
 
 /* Keyframes for automatic shrinking animation */
 @keyframes shrink {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1.05);
   }
   50% {
@@ -32,7 +34,6 @@
 .power-card-center {
   position: relative;
   bottom: 160%;
-
 }
 
 /* Apply animation to card image on hover */

@@ -1,6 +1,6 @@
-import React from 'react';
-import './Projects.css';
-import Post from './Post.tsx';
+import React from "react";
+import "./Projects.css";
+import Post from "../Post/Post.tsx";
 
 // Define the type for a single project
 interface Project {

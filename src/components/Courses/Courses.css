@@ -1,0 +1,6 @@
+/* Courses.css */
+.card-image {
+  width: 125px;
+  height: 150px;
+  object-fit: cover; /* Maintain aspect ratio while filling the container */
+}

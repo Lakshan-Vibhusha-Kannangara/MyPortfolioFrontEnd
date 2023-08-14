@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Technical from './Technical.tsx';
-import ProjInfo from './ProjInfo.tsx';
+import React, { useState } from "react";
+
+import Technical from "../Technical/Technical.tsx";
+import ProjInfo from "../ProjInfo/ProjInfo.tsx";
+
+
 import {
   MDBCol,
   MDBContainer,
@@ -13,52 +16,22 @@ import {
   MDBIcon,
   MDBListGroup,
   MDBListGroupItem,
-  MDBCardHeader
-} from 'mdb-react-ui-kit';
+  MDBCardHeader,
+} from "mdb-react-ui-kit";
 
+export default function UserProfile(props: any) {
+  const { userData, technicalData, projlData, isLoading } = props;
 
-export default function UserProfile() {
+  // Placeholder data
+
   const [data, setInfoData] = useState({
-    degree: 'Loading...',
-    university: 'Loading...',
-    mobile: 'Loading...',
-    address: 'Loading...',
-    image: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp', // Default image URL
+    degree:  userData[0].degree,
+    university: userData[0].university,
+    mobile:  userData[0].mobile,
+    address:  userData[0].address,
+    image:
+    userData[0].image, // Default image URL
   });
-
-  const [technicalData, setTechnicalData] = useState({
-    
-
-  });
-
-  const fetchInfoData = async () => {
-    try {
-      const response = await fetch('http://52.65.35.114:4002/info'); // Replace with your specific endpoint
-      const jsonData = await response.json();
-      setInfoData(jsonData.info[0]);
-      console.log('Fetched info data:', jsonData);
-    } catch (error) {
-      console.error('Error fetching info data:', error);
-    }
-  };
-
-  const fetchTechnicalData = async () => {
-    try {
-      const response = await fetch('http://52.65.35.114:4002/technical'); // Replace with your specific endpoint
-      const jsonData = await response.json();
-      setTechnicalData(jsonData);
-      console.log('Fetched technical data:', jsonData);
-    } catch (error) {
-      console.error('Error fetching technical data:', error);
-    }
-  };
-
-  useEffect(() => {
-    
-    fetchTechnicalData();
-    fetchInfoData();
-  }, []);
-  
   return (
     <section style={{ backgroundColor: '#eee' }}>
       <MDBContainer className="py-5">
@@ -156,12 +129,16 @@ export default function UserProfile() {
               </MDBCardBody>
             </MDBCard>
 
-            <MDBRow>
-            <Technical  technicalData={technicalData}></Technical>
-            <ProjInfo></ProjInfo>
-     
-    </MDBRow>
 
+            <MDBRow>
+{technicalData && <Technical technicalData={technicalData} />}
+      {projlData && !isLoading ? (
+        <ProjInfo projlData={projlData} isLoading={isLoading} />
+      ) : (
+        // Render a message if project data is not available or loading
+        <p>No project information available.</p>
+      )}
+    </MDBRow>
       
           </MDBCol>
         </MDBRow>
@@ -169,3 +146,4 @@ export default function UserProfile() {
     </section>
   );
 }
+

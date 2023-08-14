@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   MDBCol,
   MDBCard,
@@ -6,7 +6,7 @@ import {
   MDBCardBody,
   MDBProgress,
   MDBProgressBar,
-} from 'mdb-react-ui-kit';
+} from "mdb-react-ui-kit";
 
 interface TechnicalProps {
   technicalData: {
@@ -19,12 +19,16 @@ interface TechnicalProps {
 
 function Technical({ technicalData }: TechnicalProps) {
   // Check if data.info is an array before using it
-  const skillArray = Array.isArray(technicalData?.technical) ? technicalData.technical : [];
+  const skillArray = Array.isArray(technicalData?.technical)
+    ? technicalData.technical
+    : [];
 
   // Map over the skillArray to generate the skill items
   const skillItems = skillArray.map((skill, index) => (
-    <div key={index} style={{ padding: '10px' }}>
-      <MDBCardText className="mb-1" style={{ fontSize: '.77rem' }}>{skill.name}</MDBCardText>
+    <div key={index} style={{ padding: "10px" }}>
+      <MDBCardText className="mb-1" style={{ fontSize: ".77rem" }}>
+        {skill.name}
+      </MDBCardText>
       <MDBProgress className="rounded">
         <MDBProgressBar valuemin={0} width={skill.width} valuemax={100} />
       </MDBProgress>
@@ -36,7 +40,9 @@ function Technical({ technicalData }: TechnicalProps) {
       <MDBCard className="mb-4 mb-md-0">
         <MDBCardBody>
           <MDBCardText className="mb-4">
-            <span className="text-primary font-italic me-1">Technical Skills</span>
+            <span className="text-primary font-italic me-1">
+              Technical Skills
+            </span>
           </MDBCardText>
           {skillItems}
         </MDBCardBody>
