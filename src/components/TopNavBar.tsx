@@ -79,7 +79,7 @@ const TopNavbar = () => {
             </li>
           </ul>
           
-          <button type="button" className="btn btn-primary" style={{left:'600px',position:'relative',background:'orange',borderColor:'orange'}}> <a className="nav-link" target="_blank" href='https://github.com/Lakshan-Vibhusha-Kannangara/MyPortfolio.git' >Source Code</a>
+          <button type="button" className="btn btn-primary" style={{left:'600px',position:'relative',background:'orange',borderColor:'orange'}}> <a className="nav-link" target="_blank" href='https://github.com/Lakshan-Vibhusha-Kannangara?tab=repositories' >Source Code</a>
            </button>
         </div>
       </div>
