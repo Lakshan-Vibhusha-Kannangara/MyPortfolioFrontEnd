@@ -14,7 +14,7 @@ const TechStack: React.FC = () => {
   const [technologyData, setTechnologyData] = useState<{ name: string; image: string }[]>([]);
 
   useEffect(() => {
-    // Fetch technology data from the backend
+
     fetch('http://52.65.35.114:4002/technologies')
       .then((response) => response.json())
       .then((data) => {
