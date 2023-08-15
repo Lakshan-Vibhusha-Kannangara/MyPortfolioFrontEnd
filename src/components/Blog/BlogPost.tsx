@@ -47,7 +47,7 @@ function BlogPost(props: BlogPostProps) {
               {author.name}
             </a>
           </div>
-       <div style={{margin:"10px"}}> <p>{content}</p></div>
+       <div style={{margin:"10px"}}> <h5>{content}</h5></div>
         
 
         <img
@@ -63,7 +63,7 @@ function BlogPost(props: BlogPostProps) {
         <p>{listItems[3]}</p>
         <p>{listItems[4]}</p>
 
-        <p>{content}</p>
+  
   </div>
       </section>
       <section>

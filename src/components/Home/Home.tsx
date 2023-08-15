@@ -118,7 +118,7 @@ function Home(essential:any) {
                 <div
                   className="rounded-top  d-flex flex-row"
                   style={{
-                    backgroundColor: "#b4a7fa",
+                    backgroundColor: "#b4a5ba",
                     height: "200px",
                     fontSize: "25px",
                   }}
@@ -160,7 +160,7 @@ function Home(essential:any) {
                     >
                       <a
                         className="btn btn-primary"
-                        style={{ backgroundColor: "#0082ca", margin: "10px" }}
+                        style={{ backgroundColor: "#0082cb", margin: "10px" }}
                         href="https://linkedin.com/in/vibhoosha-kannangara"
                         role="button"
                       >

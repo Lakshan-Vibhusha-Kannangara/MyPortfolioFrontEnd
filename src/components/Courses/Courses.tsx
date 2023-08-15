@@ -11,8 +11,8 @@ const TechnologyCard: React.FC<{
   };
   progress: number;
 }> = ({ technology, progress }) => (
-  <div className="col-md-5 mb-5">
-    <div className="card h-200">
+  <div className="col-md-5 mb-0">
+    <div className="card h-80">
       <div className="row g-0">
         <div className="col-md-4">
           <img
@@ -23,7 +23,7 @@ const TechnologyCard: React.FC<{
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">{technology.name}</h5>
+            <h5 className="card-title" style={{fontSize:"15px"}}>{technology.name}</h5>
             <p className="card-text">{technology.description}</p>
             <div className="progress mb-3">
               <div
@@ -37,7 +37,7 @@ const TechnologyCard: React.FC<{
                 {progress}% Complete
               </div>
             </div>
-            <p className="card-text">
+            <p className="card-text" style={{fontSize:"15px",margin:"0"}}>
               <small className="text-muted">
                 Last updated {technology.lastUpdated}
               </small>
@@ -53,11 +53,13 @@ const TechnologyCard: React.FC<{
 const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
 
   if (!courses || courses.length === 0) {
-    return <p>No technologies available.</p>;
+    return <p>Loading......</p>;
   }
 
   return (
-    <div style={{margin:'2px',top:'30px',left:"40px",position:"relative"}}>
+
+    <div style={{margin:'5px',top:'30px',left:"10%",position:"relative"}}>
+      <h1>Courses that I've Followed</h1>
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {courses.map((tech, index) => (
           

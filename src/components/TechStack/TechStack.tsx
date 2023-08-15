@@ -30,15 +30,21 @@ const TechStack: React.FC = () => {
   }, []);
 
   return (
-    <div className="tech-stack">
-      <div className="grid-container">
-        {technologyData.map((tech, index) => (
-          <div key={index} className="grid-item">
-            <TechCard technology={tech} />
-          </div>
-        ))}
-      </div>
+    <div style={{margin:"10px"}}>
+      <p style={{fontSize:"40px"}}>My Technologies</p>
+      <div className="tech-stack">
+    
+    <div className="grid-container">
+      
+      {technologyData.map((tech, index) => (
+        <div key={index} className="grid-item">
+          <TechCard technology={tech} />
+        </div>
+      ))}
     </div>
+  </div>
+    </div>
+    
   );
 };
 

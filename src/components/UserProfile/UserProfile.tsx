@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Technical from "../Technical/Technical";
+import './UserProfile.css'
 import ProjInfo from "../ProjInfo/ProjInfo";
 import {
   MDBCol,
@@ -15,10 +16,16 @@ import {
   MDBListGroupItem,
   MDBCardHeader,
 } from "mdb-react-ui-kit";
+import SocialMedia from "../SocialMedia/SocialMedia";
 
 export default function UserProfile(props: any) {
   // Destructure props with default values if they are undefined
-  const { userData = [], technicalData = [], projlData = [], isLoading = false } = props;
+  const {
+    userData = [],
+    technicalData = [],
+    projlData = [],
+    isLoading = false,
+  } = props;
 
   // Placeholder data
   const [data, setInfoData] = useState({
@@ -34,120 +41,115 @@ export default function UserProfile(props: any) {
     return <div></div>;
   }
   return (
-    <section style={{ backgroundColor: '#eee' }}>
+    <section style={{ backgroundColor: "#eee" }}>
+    
       <MDBContainer className="py-5">
-       
+      <div style={{margin:"20px",bottom:"10px",position:"relative"}}> <h1 style={{font:"-moz-initial",fontFamily:"initial"}}>Basic Information</h1></div>
+        <MDBCol> 
+        <div className="container" style={{margin:"20px",right:'20px',position:"relative"}} >
+        <div className="row">
+        <div className="col" >
 
-        <MDBRow>
-          <MDBCol lg="4">
-            <MDBCard className="mb-4">
-              <MDBCardBody className="text-center">
-                <MDBCardImage
-                  src={data.image}
-                  alt="avatar"
-                  className="rounded-circle"
-                  style={{ width: '250px' }}
-                  fluid />
-                <p className="text-muted mb-1">{data.degree}</p>
-                <p className="text-muted mb-4">{data.university}</p>
-                <div className="d-flex justify-content-center mb-2">
-                  <MDBBtn>Follow</MDBBtn>
-                  <MDBBtn outline className="ms-1">Message</MDBBtn>
-                </div>
-              </MDBCardBody>
-            </MDBCard>
-
-            <MDBCard className="mb-4 mb-lg-0">
-            <MDBCardHeader className='mb-4'><p style={{position:'relative',left:'200px'}}>Languages</p></MDBCardHeader>
-              <MDBCardBody className="p-0">
-                
-                <MDBListGroup flush className="rounded-3">
-               
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <MDBIcon fas icon="globe fa-lg text-warning" />
-                    <MDBCardText>Sinhala</MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <MDBIcon fas icon="globe fa-lg text-warning" />
-                    <MDBCardText>English</MDBCardText>
-                  </MDBListGroupItem>
-              
-                  
-                 
-                </MDBListGroup>
-
+        <div style={{height:"100%"}} className="custom-card">
+                <MDBCardBody className="text-center">
+                  <MDBCardImage
+                    src={data.image}
+                    
+                    alt="avatar"
+                    className="rounded-circle"
+                    style={{ width: "300px" }}
+                    fluid
+                  />
+                         
+               <div style={{margin:"20px",left:"10px"}}>
+               <p style={{color:"black",fontSize:"25px",fontFamily:"inherit"}}>{data.degree}</p>
+                  <p style={{color:"black",fontSize:"25px",fontFamily:"inherit"}}>{data.university}</p>
+               </div>
              
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol lg="8">
+                  <div className="d-flex justify-content-center mb-2">
+               
+                  </div>
+                </MDBCardBody>
+             
+                </div>
+
+        </div>
+        <div className="col">
+        {technicalData && <Technical technicalData={technicalData} />}
+
+        </div>
+      </div>
+    </div>
+         
+               
+               <MDBCard>
+               <MDBCardBody>
+                  <MDBRow>
+                    <MDBCol sm="3">
+                      <MDBCardText>Full Name</MDBCardText>
+                    </MDBCol>
+                    <MDBCol sm="9">
+                      <MDBCardText className="text-muted">
+                        Vibhusha Kannangara
+                      </MDBCardText>
+                    </MDBCol>
+                  </MDBRow>
+                  <hr />
+                  <MDBRow>
+                    <MDBCol sm="3">
+                      <MDBCardText>Email</MDBCardText>
+                    </MDBCol>
+                    <MDBCol sm="9">
+                      <MDBCardText className="text-muted">
+                        vibhooshakannangara@gmail.com
+                      </MDBCardText>
+                    </MDBCol>
+                  </MDBRow>
+                  <hr />
+                  <MDBRow>
+                    <MDBCol sm="3">
+                      <MDBCardText>Phone</MDBCardText>
+                    </MDBCol>
+                    <MDBCol sm="9">
+                      <MDBCardText className="text-muted">
+                        {data.mobile}
+                      </MDBCardText>
+                    </MDBCol>
+                  </MDBRow>
+                  <hr />
+                  <MDBRow>
+                    <MDBCol sm="3">
+                      <MDBCardText>Mobile</MDBCardText>
+                    </MDBCol>
+                    <MDBCol sm="9">
+                      <MDBCardText className="text-muted">
+                        {data.mobile}
+                      </MDBCardText>
+                    </MDBCol>
+                  </MDBRow>
+                  <hr />
+                  <MDBRow>
+                    <MDBCol sm="3">
+                      <MDBCardText>Address</MDBCardText>
+                    </MDBCol>
+                    <MDBCol sm="9">
+                      <MDBCardText className="text-muted">
+                        {data.address}
+                      </MDBCardText>
+                    </MDBCol>
+                  </MDBRow>
+                </MDBCardBody>
+               </MDBCard></MDBCol>
+        <MDBRow>
+          <MDBRow lg="8">
             <MDBCard className="mb-4">
-              <MDBCardBody>
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Full Name</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Vibhusha Kannangara</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Email</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">vibhooshakannangara@gmail.com</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Phone</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">{data.mobile}</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Mobile</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">{data.mobile}</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Address</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">{data.address}</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-              </MDBCardBody>
-            </MDBCard>
-
-
-            <MDBRow>
-{technicalData && <Technical technicalData={technicalData} />}
-      {projlData && !isLoading ? (
-        <ProjInfo projlData={projlData} isLoading={isLoading} />
-      ) : (
-        // Render a message if project data is not available or loading
-        <p>No project information available.</p>
-      )}
-    </MDBRow>
+        
       
-          </MDBCol>
+            </MDBCard>
+          </MDBRow>
         </MDBRow>
       </MDBContainer>
+
     </section>
   );
 }
-
-
-
-
