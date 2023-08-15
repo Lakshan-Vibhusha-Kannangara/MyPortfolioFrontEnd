@@ -40,57 +40,57 @@ const TopNavbar = () => {
           <ul className="navbar-nav ml-auto">
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
-                <Link to='/home' style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link">Home</a></Link>
+                <Link to='/home' style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href="##">Home</a></Link>
               </div>
             </li>
           
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
-                <Link to='/projects'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link">Projects</a></Link>
+                <Link to='/projects'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href="##">Projects</a></Link>
               </div>
             </li>
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
-                <Link to='/about' style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link">About</a></Link>
+                <Link to='/about' style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href='##'>About</a></Link>
               </div>
             </li>
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
-             <a className="nav-link" href='https://drive.google.com/file/d/1XAqbKIgRzrcWtusfhYyhJkX_VSoD6uzQ/view?usp=drive_link' target="_blank">Résumé</a>
-              </div>
-            </li>
-
-            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-              <div style={containerStyle}>
-                <Link to='/techstack'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link">Tech-Stack</a></Link>
-              </div>
-            </li>
-            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-              <div style={containerStyle}>
-                <Link to='/courses'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link">Courses</a></Link>
+             <a className="nav-link" href='https://drive.google.com/file/d/1XAqbKIgRzrcWtusfhYyhJkX_VSoD6uzQ/view?usp=drive_link' target="_blank" rel='noreferrer'>Résumé</a>
               </div>
             </li>
 
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
-                <Link to='/powered'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link">Powered By</a></Link>
+                <Link to='/techstack'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href='##'>Tech-Stack</a></Link>
+              </div>
+            </li>
+            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <div style={containerStyle}>
+                <Link to='/courses'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href="##">Courses</a></Link>
               </div>
             </li>
 
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
-                <Link to='/blog'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link">Blog</a></Link>
+                <Link to='/powered'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href='##'>Powered By</a></Link>
+              </div>
+            </li>
+
+            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <div style={containerStyle}>
+                <Link to='/blog'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href="##">Blog</a></Link>
               </div>
             </li>
             
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
-             <a className="nav-link" href='https://drive.google.com/file/d/1-q-6zJ1NkXNy6nrrMkMUVNYd_7WF91Wp/view?usp=drive_link' target="_blank">Research Paper</a>
+             <a className="nav-link" href='https://drive.google.com/file/d/1-q-6zJ1NkXNy6nrrMkMUVNYd_7WF91Wp/view?usp=drive_link' target="_blank" rel='noreferrer'>Research Paper</a>
               </div>
             </li>
           </ul>
           
-          <button type="button" className="btn btn-primary" style={{left:'350px',position:'relative',background:'orange',borderColor:'orange'}}> <a className="nav-link" target="_blank" href='https://github.com/Lakshan-Vibhusha-Kannangara?tab=repositories' >Source Code</a>
+          <button type="button" className="btn btn-primary" style={{left:'350px',position:'relative',background:'orange',borderColor:'orange'}}> <a className="nav-link" target="_blank" href='https://github.com/Lakshan-Vibhusha-Kannangara?tab=repositories' rel='noreferrer'>Source Code</a>
            </button>
         </div>
       </div>
