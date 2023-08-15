@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Technical from "../Technical/Technical";
 import './UserProfile.css'
-import ProjInfo from "../ProjInfo/ProjInfo";
+
 import {
   MDBCol,
   MDBContainer,
@@ -10,13 +10,9 @@ import {
   MDBCardText,
   MDBCardBody,
   MDBCardImage,
-  MDBBtn,
-  MDBIcon,
-  MDBListGroup,
-  MDBListGroupItem,
-  MDBCardHeader,
+ 
 } from "mdb-react-ui-kit";
-import SocialMedia from "../SocialMedia/SocialMedia";
+
 
 export default function UserProfile(props: any) {
   // Destructure props with default values if they are undefined

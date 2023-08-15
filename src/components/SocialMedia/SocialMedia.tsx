@@ -4,10 +4,7 @@ import {
     FaLinkedinIn,
     FaGithub,
     FaInstagram,
-    FaDatabase,
-    FaServer,
-    FaReact,
-    FaNodeJs,
+
   } from "react-icons/fa";
 function SocialMedia() {
     return (       <div

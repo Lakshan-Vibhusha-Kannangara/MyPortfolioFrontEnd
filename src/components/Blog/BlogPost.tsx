@@ -1,5 +1,5 @@
 import React from "react";
-import Comment from './Comment'
+
 
 interface Author {
   name: string;
@@ -51,6 +51,7 @@ function BlogPost(props: BlogPostProps) {
         
 
         <img
+          alt=""
           src={images[0]} // Display the first image from the images array
           className="img-fluid"
      
@@ -70,7 +71,7 @@ function BlogPost(props: BlogPostProps) {
         {/* You can add more sections and content here */}
       </section>
 
-      <Comment />
+    
     </div>
   );
 }
