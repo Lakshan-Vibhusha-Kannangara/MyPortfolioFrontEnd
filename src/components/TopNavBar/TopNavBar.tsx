@@ -23,9 +23,8 @@ const TopNavbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <a className="navbar-brand" href="#">
-          <img src="https://picsum.photos/50" alt="Logo" className="rounded-circle" style={{ width: '50px', height: '50px', padding: '0px' }} />
-        </a>
+      <img src="https://picsum.photos/50" alt="Logo" className="rounded-circle" style={{ width: '50px', height: '50px', padding: '0px' }} />
+      
         <button
           className="navbar-toggler"
           type="button"
