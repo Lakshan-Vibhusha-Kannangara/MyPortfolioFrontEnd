@@ -57,7 +57,7 @@ const TopNavbar = () => {
             </li>
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
-             <a className="nav-link" href='https://drive.google.com/file/d/1La3q2IkO0fC0uLtNFphid4gIHFF3NvZb/view?usp=sharing' target="_blank">Résumé</a>
+             <a className="nav-link" href='https://drive.google.com/file/d/1XAqbKIgRzrcWtusfhYyhJkX_VSoD6uzQ/view?usp=drive_link' target="_blank">Résumé</a>
               </div>
             </li>
 
@@ -81,6 +81,12 @@ const TopNavbar = () => {
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
                 <Link to='/blog'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link">Blog</a></Link>
+              </div>
+            </li>
+            
+            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <div style={containerStyle}>
+             <a className="nav-link" href='https://drive.google.com/file/d/1-q-6zJ1NkXNy6nrrMkMUVNYd_7WF91Wp/view?usp=drive_link' target="_blank">Research Paper</a>
               </div>
             </li>
           </ul>
