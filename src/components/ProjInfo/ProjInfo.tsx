@@ -34,7 +34,7 @@ function ProjectAspectBar({ aspect }: { aspect: ProjectAspect }) {
 }
 
 function ProjInfo(props: ProjInfoProps) {
-  console.log("projinfo   ", props);
+
 
   return (
     <MDBCol md="6">

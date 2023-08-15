@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-
 import Technical from "../Technical/Technical";
 import ProjInfo from "../ProjInfo/ProjInfo";
-
-
 import {
   MDBCol,
   MDBContainer,
@@ -20,18 +17,22 @@ import {
 } from "mdb-react-ui-kit";
 
 export default function UserProfile(props: any) {
-  const { userData, technicalData, projlData, isLoading } = props;
+  // Destructure props with default values if they are undefined
+  const { userData = [], technicalData = [], projlData = [], isLoading = false } = props;
 
   // Placeholder data
-
   const [data, setInfoData] = useState({
-    degree:  userData[0].degree,
-    university: userData[0].university,
-    mobile:  userData[0].mobile,
-    address:  userData[0].address,
-    image:
-    userData[0].image, // Default image URL
+    degree: userData[0]?.degree,
+    university: userData[0]?.university,
+    mobile: userData[0]?.mobile,
+    address: userData[0]?.address,
+    image: userData[0]?.image, // Default image URL
   });
+
+  if (!props) {
+    // Return an empty div if props are undefined
+    return <div></div>;
+  }
   return (
     <section style={{ backgroundColor: '#eee' }}>
       <MDBContainer className="py-5">
@@ -146,4 +147,7 @@ export default function UserProfile(props: any) {
     </section>
   );
 }
+
+
+
 

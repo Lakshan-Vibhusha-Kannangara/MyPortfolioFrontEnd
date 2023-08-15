@@ -7,9 +7,7 @@ interface InterestProps {
       name: string;
       description: string;
       image: string;
-      // Add other properties as needed
     }>;
-    // Add other properties of 'data' if any
   };
 }
 
@@ -20,9 +18,16 @@ function Interest({ data }: InterestProps) {
 
   const interests = data.interests;
 
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.currentTarget.style.opacity = "0.8";
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.currentTarget.style.opacity = "1";
+  };
+
   return (
     <div>
-      {/* Use Bootstrap classes to create a 2-column grid layout */}
       <div className="container">
         <div className="row">
           {interests.map((interest) => (
@@ -30,18 +35,11 @@ function Interest({ data }: InterestProps) {
               className="col-md-6 mb-4"
               key={interest.id}
               style={{
-                // Apply inline styles for the card and add a transition effect
                 transition: "opacity 0.3s ease-in-out",
                 opacity: 1,
               }}
-              onMouseEnter={(e) => {
-                // When the mouse enters, reduce the opacity for the hover effect
-                e.currentTarget.style.opacity = "0.8";
-              }}
-              onMouseLeave={(e) => {
-                // When the mouse leaves, restore the original opacity
-                e.currentTarget.style.opacity = "1";
-              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <div className="card">
                 <img
