@@ -45,7 +45,7 @@ function Interest({ data }: InterestProps) {
                 <img
                   src={interest.image}
                   className="card-img-top"
-                  alt="Interest Image"
+                  alt=""
                 />
                 <div className="card-body">
                   <h5 className="card-title">{interest.name}</h5>

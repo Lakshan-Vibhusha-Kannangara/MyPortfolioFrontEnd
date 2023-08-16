@@ -43,7 +43,7 @@ function BlogPost(props: BlogPostProps) {
               {" "}
               Published <u>{publishDate}</u> by
             </span>
-            <a  className="text-dark">
+            <a  className="text-dark" href="##">
               {author.name}
             </a>
           </div>

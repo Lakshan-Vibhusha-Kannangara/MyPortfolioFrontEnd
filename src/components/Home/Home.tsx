@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Interest from "../Interest/Interest";
 import CarouselPage from "../Carousel/Carousel";
 import Footer from "../Footer/Footer"
+import Load from "./Load"
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -27,6 +28,7 @@ function Home(essential:any) {
   const [data, setData] = useState<any>(null);
   const [scrollToBottomClicked, setScrollToBottomClicked] = useState(false);
   
+  
   const divStyle = {
     width: "100%",
     height: "100%",
@@ -35,6 +37,7 @@ function Home(essential:any) {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
   };
+  
   const gradientStyle = {
     background:
       "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(190,127,164,1) 0%, rgba(0,212,255,1) 100%)",
@@ -62,15 +65,17 @@ function Home(essential:any) {
   const handleScrollToBottom = () => {
     setScrollToBottomClicked(true);
   };
+ 
 
 
-  if(false){
-    return(<div>Null</div>)
+  if(!essential.essential){
+    return( <Load/> )
       }
-  return (
+
+    return (
     <div>
     <div>
-      {/* Background image */}
+
       <div
         id="intro-example"
         className="p-5 text-center bg-image"
@@ -126,7 +131,7 @@ function Home(essential:any) {
                   <div className="ms-4 mt-5 d-flex flex-column">
                     <img
                       src={essentialData.image}
-                      alt="Generic placeholder image"
+                      alt=""
                       className="img-fluid img-thumbnail mt-4 mb-2"
                       style={{
                         width: "200px",
@@ -138,7 +143,7 @@ function Home(essential:any) {
                   </div>
                   <div className="ms-3" style={{ marginTop: "40px" }}>
                     <p style={{ fontSize: "60px", color: "white" }}>
-                      {essentialData.name}
+                      Vibhusha Kannangara
                     </p>
                     <p
                       style={{
@@ -149,7 +154,7 @@ function Home(essential:any) {
                         top: 0,
                       }}
                     >
-                      {essentialData.address}
+                      Aluthgama, Sri Lanka
                     </p>
                     <div
                       style={{
@@ -202,7 +207,7 @@ function Home(essential:any) {
                   <div className="d-flex justify-content-end text-center py-1">
                     <div>
                       <p className="large text-muted mb-3 h4">
-                        {essentialData.title}
+                      Bsc(Hons) Engineering | Department of Electrical Engineering | University of Moratuwa
                       </p>
                     </div>
                   </div>

@@ -12,7 +12,7 @@ function SideBar() {
               style={{ width: "100%", height: "auto", maxHeight: "300px",left:"50px" }} // Increased max height for larger image
               alt="AI Article"
             />
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="##" target="_blank" rel="noopener noreferrer">
               <div
                 className="mask"
                 style={{ backgroundColor: "rgba(57, 192, 237, 0.2)" }}

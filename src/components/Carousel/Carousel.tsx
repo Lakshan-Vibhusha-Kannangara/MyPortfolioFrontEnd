@@ -41,7 +41,7 @@ const CarouselPage = (props: { data: string[] }) => {
             <img
               src={imageUrl}
               className="d-block w-100"
-              alt={`Image ${idx + 1}`}
+              alt=""
             />
             <div className="carousel-caption d-none d-md-block">
               <h1>{idx === 1 ? "EXMO 2023" : "Final Year Project"}</h1>

@@ -19,12 +19,11 @@ export default function UserProfile(props: any) {
   const {
     userData = [],
     technicalData = [],
-    projlData = [],
-    isLoading = false,
+   
   } = props;
 
   // Placeholder data
-  const [data, setInfoData] = useState({
+  const [data] = useState({
     degree: userData[0]?.degree,
     university: userData[0]?.university,
     mobile: userData[0]?.mobile,

@@ -10,136 +10,52 @@ import React, { useState, useEffect } from "react";
 import PdfViewer from "./components/PdfViewer/PdfViewer";
 import TechStack from "./components/TechStack/TechStack";
 import Powered from "./components/Powered/Powered";
-
 import Blog from "./components/Blog/Blog.tsx";
-import Research from './components/Research/Research';
+import Research from "./components/Research/Research";
 function App() {
   const [data, setData] = useState(null);
   const [essentialData, setEssentialData] = useState({});
   const [coursesData, setCoursesData] = useState({});
   const [userData, setUserData] = useState({});
-  const [technicalData, setTechnicalData] = useState({});
+  const [technicalData, setTechnicalData] = useState([]);
   const [projlData, setProjlData] = useState([]);
-  const [infoData, setInfoData] = useState([]);
+
   const [isLoading, setIsLoading] = useState(true);
   const [technologyData, setTechnologyData] = useState([]);
-  const [blogData, setBlogData] = useState([]);
+
   const [blogPosts, setBlogPosts] = useState([]);
 
-  const fetchBlogPosts = async () => {
+  const fetchData = async (url, setterFunction) => {
     try {
-      const response = await fetch("http://52.65.35.114:4002/blog");
-      const data = await response.json();
-      setBlogPosts(data);
-    } catch (error) {
-      console.error("Error fetching blog posts:", error);
-    }
-  };
-  const fetchUserData = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/info");
+      const response = await fetch(url);
       const jsonData = await response.json();
-      setUserData(jsonData);
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-    }
-  };
-  const fetchBlogData = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/info");
-      const jsonData = await response.json();
-      setBlogData(jsonData);
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-    }
-  };
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/projects");
-      const jsonData = await response.json();
-      setData(jsonData);
+      setterFunction(jsonData);
     } catch (error) {
       console.error("Error fetching data:", error);
-    }
-  };
-
-  const fetchEssentials = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/essential");
-      const jsonData = await response.json();
-      setEssentialData(jsonData);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
-  const fetchCourses = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/courses");
-      const jsonData = await response.json();
-      setCoursesData(jsonData);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-  const fetchTechnicalData = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/technical");
-      const jsonData = await response.json();
-      setTechnicalData(jsonData);
-    } catch (error) {
-      console.error("Error fetching technical data:", error);
-    }
-  };
-  const fetchInfoData = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/info"); // Replace with your specific endpoint
-      const jsonData = await response.json();
-      setInfoData(jsonData.info[0]);
-    } catch (error) {
-      console.error("Error fetching info data:", error);
-    }
-  };
-
-  const fetchProjectData = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/projinfo");
-      const jsonData = await response.json();
-      setProjlData(jsonData.projinfo);
-    } catch (error) {
-      console.error("Error fetching project data:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-  const fetchTechnologyData = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/technologies");
-      const data = await response.json();
-
-      if (data.success) {
-        setTechnologyData(data.technology);
-      } else {
-        console.error("Failed to fetch technology data:", data);
-      }
-    } catch (error) {
-      console.error("Error fetching technology data:", error);
     }
   };
 
   useEffect(() => {
-    fetchUserData();
-    fetchEssentials();
-    fetchData();
-    fetchCourses();
-    fetchProjectData();
-    fetchTechnicalData();
-    fetchInfoData();
-    fetchBlogData();
-    fetchBlogPosts();
-    fetchTechnologyData();
-  }, []); // Fetch data when the component mounts
+    const fetchDataAsync = async () => {
+      await Promise.all([
+        fetchData("http://52.65.35.114:4002/projects", setData),
+        fetchData("http://52.65.35.114:4002/essential", setEssentialData),
+        fetchData("http://52.65.35.114:4002/courses", setCoursesData),
+        fetchData("http://52.65.35.114:4002/technical", setTechnicalData),
+        fetchData("http://52.65.35.114:4002/projinfo", setProjlData),
+        fetchData("http://52.65.35.114:4002/blog", setBlogPosts),
+        fetchData("http://52.65.35.114:4002/info", setUserData),
+        fetchData("http://52.65.35.114:4002/technologies", setTechnologyData),
+
+      ]);
+
+      setIsLoading(false);
+    };
+
+    fetchDataAsync();
+  }, []);
+
+   // This will log the fetched technologyData to the console
 
   return (
     <div
@@ -178,20 +94,15 @@ function App() {
           ></Route>
           <Route path="/pdfviewer" component={PdfViewer}></Route>
           <Route path="/researchr" component={Research}></Route>
-          <Route path="/techstack" component={TechStack}></Route>
-
-          <Route path="/powered" component={Powered}></Route>
 
           <Route
             path="/techstack"
-            render={(props) =>
-              technologyData.length > 0 ? (
-                <TechStack {...props} technologyData={technologyData} />
-              ) : (
-                <div>Loading technology data...</div>
-              )
-            }
+            render={(props) => <TechStack courses={technologyData.technology} />}
           ></Route>
+
+          <Route path="/powered" component={Powered}></Route>
+
+         
           <Route
             path="/courses"
             render={(props) => <Courses courses={coursesData.course} />}
