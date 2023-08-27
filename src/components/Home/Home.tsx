@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Interest from "../Interest/Interest";
 import CarouselPage from "../Carousel/Carousel";
-import Footer from "../Footer/Footer"
-import Load from "./Load"
+import Footer from "../Footer/Footer";
+import Load from "./Load";
+import Login from "../Login/Login";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -14,34 +15,34 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 import "./Home.css";
-import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-} from "mdb-react-ui-kit";
-function Home(essential:any) {
-  let essentialData={name:"",image:"",address:"",title:"",about:"",images:[]}
+import { MDBContainer, MDBRow, MDBCol, MDBCard } from "mdb-react-ui-kit";
 
-  essentialData=essential.essential
-
-  const [data, setData] = useState<any>(null);
+function Home(essential: any) {
+  const [isLoading, setIsLoading] = useState(true);
   const [scrollToBottomClicked, setScrollToBottomClicked] = useState(false);
-  
-  
+  const [data, setData] = useState({ interests: [] }); // Initialize with an empty array
+
+  const essentialData = essential.essential || {
+    name: "",
+    image: "",
+    address: "",
+    title: "",
+    about: "",
+    images: [],
+  };
+
   const divStyle = {
     width: "100%",
     height: "100%",
-    backgroundImage: `url(${"https://images.pexels.com/photos/1743165/pexels-photo-1743165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})`,
+    backgroundImage: `url("https://images.pexels.com/photos/1743165/pexels-photo-1743165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
   };
-  
+
   const gradientStyle = {
     background:
       "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(190,127,164,1) 0%, rgba(0,212,255,1) 100%)",
-
   };
 
   const fetchData = async (url: string, setStateCallback: (data: any) => void) => {
@@ -55,9 +56,17 @@ function Home(essential:any) {
   };
 
   useEffect(() => {
-    fetchData("http://52.65.35.114:4002/interests", setData);
-    if (scrollToBottomClicked) {
+    // Fetch essential data
+    fetchData("http://52.65.35.114:4002/interests", (essentialData) => {
+      // Set isLoading to false when essential data is loaded
+      setData(essentialData)
 
+    });
+
+    // Fetch additional data (if needed)
+  
+
+    if (scrollToBottomClicked) {
       window.scrollTo(0, document.body.scrollHeight);
     }
   }, [scrollToBottomClicked]);
@@ -65,14 +74,12 @@ function Home(essential:any) {
   const handleScrollToBottom = () => {
     setScrollToBottomClicked(true);
   };
- 
+  console.log(essential.essential.name)
+  if (essential.essential.name===undefined) {
+    return <Load />;
+  }
 
-
-  if(!essential.essential){
-    return( <Load/> )
-      }
-
-    return (
+  return (
     <div>
     <div>
 
@@ -115,7 +122,7 @@ function Home(essential:any) {
     </div>
 
     <section>
-      <div style={divStyle}>
+    <div style={divStyle}>
         <MDBContainer className="py-5 h-5">
           <MDBRow>
             <MDBCol>
@@ -236,6 +243,7 @@ function Home(essential:any) {
           </MDBRow>
         </MDBContainer>
       </div>
+   
     </section>
 
     <div>
@@ -248,3 +256,12 @@ function Home(essential:any) {
 }
 
 export default Home;
+
+
+
+
+
+
+
+
+

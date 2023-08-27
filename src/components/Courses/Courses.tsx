@@ -58,9 +58,9 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
 
   return (
 
-    <div style={{margin:'5px',top:'30px',left:"10%",position:"relative"}}>
+    <div style={{margin:'8px',top:'30px',left:"14%",position:"relative",width:'85%'}}>
       <h1>Courses that I've Followed</h1>
-      <div className="row row-cols-1 row-cols-md-2 g-4">
+      <div className="row row-cols-1 row-cols-md g-4">
         {courses.map((tech, index) => (
           
           <TechnologyCard

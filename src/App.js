@@ -12,6 +12,9 @@ import TechStack from "./components/TechStack/TechStack";
 import Powered from "./components/Powered/Powered";
 import Blog from "./components/Blog/Blog.tsx";
 import Research from "./components/Research/Research";
+import axios from "axios";
+import Login from './components/Login/Login';
+import Chat from './components/Chat/Chat'
 function App() {
   const [data, setData] = useState(null);
   const [essentialData, setEssentialData] = useState({});
@@ -27,25 +30,25 @@ function App() {
 
   const fetchData = async (url, setterFunction) => {
     try {
-      const response = await fetch(url);
-      const jsonData = await response.json();
-      setterFunction(jsonData);
+      const response = await axios.get(url);
+      setterFunction(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
+  
 
   useEffect(() => {
     const fetchDataAsync = async () => {
       await Promise.all([
-        fetchData("http://52.65.35.114:4002/projects", setData),
-        fetchData("http://52.65.35.114:4002/essential", setEssentialData),
-        fetchData("http://52.65.35.114:4002/courses", setCoursesData),
-        fetchData("http://52.65.35.114:4002/technical", setTechnicalData),
-        fetchData("http://52.65.35.114:4002/projinfo", setProjlData),
-        fetchData("http://52.65.35.114:4002/blog", setBlogPosts),
-        fetchData("http://52.65.35.114:4002/info", setUserData),
-        fetchData("http://52.65.35.114:4002/technologies", setTechnologyData),
+        fetchData(process.env.REACT_APP_PROJECTS_URL, setData),
+        fetchData(process.env.REACT_APP_ESSENTIAL_URL, setEssentialData),
+        fetchData(process.env.REACT_APP_COURSES_URL, setCoursesData),
+        fetchData(process.env.REACT_APP_TECHNICAL_URL, setTechnicalData),
+        fetchData(process.env.REACT_APP_PROJINFO_URL, setProjlData),
+        fetchData(process.env.REACT_APP_BLOG_URL, setBlogPosts),
+        fetchData(process.env.REACT_APP_INFO_URL, setUserData),
+        fetchData(process.env.REACT_APP_TECHNOLOGIES_URL, setTechnologyData),
 
       ]);
 
@@ -56,7 +59,7 @@ function App() {
   }, []);
 
    // This will log the fetched technologyData to the console
-
+  
   return (
     <div
       style={{
@@ -101,7 +104,7 @@ function App() {
           ></Route>
 
           <Route path="/powered" component={Powered}></Route>
-
+          <Route path="/chat" component={Chat} />
          
           <Route
             path="/courses"
@@ -111,11 +114,15 @@ function App() {
             path="/projects"
             render={(props) => <Projects {...props} data={data} />}
           ></Route>
+           <Route
+            path="/login"
+            render={(props) => <Login/>}
+          ></Route>
 
           <Route
             path="/blog"
             render={(props) => (
-              <Blog {...props} blogPosts={blogPosts.blogPosts} />
+              <Blog  blogPosts={blogPosts.blogPosts}/>
             )}
           ></Route>
         </Switch>

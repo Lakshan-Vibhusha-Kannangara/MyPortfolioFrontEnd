@@ -1,4 +1,5 @@
 import React from "react";
+import ChatApp from "./ChatApp";
 
 
 interface Author {
@@ -41,7 +42,7 @@ function BlogPost(props: BlogPostProps) {
             />
             <span>
               {" "}
-              Published <u>{publishDate}</u> by
+              Published <u>{publishDate}</u> { "by "}
             </span>
             <a  className="text-dark" href="##">
               {author.name}
@@ -67,8 +68,8 @@ function BlogPost(props: BlogPostProps) {
   
   </div>
       </section>
-      <section>
-        {/* You can add more sections and content here */}
+      <section style={{margin:'40px'}}>
+       <ChatApp/>
       </section>
 
     

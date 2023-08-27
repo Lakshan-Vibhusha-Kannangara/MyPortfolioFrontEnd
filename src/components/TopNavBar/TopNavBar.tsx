@@ -56,7 +56,7 @@ const TopNavbar = () => {
             </li>
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
-             <a className="nav-link" href='https://drive.google.com/file/d/1XAqbKIgRzrcWtusfhYyhJkX_VSoD6uzQ/view?usp=drive_link' target="_blank" rel='noreferrer'>Résumé</a>
+             <a className="nav-link" href='https://drive.google.com/file/d/136ku4DX8MCp3ZrF4shbVTT73k4UDlN6x/view?usp=sharing' target="_blank" rel='noreferrer'>Résumé</a>
               </div>
             </li>
 
@@ -88,9 +88,15 @@ const TopNavbar = () => {
              <a className="nav-link" href='https://drive.google.com/file/d/1-q-6zJ1NkXNy6nrrMkMUVNYd_7WF91Wp/view?usp=drive_link' target="_blank" rel='noreferrer'>Research Paper</a>
               </div>
             </li>
+            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <div style={containerStyle}>
+                <Link to='/login'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href="##">Login</a></Link>
+              </div>
+            </li>
+            
           </ul>
           
-          <button type="button" className="btn btn-primary" style={{left:'350px',position:'relative',background:'orange',borderColor:'orange'}}> <a className="nav-link" target="_blank" href='https://github.com/Lakshan-Vibhusha-Kannangara?tab=repositories' rel='noreferrer'>Source Code</a>
+          <button type="button" className="btn btn-primary" style={{left:'300px',position:'relative',background:'orange',borderColor:'orange'}}> <a className="nav-link" target="_blank" href='https://github.com/Lakshan-Vibhusha-Kannangara?tab=repositories' rel='noreferrer'>Source Code</a>
            </button>
         </div>
       </div>

@@ -2,6 +2,9 @@ import React from "react";
 import "./Projects.css";
 import Post from "../Post/Post";
 
+
+
+
 // Define the type for a single project
 interface Project {
   id: number;
@@ -18,6 +21,7 @@ interface ProjectsProps {
 }
 
 function Projects({ data }: ProjectsProps) {
+
   if (!data) {
     return <div>Loading...</div>;
   }
@@ -29,11 +33,12 @@ function Projects({ data }: ProjectsProps) {
   }
 
   return (
-    <div className="mb-4 mb-lg-0">
+    <div className="mb-4 mb-lg-0" style={{margin:"40px"}}>
       <p className="large text-muted mb-3 h1">My Projects</p>
       <div>
         {chunkedProjects.map((projectChunk, chunkIndex) => (
           <div key={chunkIndex} className="row mb-4">
+            
             {projectChunk.map((project, projectIndex) => (
               <div
                 key={project.id} // Add a unique key here
