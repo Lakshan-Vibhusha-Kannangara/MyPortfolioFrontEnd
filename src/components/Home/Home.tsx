@@ -3,7 +3,7 @@ import Interest from "../Interest/Interest";
 import CarouselPage from "../Carousel/Carousel";
 import Footer from "../Footer/Footer";
 import Load from "./Load";
-import Login from "../Login/Login";
+
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -18,7 +18,6 @@ import "./Home.css";
 import { MDBContainer, MDBRow, MDBCol, MDBCard } from "mdb-react-ui-kit";
 
 function Home(essential: any) {
-  const [isLoading, setIsLoading] = useState(true);
   const [scrollToBottomClicked, setScrollToBottomClicked] = useState(false);
   const [data, setData] = useState({ interests: [] }); // Initialize with an empty array
 

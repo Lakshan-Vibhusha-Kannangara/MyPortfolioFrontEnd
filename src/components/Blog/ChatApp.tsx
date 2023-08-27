@@ -2,12 +2,10 @@ import React, { Component, ChangeEvent } from "react";
 import SockJS from "sockjs-client";
 import Stomp, { Client, Message } from "stompjs";
 import {
-  MDBBtn,
   MDBCard,
   MDBCardBody,
   MDBCol,
   MDBContainer,
-  MDBIcon,
   MDBRow,
   MDBInput,
 } from "mdb-react-ui-kit";
@@ -112,7 +110,7 @@ class ChatApp extends Component<{}, State> {
   };
 
   render() {
-    const { connected, message, messages } = this.state;
+    const {  message, messages } = this.state;
 
     return (
       <MDBContainer>
