@@ -1,6 +1,7 @@
 import "./App.css";
 import "/node_modules/bootstrap/dist/css/bootstrap.css";
-import { Route, Switch } from "react-router-dom";
+import { Route,Switch } from 'react-router-dom';
+
 import Home from "./components/Home/Home";
 import UserProfile from "./components/UserProfile/UserProfile";
 import Projects from "./components/Projects/Projects";
@@ -15,9 +16,11 @@ import Research from "./components/Research/Research";
 import axios from "axios";
 import Login from './components/Login/Login';
 import Chat from './components/Chat/Chat'
+import ProjectInfo from './components/Projects/ProjectInfo.';
 function App() {
   const [data, setData] = useState(null);
   const [essentialData, setEssentialData] = useState({});
+  const [interestData, setInterestData] = useState({ interests: [] });
   const [coursesData, setCoursesData] = useState({});
   const [userData, setUserData] = useState({});
   const [technicalData, setTechnicalData] = useState([]);
@@ -49,7 +52,8 @@ function App() {
         fetchData(process.env.REACT_APP_BLOG_URL, setBlogPosts),
         fetchData(process.env.REACT_APP_INFO_URL, setUserData),
         fetchData(process.env.REACT_APP_TECHNOLOGIES_URL, setTechnologyData),
-
+        fetchData(process.env.REACT_APP_INTERESTS_URL, setInterestData),
+    
       ]);
 
       setIsLoading(false);
@@ -79,7 +83,7 @@ function App() {
               <Home
                 essential={
                   essentialData.success ? essentialData.essential[0] : {}
-                }
+                }  interests={ interestData.success ? interestData : {}}
               />
             )}
           ></Route>
@@ -105,7 +109,7 @@ function App() {
 
           <Route path="/powered" component={Powered}></Route>
           <Route path="/chat" component={Chat} />
-         
+          <Route path="/project/:projectId" component={ProjectInfo} />
           <Route
             path="/courses"
             render={(props) => <Courses courses={coursesData.course} />}

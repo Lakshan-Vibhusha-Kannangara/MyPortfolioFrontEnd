@@ -24,7 +24,7 @@ class ChatApp extends Component<{}, State> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      endpoint: "http://localhost:8080/chat-app",
+      endpoint: "http://localhost:8081/chat-app",
       message: "",
       messages: [],
       connected: false,

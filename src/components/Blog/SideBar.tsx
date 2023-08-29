@@ -9,7 +9,7 @@ function SideBar() {
             <img
               src="https://imageio.forbes.com/specials-images/dam/imageserve/966248982/960x0.jpg?height=456&width=711&fit=bounds"
               className="img-fluid"
-              style={{ width: "100%", height: "auto", maxHeight: "300px",left:"50px" }} // Increased max height for larger image
+              style={{ width: "80%", height: "auto", maxHeight: "300px",left:"50px" }} // Increased max height for larger image
               alt="AI Article"
             />
             <a href="##" target="_blank" rel="noopener noreferrer">
@@ -21,14 +21,7 @@ function SideBar() {
           </div>
           <h5>What's New on AI</h5>
 
-          <a
-            role="button"
-            className="btn btn-primary"
-            href="https://mdbootstrap.com/docs/standard/"
-            target="_blank" rel="noopener noreferrer"
-          >
-            Download for Free<i className="fas fa-download ms-2"></i>
-          </a>
+     
         </section>
 
         <section className="text-center">

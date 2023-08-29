@@ -1,9 +1,8 @@
 import React from "react";
 import "./Projects.css";
 import Post from "../Post/Post";
-
-
-
+import { MDBCardText } from "mdb-react-ui-kit";
+import { withRouter, RouteComponentProps } from "react-router-dom"; // Import withRouter and RouteComponentProps
 
 // Define the type for a single project
 interface Project {
@@ -20,7 +19,10 @@ interface ProjectsProps {
   };
 }
 
-function Projects({ data }: ProjectsProps) {
+function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
+  const handleClick = (path: string) => {
+    history.push(path); // This changes the route to the specified path
+  };
 
   if (!data) {
     return <div>Loading...</div>;
@@ -33,14 +35,14 @@ function Projects({ data }: ProjectsProps) {
   }
 
   return (
-    <div className="mb-4 mb-lg-0" style={{margin:"40px"}}>
-      <p className="large text-muted mb-3 h1">My Projects</p>
+    <div className="mb-4 mb-lg-0" style={{ margin: "40px" }}>
+      <MDBCardText style={{ fontSize: "40px" }}>Projects</MDBCardText>
       <div>
         {chunkedProjects.map((projectChunk, chunkIndex) => (
           <div key={chunkIndex} className="row mb-4">
-            
             {projectChunk.map((project, projectIndex) => (
               <div
+                onClick={() => handleClick(`/project/${projectIndex}`)} // Pass the path to handleClick
                 key={project.id} // Add a unique key here
                 className="col-lg-4 fade-in-animation"
                 style={{
@@ -61,4 +63,4 @@ function Projects({ data }: ProjectsProps) {
   );
 }
 
-export default Projects;
+export default withRouter(Projects); // Use withRouter to access the history object
