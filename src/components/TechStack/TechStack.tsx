@@ -1,45 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import './TechStack.css'; // Import the CSS file
+import React from 'react';
+import './TechStack.css';
 
-// TechCard component
-const TechCard: React.FC<{ technology: { name: string; image: string } }> = ({ technology }) => (
-  <div className="tech-card">
-    <img src={technology.image} alt={technology.name} className="tech-card-image" />
-    <p>{technology.name}</p>
-  </div>
-);
+interface Technology {
+  _id: string;
+  name: string;
+  image: string;
+}
 
-// TechStack component
-const TechStack: React.FC = () => {
-  const [technologyData, setTechnologyData] = useState<{ name: string; image: string }[]>([]);
 
-  useEffect(() => {
 
-    fetch('http://52.65.35.114:4002/technologies')
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          setTechnologyData(data.technology);
-        } else {
-          console.error('Failed to fetch technology data:', data);
-        }
-      })
-      .catch((error) => {
-        console.error('Error fetching technology data:', error);
-      });
-  }, []);
-
+function TechCard({ technology }: { technology: Technology }) {
   return (
-    <div className="tech-stack">
-      <div className="grid-container">
-        {technologyData.map((tech, index) => (
-          <div key={index} className="grid-item">
-            <TechCard technology={tech} />
-          </div>
-        ))}
+    <div className="tech-card">
+      <img src={technology.image} alt={technology.name} className="tech-card-image" />
+      <p>{technology.name}</p>
+    </div>
+  );
+}
+
+function TechStack( technologyData : {courses:Technology[]}) {
+
+  if(!technologyData.courses){
+    return(<div></div>)
+  }
+  return (
+    <div style={{ margin: '10px' }}>
+      <p style={{ fontSize: '40px' }}>My Technologies</p>
+      <div className="tech-stack">
+        <div className="grid-container">
+          {technologyData.courses.map((tech, index: number) => (
+            <div key={tech._id} className="grid-item">
+              <TechCard technology={tech} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
-};
+}
 
 export default TechStack;

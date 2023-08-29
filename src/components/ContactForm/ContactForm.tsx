@@ -13,11 +13,11 @@ const ContactForm = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post(
+       await axios.post(
         "http://52.65.35.114:4002/submit-message",
         { message }
       );
-      console.log("Message sent successfully", response.data);
+  
       setMessageSent(true);
     } catch (error) {
       console.error("Error sending message", error);

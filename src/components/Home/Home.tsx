@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Interest from "../Interest/Interest";
 import CarouselPage from "../Carousel/Carousel";
-import Footer from "../Footer/Footer"
+import Footer from "../Footer/Footer";
+import Load from "./Load";
+
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -13,32 +15,33 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 import "./Home.css";
-import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-} from "mdb-react-ui-kit";
-function Home(essential:any) {
-  let essentialData={name:"",image:"",address:"",title:"",about:"",images:[]}
+import { MDBContainer, MDBRow, MDBCol, MDBCard } from "mdb-react-ui-kit";
 
-  essentialData=essential.essential
-
-  const [data, setData] = useState<any>(null);
+function Home(essential: any) {
   const [scrollToBottomClicked, setScrollToBottomClicked] = useState(false);
-  
+  const [data, setData] = useState({ interests: [] }); // Initialize with an empty array
+
+  const essentialData = essential.essential || {
+    name: "",
+    image: "",
+    address: "",
+    title: "",
+    about: "",
+    images: [],
+  };
+
   const divStyle = {
     width: "100%",
     height: "100%",
-    backgroundImage: `url(${"https://images.pexels.com/photos/1743165/pexels-photo-1743165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})`,
+    backgroundImage: `url("https://images.pexels.com/photos/1743165/pexels-photo-1743165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
   };
+
   const gradientStyle = {
     background:
       "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(190,127,164,1) 0%, rgba(0,212,255,1) 100%)",
-
   };
 
   const fetchData = async (url: string, setStateCallback: (data: any) => void) => {
@@ -52,9 +55,17 @@ function Home(essential:any) {
   };
 
   useEffect(() => {
-    fetchData("http://52.65.35.114:4002/interests", setData);
-    if (scrollToBottomClicked) {
+    // Fetch essential data
+    fetchData("http://52.65.35.114:4002/interests", (essentialData) => {
+      // Set isLoading to false when essential data is loaded
+      setData(essentialData)
 
+    });
+
+    // Fetch additional data (if needed)
+  
+
+    if (scrollToBottomClicked) {
       window.scrollTo(0, document.body.scrollHeight);
     }
   }, [scrollToBottomClicked]);
@@ -62,15 +73,15 @@ function Home(essential:any) {
   const handleScrollToBottom = () => {
     setScrollToBottomClicked(true);
   };
+  console.log(essential.essential.name)
+  if (essential.essential.name===undefined) {
+    return <Load />;
+  }
 
-
-  if(false){
-    return(<div>Null</div>)
-      }
   return (
     <div>
     <div>
-      {/* Background image */}
+
       <div
         id="intro-example"
         className="p-5 text-center bg-image"
@@ -110,7 +121,7 @@ function Home(essential:any) {
     </div>
 
     <section>
-      <div style={divStyle}>
+    <div style={divStyle}>
         <MDBContainer className="py-5 h-5">
           <MDBRow>
             <MDBCol>
@@ -118,7 +129,7 @@ function Home(essential:any) {
                 <div
                   className="rounded-top  d-flex flex-row"
                   style={{
-                    backgroundColor: "#b4a7fa",
+                    backgroundColor: "#b4a5ba",
                     height: "200px",
                     fontSize: "25px",
                   }}
@@ -126,7 +137,7 @@ function Home(essential:any) {
                   <div className="ms-4 mt-5 d-flex flex-column">
                     <img
                       src={essentialData.image}
-                      alt="Generic placeholder image"
+                      alt=""
                       className="img-fluid img-thumbnail mt-4 mb-2"
                       style={{
                         width: "200px",
@@ -138,7 +149,7 @@ function Home(essential:any) {
                   </div>
                   <div className="ms-3" style={{ marginTop: "40px" }}>
                     <p style={{ fontSize: "60px", color: "white" }}>
-                      {essentialData.name}
+                      Vibhusha Kannangara
                     </p>
                     <p
                       style={{
@@ -149,7 +160,7 @@ function Home(essential:any) {
                         top: 0,
                       }}
                     >
-                      {essentialData.address}
+                      Aluthgama, Sri Lanka
                     </p>
                     <div
                       style={{
@@ -160,7 +171,7 @@ function Home(essential:any) {
                     >
                       <a
                         className="btn btn-primary"
-                        style={{ backgroundColor: "#0082ca", margin: "10px" }}
+                        style={{ backgroundColor: "#0082cb", margin: "10px" }}
                         href="https://linkedin.com/in/vibhoosha-kannangara"
                         role="button"
                       >
@@ -202,7 +213,7 @@ function Home(essential:any) {
                   <div className="d-flex justify-content-end text-center py-1">
                     <div>
                       <p className="large text-muted mb-3 h4">
-                        {essentialData.title}
+                      Bsc(Hons) Engineering | Department of Electrical Engineering | University of Moratuwa
                       </p>
                     </div>
                   </div>
@@ -231,6 +242,7 @@ function Home(essential:any) {
           </MDBRow>
         </MDBContainer>
       </div>
+   
     </section>
 
     <div>
@@ -243,3 +255,12 @@ function Home(essential:any) {
 }
 
 export default Home;
+
+
+
+
+
+
+
+
+

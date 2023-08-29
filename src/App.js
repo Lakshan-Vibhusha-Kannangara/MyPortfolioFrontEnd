@@ -1,5 +1,3 @@
-
-
 import "./App.css";
 import "/node_modules/bootstrap/dist/css/bootstrap.css";
 import { Route, Switch } from "react-router-dom";
@@ -12,120 +10,56 @@ import React, { useState, useEffect } from "react";
 import PdfViewer from "./components/PdfViewer/PdfViewer";
 import TechStack from "./components/TechStack/TechStack";
 import Powered from "./components/Powered/Powered";
-
-import Blog from "./components/Blog/Blog.tsx"
+import Blog from "./components/Blog/Blog.tsx";
+import Research from "./components/Research/Research";
+import axios from "axios";
+import Login from './components/Login/Login';
+import Chat from './components/Chat/Chat'
 function App() {
   const [data, setData] = useState(null);
   const [essentialData, setEssentialData] = useState({});
   const [coursesData, setCoursesData] = useState({});
   const [userData, setUserData] = useState({});
-  const [technicalData, setTechnicalData] = useState({});
+  const [technicalData, setTechnicalData] = useState([]);
   const [projlData, setProjlData] = useState([]);
-  const [infoData, setInfoData] = useState([]);
-const [isLoading, setIsLoading] = useState(true);
-const [technologyData, setTechnologyData] = useState([]);
 
-    const fetchUserData = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/info");
-      const jsonData = await response.json();
-      setUserData(jsonData);
+  const [isLoading, setIsLoading] = useState(true);
+  const [technologyData, setTechnologyData] = useState([]);
 
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-    }
-  };
-  const fetchData = async () => {
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  const fetchData = async (url, setterFunction) => {
     try {
-      const response = await fetch("http://52.65.35.114:4002/projects");
-      const jsonData = await response.json();
-      setData(jsonData);
+      const response = await axios.get(url);
+      setterFunction(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
-
-  const fetchEssentials = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/essential");
-      const jsonData = await response.json();
-      setEssentialData(jsonData);
-
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
-  const fetchCourses = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/courses");
-      const jsonData = await response.json();
-      setCoursesData(jsonData);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-  const fetchTechnicalData = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/technical");
-      const jsonData = await response.json();
-      setTechnicalData(jsonData);
-
-    } catch (error) {
-      console.error("Error fetching technical data:", error);
-    }
-  };
-  const fetchInfoData = async () => {
-    try {
-      const response = await fetch('http://52.65.35.114:4002/info'); // Replace with your specific endpoint
-      const jsonData = await response.json();
-      setInfoData(jsonData.info[0]);
-
-    } catch (error) {
-      console.error('Error fetching info data:', error);
-    }
-  };
-
+  
 
   useEffect(() => {
-    fetchUserData();
-    fetchEssentials();
-    fetchData();
-    fetchCourses();
-    fetchProjectData();
-    fetchTechnicalData();
-    fetchInfoData();
-    fetch('http://52.65.35.114:4002/technologies')
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          setTechnologyData(data.technology);
-        } else {
-          console.error('Failed to fetch technology data:', data);
-        }
-      })
-      .catch((error) => {
-        console.error('Error fetching technology data:', error);
-      });
+    const fetchDataAsync = async () => {
+      await Promise.all([
+        fetchData(process.env.REACT_APP_PROJECTS_URL, setData),
+        fetchData(process.env.REACT_APP_ESSENTIAL_URL, setEssentialData),
+        fetchData(process.env.REACT_APP_COURSES_URL, setCoursesData),
+        fetchData(process.env.REACT_APP_TECHNICAL_URL, setTechnicalData),
+        fetchData(process.env.REACT_APP_PROJINFO_URL, setProjlData),
+        fetchData(process.env.REACT_APP_BLOG_URL, setBlogPosts),
+        fetchData(process.env.REACT_APP_INFO_URL, setUserData),
+        fetchData(process.env.REACT_APP_TECHNOLOGIES_URL, setTechnologyData),
 
-    
-  }, []); // Fetch data when the component mounts
+      ]);
 
-
-  const fetchProjectData = async () => {
-    try {
-      const response = await fetch("http://52.65.35.114:4002/projinfo");
-      const jsonData = await response.json();
-      setProjlData(jsonData.projinfo);
-
-    } catch (error) {
-      console.error("Error fetching project data:", error);
-    } finally {
       setIsLoading(false);
-    }
-  };
+    };
 
+    fetchDataAsync();
+  }, []);
 
+   // This will log the fetched technologyData to the console
+  
   return (
     <div
       style={{
@@ -142,27 +76,37 @@ const [technologyData, setTechnologyData] = useState([]);
           <Route
             path="/home"
             render={(props) => (
-              <Home essential={essentialData.success ? essentialData.essential[0] : {}} />
+              <Home
+                essential={
+                  essentialData.success ? essentialData.essential[0] : {}
+                }
+              />
             )}
           ></Route>
-         
-         <Route
-        path="/about"
-        render={(props) => <UserProfile userData={userData.info} projlData={projlData} isLoading={isLoading}  technicalData={technicalData} />}
-    
-      ></Route>
+
+          <Route
+            path="/about"
+            render={(props) => (
+              <UserProfile
+                userData={userData.info}
+                projlData={projlData}
+                isLoading={isLoading}
+                technicalData={technicalData}
+              />
+            )}
+          ></Route>
           <Route path="/pdfviewer" component={PdfViewer}></Route>
-          <Route path="/techstack" component={TechStack}></Route>
+          <Route path="/researchr" component={Research}></Route>
 
-          <Route path="/powered" component={Powered}></Route>
-
-          
           <Route
             path="/techstack"
-            render={(props) => <TechStack technologyData={technologyData} />}
+            render={(props) => <TechStack courses={technologyData.technology} />}
           ></Route>
+
+          <Route path="/powered" component={Powered}></Route>
+          <Route path="/chat" component={Chat} />
+         
           <Route
-          
             path="/courses"
             render={(props) => <Courses courses={coursesData.course} />}
           ></Route>
@@ -170,22 +114,21 @@ const [technologyData, setTechnologyData] = useState([]);
             path="/projects"
             render={(props) => <Projects {...props} data={data} />}
           ></Route>
+           <Route
+            path="/login"
+            render={(props) => <Login/>}
+          ></Route>
 
-<Route
+          <Route
             path="/blog"
-            render={(props) => <Blog {...props} data={data} />}
+            render={(props) => (
+              <Blog  blogPosts={blogPosts.blogPosts}/>
+            )}
           ></Route>
         </Switch>
       </div>
     </div>
- 
- 
- );
+  );
 }
 
 export default App;
-
-
-
-
-
