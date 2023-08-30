@@ -30,10 +30,10 @@ function Interest({ data }: InterestProps) {
     <div>
       <div className="container">
         <div className="row">
-          {interests.map((interest) => (
+          {interests.map((interest,index) => (
             <div
               className="col-md-6 mb-4"
-              key={interest.id}
+              key={index}
               style={{
                 transition: "opacity 0.3s ease-in-out",
                 opacity: 1,

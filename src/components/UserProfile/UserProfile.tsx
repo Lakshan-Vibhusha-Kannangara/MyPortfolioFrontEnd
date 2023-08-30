@@ -39,7 +39,7 @@ export default function UserProfile(props: any) {
     <section style={{ backgroundColor: "#eee" }}>
     
       <MDBContainer className="py-5">
-      <div style={{margin:"20px",bottom:"10px",position:"relative"}}> <h1 style={{font:"-moz-initial",fontFamily:"initial"}}>Basic Information</h1></div>
+      <div style={{margin:"0px",bottom:"10px",position:"relative"}}><MDBCardText style={{fontSize:'40px'}}>Basic Information</MDBCardText></div>
         <MDBCol> 
         <div className="container" style={{margin:"20px",right:'20px',position:"relative"}} >
         <div className="row">

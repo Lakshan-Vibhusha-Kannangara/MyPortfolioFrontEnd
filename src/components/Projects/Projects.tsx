@@ -42,7 +42,7 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
           <div key={chunkIndex} className="row mb-4">
             {projectChunk.map((project, projectIndex) => (
               <div
-                onClick={() => handleClick(`/project/${projectIndex}`)} // Pass the path to handleClick
+                onClick={() => handleClick(`/project/${projectIndex+chunkIndex*3}`)} // Pass the path to handleClick
                 key={project.id} // Add a unique key here
                 className="col-lg-4 fade-in-animation"
                 style={{

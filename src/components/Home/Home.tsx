@@ -73,7 +73,7 @@ function Home(essential: any) {
   const handleScrollToBottom = () => {
     setScrollToBottomClicked(true);
   };
-  console.log(essential.essential.name)
+
   if (essential.essential.name===undefined) {
     return <Load />;
   }

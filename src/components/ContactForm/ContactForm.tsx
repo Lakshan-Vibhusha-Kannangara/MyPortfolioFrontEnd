@@ -25,7 +25,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-4 mb-4">
+    <div className="col-md-6 col-lg-5 col-xl-6 mb-md-6 mb-4">
       <div className="p-4">
         <div className="mb-3">
           <h5 className="card-title">Reach Out to Me!!</h5>
