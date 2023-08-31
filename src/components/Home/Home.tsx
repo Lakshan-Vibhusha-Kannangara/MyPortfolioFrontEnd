@@ -30,12 +30,9 @@ function Home(essential: any) {
     images: [],
   };
 
-  const divStyle = {};
 
-  const gradientStyle = {
-    background:
-      "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(190,127,164,1) 0%, rgba(0,212,255,1) 100%)",
-  };
+
+
 
   const fetchData = async (
     url: string,
@@ -113,7 +110,7 @@ function Home(essential: any) {
         </div>
 
         <section>
-          <div style={divStyle}>
+          <div >
             <MDBContainer className="py-5 h-5">
               <MDBRow>
                 <MDBCol>

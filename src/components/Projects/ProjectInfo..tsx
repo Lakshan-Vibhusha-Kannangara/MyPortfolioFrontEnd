@@ -47,7 +47,7 @@ function ProjectInfo() {
         console.error("Error fetching data:", error);
       });
   }, [projectNo]);
-  console.log(item);
+
   return (
     <div
       style={{ margin: "40px", width: "90%", left: "2%", position: "relative" }}
