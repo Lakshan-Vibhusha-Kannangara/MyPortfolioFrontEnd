@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import  Plx  from 'react-plx';
 const TopNavbar = () => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -21,7 +21,28 @@ const TopNavbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+  <Plx parallaxData={[
+    {
+      start: 0,
+      end: 200,
+        easing:'ease',
+      properties: [
+        {
+          startValue: 1,
+          endValue: 1,
+          property: "scale"
+        }
+      ]
+    }
+  ]}
+  style={{
+    position: "fixed",
+    left: 0,
+    top: 0,
+    width: "100%",
+    zIndex: 6
+  }}>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
       <div className="container">
       <img src="https://picsum.photos/50" alt="Logo" className="rounded-circle" style={{ width: '50px', height: '50px', padding: '0px' }} />
       
@@ -96,11 +117,12 @@ const TopNavbar = () => {
             
           </ul>
           
-          <button type="button" className="btn btn-primary" style={{left:'300px',position:'relative',background:'orange',borderColor:'orange'}}> <a className="nav-link" target="_blank" href='https://github.com/Lakshan-Vibhusha-Kannangara?tab=repositories' rel='noreferrer'>Source Code</a>
+          <button type="button" className="btn btn-primary" style={{left:'200px',position:'relative',background:'orange',borderColor:'orange'}}> <a className="nav-link" target="_blank" href='https://github.com/Lakshan-Vibhusha-Kannangara?tab=repositories' rel='noreferrer'>Source Code</a>
            </button>
         </div>
       </div>
     </nav>
+  </Plx>
   );
 };
 

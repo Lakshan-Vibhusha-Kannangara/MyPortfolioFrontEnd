@@ -3,9 +3,16 @@
 .image-container {
     overflow: hidden;
     transition: all 0.3s ease-in-out;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
   
   .image-container:hover {
-    transform: scale(1.1);
+    transform: scale(1.01);
   }
   
+  .nav-link:hover{
+    color: brown;
+  }

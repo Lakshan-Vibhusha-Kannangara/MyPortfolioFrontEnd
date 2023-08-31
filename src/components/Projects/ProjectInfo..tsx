@@ -1,17 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { MDBCol, MDBRow, MDBTypography } from "mdb-react-ui-kit";
-import { FaRegCheckCircle } from "react-icons/fa";
-import './ProjectInfo.css'
+import {
+  MDBCol,
+  MDBRow,
+  
+  MDBCard,
+  MDBCardBody,
+  MDBCardHeader,
+  MDBListGroup,
+  MDBListGroupItem,
+} from "mdb-react-ui-kit";
+import { FaGithub,FaSnowflake } from "react-icons/fa";
+import "./ProjectInfo.css";
+import {
 
+  GlassMagnifier,
+
+} from "react-image-magnifiers";
 interface ProjectInfoItem {
   _id: string;
   imageUrls: string[]; // Change imageUrl to imageUrls
   altText: string;
-  description: string;
-  text: string;
+  description: string[];
+  text: string[];
   projectNo: number;
 }
-
 
 interface ProjectInfoResponse {
   success: boolean;
@@ -26,7 +38,7 @@ function ProjectInfo() {
   const projectNo = pathnameParts[pathnameParts.length - 1];
 
   useEffect(() => {
-    fetch(`http://52.65.35.114:4002/projectinfo/${projectNo}`)
+    fetch(`http://localhost:4002/projectinfo/${projectNo}`)
       .then((response) => response.json())
       .then((data: ProjectInfoResponse) => {
         setItem(data);
@@ -35,89 +47,91 @@ function ProjectInfo() {
         console.error("Error fetching data:", error);
       });
   }, [projectNo]);
-
+  console.log(item);
   return (
-    <div style={{ margin: "40px", width: "80%" }}>
+    <div
+      style={{ margin: "40px", width: "90%", left: "2%", position: "relative" }}
+    >
       {item ? (
-        <MDBRow>
-       <MDBCol lg={3} md={12} className="mb-4 mb-lg-0">
- <div className="image-container"> <img
-   
-   src={item.projectInfo.imageUrls[0]}
-    className="w-100 shadow-1-strong rounded mb-4"
-    alt="Boat on Calm Water"
-    style={{
-      objectFit: "cover", // Auto-crop and fit
-      objectPosition: "center", // Center the image
-      height: "33%",
-      width: "100%", // Ensure the image takes the full width of the container
-    }}
-  /></div>
+        <div>
+          <MDBCard alignment="center">
+            <MDBCardHeader style={{ fontSize: "30px" }}>
+              <div className="col">
+                <p>{item.projectInfo.altText}</p>
+                <div style={{marginTop:'-20px'}}>
+                  <a
+                  
+                    className="nav-link"
+                    href="https://drive.google.com/file/d/1-q-6zJ1NkXNy6nrrMkMUVNYd_7WF91Wp/view?usp=drive_link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+               
+                    <FaGithub></FaGithub>
+                  </a>
+                </div>
+              </div>
+            </MDBCardHeader>
 
- <div className="image-container"> <img
-    src={item.projectInfo.imageUrls[1]}
-    className="w-100 shadow-1-strong rounded mb-4"
-    alt="Wintry Mountain Landscape"
-    style={{
-      objectFit: "cover", // Auto-crop and fit
-      objectPosition: "center", // Center the image
-      height: "66%",
-      width: "100%", // Ensure the image takes the full width of the container
-    }}
-  /></div>
-</MDBCol>
+            <MDBCardBody>
+              <MDBRow
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignContent: "center",
+                }}
+              >
+                {item.projectInfo.imageUrls.map((item, index) => (
+                  <MDBCol
+                    key={index}
+                    className="mb-4 mb-lg-0"
+                    style={{ margin: "10px" }}
+                  >
+                    <div
+                      className="image-container"
+                      style={{
+                        borderRadius: "10px",
+                        maxHeight: "400px",
+                        width: "auto",
+                        fill: "Background",
+                      }}
+                    >
+                      {" "}
+                      <GlassMagnifier
+                        imageSrc={item}
+                        imageAlt="Example"
+                        largeImageSrc={item} // Optional
+                        magnifierSize={200}
+                        allowOverflow
+                      />
+                    </div>
+                  </MDBCol>
+                ))}
+              </MDBRow>
+            </MDBCardBody>
+          </MDBCard>
 
-<MDBCol lg={3} className="mb-4 mb-lg-0">
- <div className="image-container">
- <img
- src={item.projectInfo.imageUrls[2]}
-    style={{
-      objectFit: "cover",
-      objectPosition: "center",
-      height: "66%",
-      width: "100%",
-    }}
-
-    className="w-100 shadow-1-strong rounded mb-4"
-    alt="Mountains in the Clouds"
-  />
- </div>
-
- <div className="image-container">
- <img
- src={item.projectInfo.imageUrls[3]}
-    style={{
-      objectFit: "cover",
-      objectPosition: "center",
-      height: "33%",
-      width: "100%",
-    }}
-
-    className="w-100 shadow-1-strong rounded mb-4"
-    alt="Boat on Calm Water"
-  />
- </div>
-</MDBCol>
-
-          <MDBCol
-            lg={6}
-            md={10}
-            key={item.projectInfo._id}
-            className="mb-4 mb-lg-0"
-          >
-            <MDBTypography
-              listUnStyled
-              className="mb-0"
-              style={{ fontSize: "30px" }}
-            >
-              <li className="mb-10">
-                <FaRegCheckCircle style={{ color: "green" }} />
-                {item.projectInfo.text}
-              </li>
-              <li className="mb-10">{item.projectInfo.description}</li>
-            </MDBTypography>
-          </MDBCol>
-        </MDBRow>
+          <MDBRow style={{ margin: "10px" }}>
+            <MDBListGroup light  style={{ minWidth: "22rem" }}>
+              {item.projectInfo.text.map((info, index) => (
+               
+                <MDBListGroupItem
+                
+                  key={index} // Use a unique key for each item
+                  className="d-flex justify-content-between align-items-start"
+                >
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">
+                    <FaSnowflake style={{color:'green',marginBottom:'3px',marginRight:'5px'}} />
+                      {item.projectInfo.text[index]}
+                    </div>
+                    {info}
+                  </div>
+                </MDBListGroupItem>
+              ))}
+            </MDBListGroup>
+          </MDBRow>
+        </div>
       ) : (
         <p>Loading...</p>
       )}

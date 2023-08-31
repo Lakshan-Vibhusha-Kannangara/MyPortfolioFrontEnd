@@ -17,7 +17,7 @@ import './Chat.css'
 export default function Chat() {
   return (
 
-    <MDBContainer fluid className="py-5 gradient-custom">
+    <MDBContainer fluid className="py-5 gradient-custom" style={{position:'fixed',top:'9.2%',bottom:'0',height:'100%'}}>
           <MDBCardText style={{left:'40%',fontSize:'30px',position:'relative',top:'0',color:'white'}}>Web - Chat-Being_Implemented-spring boot backend-webscoket </MDBCardText>
     <MDBRow>
       <MDBCol md="6" lg="5" xl="4" className="mb-4 mb-md-0">
@@ -65,7 +65,7 @@ export default function Chat() {
       </MDBCol>
 
       <MDBCol md="6" lg="7" xl="8">
-        <MDBTypography listUnStyled className="text-white">
+        <MDBTypography listUnStyled className="text-white" style={{margin:'40px'}}>
           <li className="d-flex justify-content-between mb-4">
             <img
               src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"

@@ -75,7 +75,7 @@ function App() {
       }}
     >
       <TopNavbar></TopNavbar>
-      <div>
+      <div style={{top:'30px',position:'relative'}}>
         <Switch>
           <Route
             path="/home"

@@ -25,7 +25,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="col-md-6 col-lg-5 col-xl-6 mb-md-6 mb-4">
+    <div className="col-md-6 col-lg-5 col-xl-6 mb-md-6 mb-4" style={{color:'white'}}>
       <div className="p-4">
         <div className="mb-3">
           <h5 className="card-title">Reach Out to Me!!</h5>
