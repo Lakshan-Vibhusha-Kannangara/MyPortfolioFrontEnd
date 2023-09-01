@@ -38,7 +38,7 @@ function Blog(props: BlogProps) {
 
   return (
     <main className="mt-4 mb-5">
-       <div style={{ left: "40%", position: "relative" }}>
+       <div style={{ left: "40%", position: "relative",top:'40px' }}>
               {" "}
               <ul className="pagination">
                 {props.blogPosts.map((_, index) => (

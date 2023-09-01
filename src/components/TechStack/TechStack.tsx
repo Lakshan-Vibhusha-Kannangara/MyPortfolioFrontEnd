@@ -24,7 +24,7 @@ function TechStack( technologyData : {courses:Technology[]}) {
     return(<div></div>)
   }
   return (
-    <div style={{ margin: '10px' }}>
+    <div style={{ margin: '10px',top:'40px',position:'relative' }}>
       <p style={{ fontSize: '40px' }}>My Technologies</p>
       <div className="tech-stack">
         <div className="grid-container">

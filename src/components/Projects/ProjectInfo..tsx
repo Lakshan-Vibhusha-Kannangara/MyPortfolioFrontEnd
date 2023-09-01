@@ -23,6 +23,7 @@ interface ProjectInfoItem {
   description: string[];
   text: string[];
   projectNo: number;
+  github:string
 }
 
 interface ProjectInfoResponse {
@@ -62,7 +63,7 @@ function ProjectInfo() {
                   <a
                   
                     className="nav-link"
-                    href="https://drive.google.com/file/d/1-q-6zJ1NkXNy6nrrMkMUVNYd_7WF91Wp/view?usp=drive_link"
+                    href={item.projectInfo.github}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -123,9 +124,10 @@ function ProjectInfo() {
                   <div className="ms-2 me-auto">
                     <div className="fw-bold">
                     <FaSnowflake style={{color:'green',marginBottom:'3px',marginRight:'5px'}} />
-                      {item.projectInfo.text[index]}
-                    </div>
                     {info}
+                    </div>
+                    {item.projectInfo.description[index]}
+              
                   </div>
                 </MDBListGroupItem>
               ))}

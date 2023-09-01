@@ -3,7 +3,7 @@ import "./Projects.css";
 import Post from "../Post/Post";
 import { MDBCardText } from "mdb-react-ui-kit";
 import { withRouter, RouteComponentProps } from "react-router-dom"; // Import withRouter and RouteComponentProps
-
+import Plx from "react-plx";
 // Define the type for a single project
 interface Project {
   id: number;
@@ -34,9 +34,75 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
     chunkedProjects.push(projects.slice(i, i + 3));
   }
 
-  return (
+  return (<div>
+    <Plx
+  parallaxData={[
+    {
+      start: 0,
+      end: 1800,
+      properties: [
+        {
+          startValue: 1.1, // Start with no scaling (normal size)
+          endValue: 1.25,   // End with full scaling (normal size)
+          property: "scale",
+        },
+        {
+          startValue: 0, // Start with no horizontal shift
+          endValue: 100, // End with a 100px rightward shift
+          property: "translateY",
+        },
+      ],
+    },
+  ]}
+  style={{
+    position: "fixed",
+    left: 0,
+    top: 0,
+    width: "100%",
+    zIndex: -1,
+  }}
+>
+  <img
+    style={{ width: "100%" ,opacity:0.45}}
+    src="lightning.jpg"
+    alt="background"
+  />
+</Plx>
+<Plx
+  parallaxData={[
+    {
+      start: 0,
+      end: 1800,
+      properties: [
+        {
+          startValue: 1.1, // Start with no scaling (normal size)
+          endValue: 1.25,   // End with full scaling (normal size)
+          property: "scale",
+        },
+        {
+          startValue: 0, // Start with no horizontal shift
+          endValue: 100, // End with a 100px rightward shift
+          property: "translateY",
+        },
+      ],
+    },
+  ]}
+  style={{
+    position: "fixed",
+    left: 0,
+    top: 0,
+    width: "100%",
+    zIndex: 1,
+  }}
+>
+  <img
+    style={{ width: "10%" ,opacity:1,left:'90px',position:'relative',top:'200px'}}
+    src="HiRobot.gif"
+    alt="background"
+  />
+</Plx>
     <div className="mb-4 mb-lg-0" style={{ margin: "40px" }}>
-      <MDBCardText style={{ fontSize: "40px" }}>Projects</MDBCardText>
+      <MDBCardText style={{ fontSize: "40px" ,color:'white',margin:'10px'}}>Projects</MDBCardText>
       <div>
         {chunkedProjects.map((projectChunk, chunkIndex) => (
           <div key={chunkIndex} className="row mb-4">
@@ -59,7 +125,7 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
           </div>
         ))}
       </div>
-    </div>
+    </div></div>
   );
 }
 

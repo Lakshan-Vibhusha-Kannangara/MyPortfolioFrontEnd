@@ -42,7 +42,7 @@ const TopNavbar = () => {
     width: "100%",
     zIndex: 6
   }}>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark"  style={{opacity:'0.9'}}>
       <div className="container">
       <img src="https://picsum.photos/50" alt="Logo" className="rounded-circle" style={{ width: '50px', height: '50px', padding: '0px' }} />
       
@@ -75,11 +75,7 @@ const TopNavbar = () => {
                 <Link to='/about' style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href='##'>About</a></Link>
               </div>
             </li>
-            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-              <div style={containerStyle}>
-             <a className="nav-link" href='https://drive.google.com/file/d/136ku4DX8MCp3ZrF4shbVTT73k4UDlN6x/view?usp=sharing' target="_blank" rel='noreferrer'>Résumé</a>
-              </div>
-            </li>
+          
 
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
@@ -103,17 +99,23 @@ const TopNavbar = () => {
                 <Link to='/blog'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href="##">Blog</a></Link>
               </div>
             </li>
-            
-            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-              <div style={containerStyle}>
-             <a className="nav-link" href='https://drive.google.com/file/d/1-q-6zJ1NkXNy6nrrMkMUVNYd_7WF91Wp/view?usp=drive_link' target="_blank" rel='noreferrer'>Research Paper</a>
-              </div>
-            </li>
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
                 <Link to='/login'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href="##">Login</a></Link>
               </div>
             </li>
+            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <div style={containerStyle}>
+             <a className="nav-link" href='https://drive.google.com/file/d/136ku4DX8MCp3ZrF4shbVTT73k4UDlN6x/view?usp=sharing' target="_blank" rel='noreferrer'>Résumé</a>
+              </div>
+            </li>
+            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <div style={containerStyle}>
+             <a className="nav-link" href='https://drive.google.com/file/d/1-q-6zJ1NkXNy6nrrMkMUVNYd_7WF91Wp/view?usp=drive_link' target="_blank" rel='noreferrer'>Research Paper</a>
+              </div>
+            </li>
+         
+          
             
           </ul>
           

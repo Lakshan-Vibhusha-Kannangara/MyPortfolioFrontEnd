@@ -53,12 +53,10 @@ function Technical({ technicalData }: TechnicalProps) {
 
   return (
     <MDBCol>
-      <MDBCard className="mb-4 mb-md-0">
+      <MDBCard className="mb-4 mb-md-0" style={{backgroundColor:'transparent'}}>
         <MDBCardBody>
           <MDBCardText className="mb-1">
-            <span className="text-primary font-italic me-1" style={{fontSize:"25px"}}>
-              Technical Skills
-            </span>
+          <p style={{fontSize:"25px",color:'orange'}}>Technical Skills</p>
           </MDBCardText>
           {skillItems}
         </MDBCardBody>
