@@ -27,14 +27,7 @@ import {
 } from "mdb-react-ui-kit";
 import Plx from "react-plx";
 
-interface TechnicalProps {
-  technicalData: {
-    technical?: Array<{
-      name: string;
-      width: number;
-    }>;
-  };
-}
+
 interface Props {
   essential: {
     name: string;
@@ -55,7 +48,7 @@ interface Props {
 
 function Home(essential: Props) {
   const [scrollToBottomClicked, setScrollToBottomClicked] = useState(false);
-  const [data, setData] = useState({ interests: [] }); // Initialize with an empty array
+
 
   const essentialData = essential.essential || {
     name: "",

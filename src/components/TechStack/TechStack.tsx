@@ -1,31 +1,22 @@
-import React from 'react';
-import './TechStack.css';
+import React from "react";
+import "./TechStack.css";
 import {
   MDBCard,
   MDBCardTitle,
-
   MDBCardOverlay,
-  MDBCardImage
-} from 'mdb-react-ui-kit';
-
+  MDBCardImage,
+} from "mdb-react-ui-kit";
 
 import styled, { keyframes, css } from "styled-components";
 
-interface Technology {
-  _id: string;
-  name: string;
-  image: string;
-}
-
-function TechStack(technologyData:any) {
-
+function TechStack(technologyData: any) {
   const row1 = [
-   technologyData.courses[0].image,
-   technologyData.courses[1].image,
-   technologyData.courses[2].image,
-   technologyData.courses[3].image,
-   technologyData.courses[4].image,
-   technologyData.courses[5].image,
+    technologyData.courses[0].image,
+    technologyData.courses[1].image,
+    technologyData.courses[2].image,
+    technologyData.courses[3].image,
+    technologyData.courses[4].image,
+    technologyData.courses[5].image,
   ];
 
   const row2 = [
@@ -35,82 +26,89 @@ function TechStack(technologyData:any) {
     technologyData.courses[9].image,
     technologyData.courses[10].image,
     technologyData.courses[11].image,
-   ];
-
- 
+  ];
 
   if (!technologyData.courses) {
-    return (<div></div>)
+    return <div></div>;
   }
 
   return (
-    <div style={{ margin: '10px' ,width:'105vw',height:'100vh',left:'-5vh',position:'relative',
-    background: 'linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)'}}   >
-    
-      <div style={{top:'10vh',position:'relative'}}>
-     <Wrapper>
- 
-     <MDBCard background='dark' className='text-white' style={{width:'25vw'}}>
-      <MDBCardImage overlay src='https://tectera.com/wp-content/uploads/2021/06/technology-stack-for-web-application-main.jpg' alt='...' />
-      <MDBCardOverlay style={{top:'20vh',left:'8vw',fontSize:'50px',color:'black'}}>
-        <MDBCardTitle style={{color:'black'}}>My Tech-Stack</MDBCardTitle>
-
-   
-      </MDBCardOverlay>
-    </MDBCard>
-        <Note></Note>
-        <Marquee>
-          <MarqueeGroup>
-     
-
-            {row1.map((el) => (
-              <ImageGroup>
-                <Image src={el} />
-              </ImageGroup>
-            ))}
-          </MarqueeGroup>
-          <MarqueeGroup>
-            {row1.map((el) => (
-              <ImageGroup>
-                <Image src={el} />
-              </ImageGroup>
-            ))}
-          </MarqueeGroup>
-        </Marquee>
-        <Marquee>
-          <MarqueeGroup2>
-            {row2.map((el) => (
-              <ImageGroup>
-                <Image src={el} />
-              </ImageGroup>
-            ))}
-          </MarqueeGroup2>
-          <MarqueeGroup2>
-            {row2.map((el) => (
-              <ImageGroup>
-                <Image src={el} />
-              </ImageGroup>
-            ))}
-          </MarqueeGroup2>
-        </Marquee>
-
-      </Wrapper>
- </div>
+    <div
+      style={{
+        margin: "10px",
+        width: "105vw",
+        height: "100vh",
+        left: "-5vh",
+        position: "relative",
+        background:
+          "linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)",
+      }}
+    >
+      <div style={{ top: "10vh", position: "relative" }}>
+        <Wrapper>
+          <MDBCard
+            background="dark"
+            className="text-white"
+            style={{ width: "25vw" }}
+          >
+            <MDBCardImage
+              overlay
+              src="https://tectera.com/wp-content/uploads/2021/06/technology-stack-for-web-application-main.jpg"
+              alt="..."
+            />
+            <MDBCardOverlay
+              style={{
+                top: "20vh",
+                left: "8vw",
+                fontSize: "50px",
+                color: "black",
+              }}
+            >
+              <MDBCardTitle style={{ color: "black" }}>
+                My Tech-Stack
+              </MDBCardTitle>
+            </MDBCardOverlay>
+          </MDBCard>
+          <Note></Note>
+          <Marquee>
+            <MarqueeGroup>
+              {row1.map((el) => (
+                <ImageGroup>
+                  <Image src={el} />
+                </ImageGroup>
+              ))}
+            </MarqueeGroup>
+            <MarqueeGroup>
+              {row1.map((el) => (
+                <ImageGroup>
+                  <Image src={el} />
+                </ImageGroup>
+              ))}
+            </MarqueeGroup>
+          </Marquee>
+          <Marquee>
+            <MarqueeGroup2>
+              {row2.map((el) => (
+                <ImageGroup>
+                  <Image src={el} />
+                </ImageGroup>
+              ))}
+            </MarqueeGroup2>
+            <MarqueeGroup2>
+              {row2.map((el) => (
+                <ImageGroup>
+                  <Image src={el} />
+                </ImageGroup>
+              ))}
+            </MarqueeGroup2>
+          </Marquee>
+        </Wrapper>
+      </div>
     </div>
   );
 }
 
 export default TechStack;
-const AppContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
-  color: #000000;
-
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
 
 const Wrapper = styled.div`
   width: 100%;
@@ -120,13 +118,6 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-`;
-
-const Text = styled.div`
-  font-size: 35px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  color: #02203c;
 `;
 
 const Note = styled.div`
