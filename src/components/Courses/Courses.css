@@ -1,6 +1,19 @@
-/* Courses.css */
-.card-image {
-  width: 125px;
-  height: 150px;
-  object-fit: cover; /* Maintain aspect ratio while filling the container */
-}
+@keyframes myHoverAnimation {
+    from {
+      transform: scale(1.05);
+    }
+    to {
+      transform: scale(1.01);
+    }
+  }
+  
+  /* Style for the element */
+  .cardss {
+    margin: 6vw;
+    animation: none; /* Animation initially set to none */
+  }
+  
+  /* Apply the animation on hover */
+  .cardss:hover {
+    animation: myHoverAnimation 0.3s ease-in;
+  }
