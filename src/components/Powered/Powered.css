@@ -1,43 +1,32 @@
-/* Power.css */
-.power-card,
-.power-card-center {
-  max-width: 250px;
-  transition: transform 0.3s, box-shadow 0.3s;
+.wrapper {
+  display: flex;
+  gap: 24px;
+  margin-left: 135px;
+  top: 100px;
+  position: fixed;
 }
 
-/* Keyframes for automatic enlarging animation */
-@keyframes enlarge {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1); /* Enlarge the card */
-  }
+.box {
+  background-color: #000;
+  color: #FFF;
+  padding: 58px;
+  font-family: sans-serif;
+  width: 460px;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
-/* Keyframes for automatic shrinking animation */
-@keyframes shrink {
-  0%,
-  100% {
-    transform: scale(1.05);
-  }
-  50% {
-    transform: scale(1); /* Shrink the card */
-  }
+.box h3 {
+  font-size: 32px;
+  line-height: 1;
 }
 
-.power-card {
-  animation: enlarge 10s infinite; /* Apply automatic enlarging animation */
+.box p {
+  font-size: 19px;
+  line-height: 1.5;
 }
 
-.power-card-center {
-  position: relative;
-  bottom: 160%;
-}
-
-/* Apply animation to card image on hover */
-.power-card:hover .card-img-top,
-.power-card-center:hover .card-img-top {
-  animation: shrink 10s alternate infinite; /* Apply automatic shrinking animation */
+.box:last-child {
+  position: absolute;
+  left: calc(100% + 24px);
 }

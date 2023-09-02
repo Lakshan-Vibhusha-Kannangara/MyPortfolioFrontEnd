@@ -70,11 +70,7 @@ const TopNavbar = () => {
                 <Link to='/projects'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href="##">Projects</a></Link>
               </div>
             </li>
-            <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-              <div style={containerStyle}>
-                <Link to='/about' style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href='##'>About</a></Link>
-              </div>
-            </li>
+        
           
 
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -88,15 +84,16 @@ const TopNavbar = () => {
               </div>
             </li>
 
+
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
-                <Link to='/powered'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href='##'>Powered By</a></Link>
+                <Link to='/blog'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href="##">Blog</a></Link>
               </div>
             </li>
 
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <div style={containerStyle}>
-                <Link to='/blog'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href="##">Blog</a></Link>
+                <Link to='/powered'  style={{ textDecoration: 'none', color: 'black' }}><a className="nav-link" href='##'>Powered By</a></Link>
               </div>
             </li>
             <li className={navItemClass} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

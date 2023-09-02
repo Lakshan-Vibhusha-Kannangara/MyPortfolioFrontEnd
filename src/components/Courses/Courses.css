@@ -17,3 +17,22 @@
   .cardss:hover {
     animation: myHoverAnimation 0.3s ease-in;
   }
+
+  @keyframes expand-contract {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .MDBCardTitle {
+    left: 40vw;
+    top: 20vw;
+    position: relative;
+    fontSize: 45px;
+    color: white;
+    animation: expand-contract 2s infinite;
+    cursor: pointer;
+  }

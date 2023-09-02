@@ -59,39 +59,6 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
     left: 0,
     top: 0,
     width: "100%",
-    zIndex: -1,
-  }}
->
-  <img
-    style={{ width: "100%" ,opacity:0.45}}
-    src="back.jpg"
-    alt="background"
-  />
-</Plx>
-<Plx
-  parallaxData={[
-    {
-      start: 0,
-      end: 1800,
-      properties: [
-        {
-          startValue: 1.1, // Start with no scaling (normal size)
-          endValue: 1.25,   // End with full scaling (normal size)
-          property: "scale",
-        },
-        {
-          startValue: 0, // Start with no horizontal shift
-          endValue: 100, // End with a 100px rightward shift
-          property: "translateY",
-        },
-      ],
-    },
-  ]}
-  style={{
-    position: "fixed",
-    left: 0,
-    top: 0,
-    width: "100%",
     zIndex: 1,
   }}
 >
@@ -101,6 +68,207 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
     alt="background"
   />
 </Plx>
+     <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 500,
+            easing: [0.25, 0.1, 0.53, 3],
+            properties: [
+              {
+                startValue: 1.8, // Start with no scaling (normal size)
+                endValue: 1.81, // End with full scaling (normal size)
+                property: "scale",
+              }, {
+                startValue: 1, // Start with no scaling (normal size)
+                endValue: -1, // End with full scaling (normal size)
+                property: "opacity",
+              },
+              {
+                startValue: -600, // Start with no horizontal shift
+                endValue: 100, // End with a 100px rightward shift
+                property: "translateY",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          width: "100%",
+          zIndex: -3,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="starry.jpg"
+          alt="background"
+        />
+      </Plx>
+
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 500,
+            easing: [0.25, 0.1, 0.53, 3],
+            properties: [
+              {
+                startValue: 1.8, // Start with no scaling (normal size)
+                endValue: 1.81, // End with full scaling (normal size)
+                property: "scale",
+              }, {
+                startValue: -0.2, // Start with no scaling (normal size)
+                endValue: 1, // End with full scaling (normal size)
+                property: "opacity",
+              },
+              {
+                startValue: -600, // Start with no horizontal shift
+                endValue: 100, // End with a 100px rightward shift
+                property: "translateY",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          width: "100%",
+          zIndex: -3,
+        }}
+      >
+        <img
+          style={{ width: "140%", opacity: 1 }}
+          src="daytime.jpg"
+          alt="background"
+        />
+      </Plx>
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 500,
+            properties: [
+              {
+                startValue: 1, // Start with no scaling (normal size)
+                endValue: 0.6, // End with full scaling (normal size)
+                property: "scale",
+              },   {
+                startValue: 100, // Start with no scaling (normal size)
+                endValue: 100, // End with full scaling (normal size)
+                property: "translateY",
+              },
+              {
+                startValue: 400, // Start with no horizontal shift
+                endValue: 400, // End with a 100px rightward shift
+                property: "translateX",
+              },{
+              startValue: 1, // Start with no horizontal shift
+              endValue: -1, // End with a 100px rightward shift
+              property: "opacity",
+            }
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          width: "100%",
+          zIndex: -2,
+        }}
+      >
+      <div style={{width:'8%',left:'20%',position:'relative'}}>
+      <img
+          style={{ width: "100%", opacity: 1 }}
+          src="moon.png"
+          alt="background"
+        />
+      </div>
+      </Plx>
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 500,
+            properties: [
+              {
+                startValue: 1, // Start with no scaling (normal size)
+                endValue: 1, // End with full scaling (normal size)
+                property: "scale",
+              },   {
+                startValue: 400, // Start with no scaling (normal size)
+                endValue: 100, // End with full scaling (normal size)
+                property: "translateY",
+              },
+              {
+                startValue: 400, // Start with no horizontal shift
+                endValue: 340, // End with a 100px rightward shift
+                property: "translateX",
+              },{
+              startValue: 0, // Start with no horizontal shift
+              endValue: 1.2, // End with a 100px rightward shift
+              property: "opacity",
+            }
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          width: "100%",
+          zIndex: -2,
+        }}
+      >
+      <div style={{width:'8%',left:'20%',position:'relative'}}>
+      <img
+          style={{ width: "100%", opacity: 1 }}
+          src="sun.png"
+          alt="background"
+        />
+      </div>
+      </Plx>
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 1000,
+            properties: [
+              {
+                startValue: 1.1, // Start with no scaling (normal size)
+                endValue: 1.2, // End with full scaling (normal size)
+                property: "scale",
+              },
+              {
+                startValue: 0, // Start with no horizontal shift
+                endValue: 500, // End with a 100px rightward shift
+                property: "translateY",
+              },
+              {
+                startValue: 1, // Start with no horizontal shift
+                endValue: 0.6, // End with a 100px rightward shift
+                property: "opacity",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          width: "100%",
+          zIndex: -1,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="removal.png"
+          alt="background"
+        />
+      </Plx>
     <div className="mb-4 mb-lg-0" style={{ margin: "40px" }}>
       <MDBCardText style={{ fontSize: "40px" ,color:'white',margin:'10px'}}>Projects</MDBCardText>
       <div>

@@ -15,9 +15,45 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 import "./Home.css";
-import { MDBContainer, MDBRow, MDBCol, MDBCard } from "mdb-react-ui-kit";
+import {
+  MDBContainer,
+  MDBRow,
+  MDBCard,
+  MDBCol,
+  MDBProgress,
+  MDBProgressBar,
+  MDBCardText,
+  MDBCardBody,
+} from "mdb-react-ui-kit";
 import Plx from "react-plx";
-function Home(essential: any) {
+
+interface TechnicalProps {
+  technicalData: {
+    technical?: Array<{
+      name: string;
+      width: number;
+    }>;
+  };
+}
+interface Props {
+  essential: {
+    name: string;
+    image: string;
+    address: string;
+    title: string;
+    about: string;
+    images: string[];
+  };
+  interests: any;
+  technicalData: {
+    technical?: Array<{
+      name: string;
+      width: number;
+    }>;
+  };
+}
+
+function Home(essential: Props) {
   const [scrollToBottomClicked, setScrollToBottomClicked] = useState(false);
   const [data, setData] = useState({ interests: [] }); // Initialize with an empty array
 
@@ -30,29 +66,47 @@ function Home(essential: any) {
     images: [],
   };
 
+  const skillArray = Array.isArray(essential?.technicalData.technical)
+    ? essential.technicalData.technical
+    : [];
 
+  // Calculate the number of columns per row
+  const columnsPerRow = 3;
 
+  // Calculate the width for each column
+  const columnWidth = `${100 / columnsPerRow}%`;
 
+  // Group the skill items into rows
+  const skillRows = [];
+  for (let i = 0; i < skillArray.length; i += columnsPerRow) {
+    const rowItems = skillArray.slice(i, i + columnsPerRow);
+    skillRows.push(rowItems);
+  }
 
-  const fetchData = async (
-    url: string,
-    setStateCallback: (data: any) => void
-  ) => {
-    try {
-      const response = await fetch(url);
-      const jsonData = await response.json();
-      setStateCallback(jsonData);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  // Map over the skillRows to generate the skill items in columns
+  const skillItems = skillRows.map((row, rowIndex) => (
+    <div key={rowIndex} className="d-flex">
+      {row.map((skill, columnIndex) => (
+        <div
+          key={columnIndex}
+          style={{ flex: 1, padding: "10px", width: columnWidth }}
+        >
+          <MDBCardText
+            className="mb-1"
+            style={{ fontSize: "1rem", color: "white" }}
+          >
+            {skill.name}
+          </MDBCardText>
+          <MDBProgress className="rounded">
+            <MDBProgressBar valuemin={0} width={skill.width} valuemax={100} />
+          </MDBProgress>
+        </div>
+      ))}
+    </div>
+  ));
 
   useEffect(() => {
     // Fetch essential data
-    fetchData("http://52.65.35.114:4002/interests", (essentialData) => {
-      // Set isLoading to false when essential data is loaded
-      setData(essentialData);
-    });
 
     // Fetch additional data (if needed)
 
@@ -68,7 +122,7 @@ function Home(essential: any) {
   if (essential.essential.name === undefined) {
     return <Load />;
   }
-
+  console.log(essential.technicalData.technical);
   return (
     <div>
       <div style={{ zIndex: 4, top: "30px", position: "relative" }}>
@@ -76,7 +130,7 @@ function Home(essential: any) {
           <div
             id="intro-example"
             className="p-5 text-center bg-image"
-            style={{backgroundColor:'transparent'}}
+            style={{ backgroundColor: "transparent" }}
           >
             <MDBContainer>
               <MDBRow>
@@ -95,7 +149,8 @@ function Home(essential: any) {
                       <FaReact /> React (Frontend)
                       <FaNodeJs /> Node.js (Server)
                     </div>
-                    <button style={{color:'white'}}
+                    <button
+                      style={{ color: "white", backgroundColor: "" }}
                       type="button"
                       className="btn btn-outline-primary btn-lg"
                       onClick={handleScrollToBottom}
@@ -110,17 +165,18 @@ function Home(essential: any) {
         </div>
 
         <section>
-          <div >
+          <div>
             <MDBContainer className="py-5 h-5">
               <MDBRow>
                 <MDBCol>
-                  <MDBCard style={{backgroundColor:'transparent'}}>
+                  <MDBCard style={{ backgroundColor: "transparent" }}>
                     <div
                       className="rounded-top  d-flex flex-row"
                       style={{
                         backgroundColor: "transparent",
                         height: "200px",
-                        fontSize: "25px",opacity:'1'
+                        fontSize: "25px",
+                        opacity: "1",
                       }}
                     >
                       <div className="ms-4 mt-5 d-flex flex-column">
@@ -132,7 +188,8 @@ function Home(essential: any) {
                             width: "200px",
                             zIndex: 1,
                             top: "0px",
-                            position: "relative",opacity:'1'
+                            position: "relative",
+                            opacity: "1",
                           }}
                         />
                       </div>
@@ -161,7 +218,6 @@ function Home(essential: any) {
                           <a
                             className="btn btn-primary"
                             style={{
-                              
                               margin: "10px",
                             }}
                             href="https://linkedin.com/in/vibhoosha-kannangara"
@@ -209,11 +265,11 @@ function Home(essential: any) {
                     </div>
                     <div
                       className="p-4 text-black"
-                      style={{ backgroundColor: "wheat",opacity:'0.4' }}
+                      style={{ backgroundColor: "wheat", opacity: "0.4" }}
                     >
                       <div className="d-flex justify-content-end text-center py-1">
                         <div>
-                          <p style={{fontSize:'24px',color:'black'}}>
+                          <p style={{ fontSize: "24px", color: "black" }}>
                             Bsc(Hons) Engineering | Department of Electrical
                             Engineering | University of Moratuwa
                           </p>
@@ -222,22 +278,55 @@ function Home(essential: any) {
                     </div>
                     <div className="card-body p-4 text-black">
                       <div className="mb-5">
-                        <p className="large text mb-3 h1" style={{color:'white'}}>About Me</p>
+                        <p
+                          className="large text mb-3 h1"
+                          style={{ color: "white" }}
+                        >
+                          About Me
+                        </p>
                         <div
                           className="p-4"
-                          style={{ backgroundColor: "#f8f9fa" ,opacity:'0.6'}}
+                          style={{ backgroundColor: "#f8f9fa", opacity: "0.6" }}
                         >
                           <p className="font-italic mb-1">
                             {essentialData.about}
                           </p>
                         </div>
+                        <MDBCol>
+                          <MDBCard
+                            className="mb-4 mb-md-0"
+                            style={{ backgroundColor: "transparent" }}
+                          >
+                            <MDBCardBody>
+                              <MDBCardText className="mb-1">
+                                <p
+                                  className="large text mb-3 h1"
+                                  style={{
+                                    color: "white",
+                                    marginTop: "10px",
+                                    left: "-10px",
+                                    position: "relative",
+                                  }}
+                                >
+                                  Technical Skills
+                                </p>
+                              </MDBCardText>
+                              {skillItems}
+                            </MDBCardBody>
+                          </MDBCard>
+                        </MDBCol>
                       </div>
 
                       <div className="row g-2">
-                        <p className="large text mb-3 h1" style={{color:'white'}}>My Interests</p>
+                        <p
+                          className="large text mb-3 h1"
+                          style={{ color: "white" }}
+                        >
+                          My Interests
+                        </p>
                       </div>
 
-                      <Interest data={data} />
+                      <Interest data={essential.interests} />
                     </div>
                   </MDBCard>
                 </MDBCol>
@@ -249,7 +338,7 @@ function Home(essential: any) {
         <div></div>
       </div>
       <div>
-        <div style={{ zIndex: 5, position: "relative" ,margin:'30px'}}>
+        <div style={{ zIndex: 5, position: "relative", margin: "30px" }}>
           {" "}
           <Footer></Footer>
         </div>
@@ -265,8 +354,6 @@ function Home(essential: any) {
                   startValue: 1.6,
                   endValue: 3,
                   property: "scale",
-                  
-                  
                 },
               ],
             },
@@ -277,7 +364,6 @@ function Home(essential: any) {
             top: 0,
             width: "100%",
             zIndex: 0,
-            
           }}
         >
           <img style={{ width: "100%" }} src="bg.png" alt="foreground" />
@@ -311,73 +397,73 @@ function Home(essential: any) {
             alt="background"
           />
         </Plx>
-        
+
         <Plx
-  parallaxData={[
-    {
-      start: 0,
-      end: 800,
-      properties: [
-        {
-          startValue: 1.0, // Start with no scaling (normal size)
-          endValue: 1.2,   // End with full scaling (normal size)
-          property: "scale",
-        },
-        {
-          startValue: 0, // Start with no horizontal shift
-          endValue: 100, // End with a 100px rightward shift
-          property: "translateY",
-        },
-      ],
-    },
-  ]}
-  style={{
-    position: "fixed",
-    left: 0,
-    top: 0,
-    width: "100%",
-    zIndex: -1,
-  }}
->
-  <img
-    style={{ width: "100%" ,opacity:0.09}}
-    src="raindrops.png"
-    alt="background"
-  />
-</Plx>
-<Plx
-  parallaxData={[
-    {
-      start: 0,
-      end: 1800,
-      properties: [
-        {
-          startValue: 1.1, // Start with no scaling (normal size)
-          endValue: 1.25,   // End with full scaling (normal size)
-          property: "scale",
-        },
-        {
-          startValue: 0, // Start with no horizontal shift
-          endValue: 100, // End with a 100px rightward shift
-          property: "translateY",
-        },
-      ],
-    },
-  ]}
-  style={{
-    position: "fixed",
-    left: 0,
-    top: 0,
-    width: "100%",
-    zIndex: -1,
-  }}
->
-  <img
-    style={{ width: "100%" ,opacity:0.45}}
-    src="lightning.jpg"
-    alt="background"
-  />
-</Plx>
+          parallaxData={[
+            {
+              start: 0,
+              end: 800,
+              properties: [
+                {
+                  startValue: 1.0, // Start with no scaling (normal size)
+                  endValue: 1.2, // End with full scaling (normal size)
+                  property: "scale",
+                },
+                {
+                  startValue: 0, // Start with no horizontal shift
+                  endValue: 100, // End with a 100px rightward shift
+                  property: "translateY",
+                },
+              ],
+            },
+          ]}
+          style={{
+            position: "fixed",
+            left: 0,
+            top: 0,
+            width: "100%",
+            zIndex: -1,
+          }}
+        >
+          <img
+            style={{ width: "100%", opacity: 0.09 }}
+            src="raindrops.png"
+            alt="background"
+          />
+        </Plx>
+        <Plx
+          parallaxData={[
+            {
+              start: 0,
+              end: 1800,
+              properties: [
+                {
+                  startValue: 1.1, // Start with no scaling (normal size)
+                  endValue: 1.25, // End with full scaling (normal size)
+                  property: "scale",
+                },
+                {
+                  startValue: 0, // Start with no horizontal shift
+                  endValue: 100, // End with a 100px rightward shift
+                  property: "translateY",
+                },
+              ],
+            },
+          ]}
+          style={{
+            position: "fixed",
+            left: 0,
+            top: 0,
+            width: "100%",
+            zIndex: -1,
+          }}
+        >
+          <img
+            style={{ width: "100%", opacity: 0.45 }}
+            src="lightning.jpg"
+            alt="background"
+          />
+        </Plx>
       </div>
     </div>
   );

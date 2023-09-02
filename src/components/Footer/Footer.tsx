@@ -15,7 +15,7 @@ function Footer() {
       <div className="col-md-4 py-3" style={{left:'20%',position:'relative',color:'white'}}>
         <h6 className="text-uppercase fw-bold mb-4" style={{color:'white'}}>Contact</h6>
         <p>
-          <i className="fas fa-home me-3" style={{color:'white'}}></i> Aluthgama,Sri Lanka
+          <i className="fas fa-home me-3" style={{color:'white'}}></i>   Aluthgama ,Western Province,  Sri Lanka
         </p>
         <p style={{color:'white'}}>
           <i className="fas fa-envelope me-3"></i>{" "}

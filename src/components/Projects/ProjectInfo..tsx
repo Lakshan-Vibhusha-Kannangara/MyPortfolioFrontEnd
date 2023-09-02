@@ -16,6 +16,7 @@ import {
   GlassMagnifier,
 
 } from "react-image-magnifiers";
+import Load from "../Home/Load";
 interface ProjectInfoItem {
   _id: string;
   imageUrls: string[]; // Change imageUrl to imageUrls
@@ -135,7 +136,7 @@ function ProjectInfo() {
           </MDBRow>
         </div>
       ) : (
-        <p>Loading...</p>
+        <Load/>
       )}
     </div>
   );

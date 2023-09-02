@@ -3,7 +3,7 @@ import "/node_modules/bootstrap/dist/css/bootstrap.css";
 import { Route,Switch } from 'react-router-dom';
 
 import Home from "./components/Home/Home";
-import UserProfile from "./components/UserProfile/UserProfile";
+
 import Projects from "./components/Projects/Projects";
 import TopNavbar from "./components/TopNavBar/TopNavBar";
 import Courses from "./components/Courses/Courses.tsx";
@@ -81,6 +81,7 @@ function App() {
             path="/home"
             render={(props) => (
               <Home
+              technicalData={technicalData}
                 essential={
                   essentialData.success ? essentialData.essential[0] : {}
                 }  interests={ interestData.success ? interestData : {}}
@@ -88,17 +89,7 @@ function App() {
             )}
           ></Route>
 
-          <Route
-            path="/about"
-            render={(props) => (
-              <UserProfile
-                userData={userData.info}
-                projlData={projlData}
-                isLoading={isLoading}
-                technicalData={technicalData}
-              />
-            )}
-          ></Route>
+
           <Route path="/pdfviewer" component={PdfViewer}></Route>
           <Route path="/researchr" component={Research}></Route>
 

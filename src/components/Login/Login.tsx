@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Login() {
  
   return (
-<div style={{top:'50px',position:'relative'}}>
+<div style={{top:'200px',position:'relative'}}>
 <section className="vh-100">
  
       <div className="container-fluid h-custom">

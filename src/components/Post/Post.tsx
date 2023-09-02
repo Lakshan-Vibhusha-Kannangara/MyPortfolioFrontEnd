@@ -9,9 +9,9 @@ interface Project {
 function Post(project: Project) {
   return (
     <div className="col">
-      <div className="card h-100">
+      <div className="card h-100" style={{background:'transparent',color:'white'}}>
         <img src={project.image} className="card-img-top" alt="Skyscrapers" />
-        <div className="card-body">
+        <div className="card-body" style={{background:'transparent'}}>
           <h5 className="card-title">{project.name}</h5>
           <p className="card-text">{project.information}</p>
         </div>

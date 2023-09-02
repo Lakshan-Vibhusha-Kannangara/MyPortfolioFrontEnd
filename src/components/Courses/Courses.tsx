@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import "./Courses.css"; // Import the CSS file
 
@@ -24,7 +27,7 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
 
   return (
     <div style={{ top: "0", position: "relative" }}>
-      <Plx
+    <Plx
         parallaxData={[
           {
             start: -1,
@@ -32,18 +35,18 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
             easing: "ease",
             properties: [
               {
-                startValue: 0.14,
-                endValue: 0.14,
-                property: "scale",
+                startValue: 1,
+                endValue: 0.8,
+                property: "translateY",
               },
             ],
           },
         ]}
         style={{
           position: "fixed",
-          left: "18vw",
-          top: "-30vh",
-          width: "100%",
+          left: "60vw",
+          top: "50vh",
+          width: "10vw",
           zIndex: 0,
         }}
       >
@@ -57,8 +60,8 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
             end: 1800,
             properties: [
               {
-                startValue: 1.1,
-                endValue: 1.17,
+                startValue: 1,
+                endValue: 1.11,
                 property: "scale",
               },
             ],
@@ -81,6 +84,7 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
           top: "-20vh",
           width: "100%",
           zIndex: -1,
+          scale:'1.1'
         }}
       >
         <img style={{ width: "100%" ,opacity:'0.92'}} src="lap.jpg" alt="background" />
@@ -93,8 +97,8 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
             end: 1800,
             properties: [
               {
-                startValue: 0.31, // Start with no scaling (normal size)
-                endValue: 0.31, // End with full scaling (normal size)
+                startValue: 1, // Start with no scaling (normal size)
+                endValue: 1, // End with full scaling (normal size)
                 property: "scale",
               },
               {
@@ -107,9 +111,9 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
         ]}
         style={{
           position: "fixed",
-          left: "-3vw",
-          top: "-12vh",
-          width: "100%",
+          left: "30vw",
+          top: "60vh",
+          width: "34vw",
           zIndex: -1,
         }}
       >
@@ -130,7 +134,18 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
             properties: [
               {
                 startValue: 0,
-                endValue: -200,
+                endValue: -400,
+                property: "translateY",
+              },
+            ],
+          }, {
+            start: 200,
+            end: 300,
+            easing: "ease",
+            properties: [
+              {
+                startValue: -300,
+                endValue: -800,
                 property: "translateY",
               },
             ],
@@ -145,8 +160,8 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
           }}
         > <MDBCardTitle style={{left:'40vw',top:'20vw',position:'relative',fontSize:'60px',color:'gray'}}>My Courses</MDBCardTitle>
 		<FaScroll  style={{width:'20vh',height:'auto',left:'27vw',position:'relative',top:'28vh'}}/>
-		<MDBCardTitle style={{left:'40vw',top:'20vw',position:'relative',fontSize:'45px',color:'white'}}>Scroll Down</MDBCardTitle>
-		<FaArrowDown  style={{width:'20vh',height:'auto',left:'56vw',position:'relative',top:'28vh',color:'wheat'}}/></div>
+		<MDBCardTitle className="MDBCardTitle" style={{left:'42vw',top:'20vw',position:'relative',fontSize:'45px',color:'white'}}>Scroll Down</MDBCardTitle>
+		<FaArrowDown  className="MDBCardTitle" style={{width:'20vh',height:'auto',left:'56vw',position:'relative',top:'28vh',color:'wheat'}}/></div>
       </Plx>
 
       <Plx
@@ -286,10 +301,10 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
                   />
 
                   <MDBCardBody>
-                    <MDBCardText>{courses[0].name}</MDBCardText>
+                    <MDBCardText>{courses[1].name}</MDBCardText>
                     <MDBProgress height="10">
                       <MDBProgressBar
-                        width={courses[0].width}
+                        width={courses[1].width}
                         valuemin={0}
                         valuemax={100}
                       >
@@ -836,3 +851,9 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
 };
 
 export default Courses;
+
+
+
+
+
+

@@ -1,68 +1,34 @@
-import React from 'react';
-import './TechStack.css';
-import {
-  MDBCard,
-  MDBCardTitle,
-
-  MDBCardOverlay,
-  MDBCardImage
-} from 'mdb-react-ui-kit';
-
-
+import React from "react";
 import styled, { keyframes, css } from "styled-components";
 
-interface Technology {
-  _id: string;
-  name: string;
-  image: string;
-}
 
-function TechStack(technologyData:any) {
+function Comp() {
 
   const row1 = [
-   technologyData.courses[0].image,
-   technologyData.courses[1].image,
-   technologyData.courses[2].image,
-   technologyData.courses[3].image,
-   technologyData.courses[4].image,
-   technologyData.courses[5].image,
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/7ae42bac3b34999c0db3.png",
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/b2bd91d7b87b2181ca45.png",
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/6591cdc0702b32310306.png",
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/3b7d9f4b073deb6a9b74.png",
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/3cd767dea94a85078ca4.png",
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/a2b3c3709ffedce2a22a.png",
   ];
 
   const row2 = [
-    technologyData.courses[6].image,
-    technologyData.courses[7].image,
-    technologyData.courses[8].image,
-    technologyData.courses[9].image,
-    technologyData.courses[10].image,
-    technologyData.courses[11].image,
-   ];
-
- 
-
-  if (!technologyData.courses) {
-    return (<div></div>)
-  }
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/6c585c33ca6c71c79bb7.png",
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/9dd55e54b5a28658bf4e.png",
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/0384060dcbf73b6a707c.png",
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/35e044b3354aaa0caed5.png",
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/f50ae7cbf6cc805bdadc.png",
+    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/6c585c33ca6c71c79bb7.png",
+  ];
 
   return (
-    <div style={{ margin: '10px' ,width:'105vw',height:'100vh',left:'-5vh',position:'relative',
-    background: 'linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)'}}   >
-    
-      <div style={{top:'10vh',position:'relative'}}>
+ <div style={{top:'10vh',position:'relative'}}>
      <Wrapper>
- 
-     <MDBCard background='dark' className='text-white' style={{width:'25vw'}}>
-      <MDBCardImage overlay src='https://tectera.com/wp-content/uploads/2021/06/technology-stack-for-web-application-main.jpg' alt='...' />
-      <MDBCardOverlay style={{top:'20vh',left:'8vw',fontSize:'50px',color:'black'}}>
-        <MDBCardTitle style={{color:'black'}}>My Tech-Stack</MDBCardTitle>
-
-   
-      </MDBCardOverlay>
-    </MDBCard>
+        <Text style={{fontFamily:'roboto'}}>My Tech-Stack !</Text>
         <Note></Note>
         <Marquee>
           <MarqueeGroup>
-     
-
             {row1.map((el) => (
               <ImageGroup>
                 <Image src={el} />
@@ -96,11 +62,11 @@ function TechStack(technologyData:any) {
 
       </Wrapper>
  </div>
-    </div>
   );
 }
 
-export default TechStack;
+export default Comp;
+
 const AppContainer = styled.div`
   width: 100vw;
   height: 100vh;
