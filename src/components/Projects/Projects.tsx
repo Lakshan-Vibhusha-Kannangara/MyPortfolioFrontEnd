@@ -64,7 +64,7 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
 >
   <img
     style={{ width: "100%" ,opacity:0.45}}
-    src="lightning.jpg"
+    src="back.jpg"
     alt="background"
   />
 </Plx>
