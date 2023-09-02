@@ -1,4 +1,4 @@
-import React, { useRef, Component } from "react";
+import React from "react";
 import "./Courses.css"; // Import the CSS file
 
 import Plx from "react-plx";

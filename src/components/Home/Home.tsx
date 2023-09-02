@@ -12,7 +12,7 @@ import {
   FaDatabase,
   FaServer,
   FaReact,
-  FaNodeJs,FaScroll
+  FaNodeJs,
 } from "react-icons/fa";
 import "./Home.css";
 import { MDBContainer, MDBRow, MDBCol, MDBCard } from "mdb-react-ui-kit";
