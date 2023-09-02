@@ -1,7 +1,9 @@
 import "./App.css";
 import "/node_modules/bootstrap/dist/css/bootstrap.css";
-import { Route, Switch } from "react-router-dom";
+import { Route,Switch } from 'react-router-dom';
+
 import Home from "./components/Home/Home";
+
 import Projects from "./components/Projects/Projects";
 import TopNavbar from "./components/TopNavBar/TopNavBar";
 import Courses from "./components/Courses/Courses.tsx";
@@ -12,9 +14,9 @@ import Powered from "./components/Powered/Powered";
 import Blog from "./components/Blog/Blog.tsx";
 import Research from "./components/Research/Research";
 import axios from "axios";
-import Login from "./components/Login/Login";
-import Chat from "./components/Chat/Chat";
-import ProjectInfo from "./components/Projects/ProjectInfo.";
+import Login from './components/Login/Login';
+import Chat from './components/Chat/Chat'
+import ProjectInfo from './components/Projects/ProjectInfo.';
 function App() {
   const [data, setData] = useState(null);
   const [essentialData, setEssentialData] = useState({});
@@ -22,6 +24,8 @@ function App() {
   const [coursesData, setCoursesData] = useState({});
 
   const [technicalData, setTechnicalData] = useState([]);
+
+
 
   const [technologyData, setTechnologyData] = useState([]);
 
@@ -35,6 +39,7 @@ function App() {
       console.error("Error fetching data:", error);
     }
   };
+  
 
   useEffect(() => {
     const fetchDataAsync = async () => {
@@ -43,21 +48,22 @@ function App() {
         fetchData(process.env.REACT_APP_ESSENTIAL_URL, setEssentialData),
         fetchData(process.env.REACT_APP_COURSES_URL, setCoursesData),
         fetchData(process.env.REACT_APP_TECHNICAL_URL, setTechnicalData),
-        fetchData(process.env.REACT_APP_PROJINFO_URL, setProjlData),
+
         fetchData(process.env.REACT_APP_BLOG_URL, setBlogPosts),
-        fetchData(process.env.REACT_APP_INFO_URL, setUserData),
+        
         fetchData(process.env.REACT_APP_TECHNOLOGIES_URL, setTechnologyData),
         fetchData(process.env.REACT_APP_INTERESTS_URL, setInterestData),
+    
       ]);
 
-      setIsLoading(false);
+
     };
 
     fetchDataAsync();
   }, []);
 
-  // This will log the fetched technologyData to the console
-
+   // This will log the fetched technologyData to the console
+  
   return (
     <div
       style={{
@@ -69,29 +75,27 @@ function App() {
       }}
     >
       <TopNavbar></TopNavbar>
-      <div style={{ top: "30px", position: "relative" }}>
+      <div style={{top:'30px',position:'relative'}}>
         <Switch>
           <Route
             path="/home"
             render={(props) => (
               <Home
-                technicalData={technicalData}
+              technicalData={technicalData}
                 essential={
                   essentialData.success ? essentialData.essential[0] : {}
-                }
-                interests={interestData.success ? interestData : {}}
+                }  interests={ interestData.success ? interestData : {}}
               />
             )}
           ></Route>
+
 
           <Route path="/pdfviewer" component={PdfViewer}></Route>
           <Route path="/researchr" component={Research}></Route>
 
           <Route
             path="/techstack"
-            render={(props) => (
-              <TechStack courses={technologyData.technology} />
-            )}
+            render={(props) => <TechStack courses={technologyData.technology} />}
           ></Route>
 
           <Route path="/powered" component={Powered}></Route>
@@ -105,11 +109,16 @@ function App() {
             path="/projects"
             render={(props) => <Projects {...props} data={data} />}
           ></Route>
-          <Route path="/login" render={(props) => <Login />}></Route>
+           <Route
+            path="/login"
+            render={(props) => <Login/>}
+          ></Route>
 
           <Route
             path="/blog"
-            render={(props) => <Blog blogPosts={blogPosts.blogPosts} />}
+            render={(props) => (
+              <Blog  blogPosts={blogPosts.blogPosts}/>
+            )}
           ></Route>
         </Switch>
       </div>
