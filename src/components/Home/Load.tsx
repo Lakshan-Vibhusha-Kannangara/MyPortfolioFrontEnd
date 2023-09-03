@@ -31,7 +31,7 @@ function Load() {
       >
         <img
           style={{ width: "100%", opacity: 1 }}
-          src="Psc.gif"
+          src="https://i.gifer.com/PSc.gif"
           alt="background"
         />
       </Plx>
