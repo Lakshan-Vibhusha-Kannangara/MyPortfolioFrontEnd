@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "./Header";
 import BlogPost from "./BlogPost";
 import Sidebar from "./SideBar";
-
+import Plx from "react-plx";
 interface AuthorData {
   name: string;
   image: string;
@@ -38,6 +38,38 @@ function Blog(props: BlogProps) {
 
   return (
     <main className="mt-4 mb-5">
+       <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 1000,
+            easing: [0.25, 0.1, 0.53, 3],
+            properties: [
+              {
+                startValue: 0, // Start with no horizontal shift
+                endValue: -10, // End with a 100px rightward shift
+                property: "translateX",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: "15vw",
+          top: "25vh",
+          width: "50vw",
+          height: "auto",
+          margin: "auto",
+          scale: "1",
+          zIndex: -4,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="blog.svg"
+          alt="background"
+        />
+      </Plx>
        <div style={{ left: "40%", position: "relative",top:'40px' }}>
               {" "}
               <ul className="pagination">

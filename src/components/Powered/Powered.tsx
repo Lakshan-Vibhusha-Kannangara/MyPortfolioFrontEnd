@@ -1,18 +1,14 @@
 import React from "react";
 import "./Powered.css";
 import Plx from "react-plx";
+import { MDBCard, MDBCardImage, MDBRipple,MDBCardTitle } from "mdb-react-ui-kit";
 import {
-  MDBCard,
-  
-  MDBCardImage,
-
-  MDBRipple,
-} from "mdb-react-ui-kit";
-
+	FaArrowDown
+  }from "react-icons/fa";
 const parallaxData = [
   {
     start: 0,
-    duration: "80%",
+    duration: "120%",
     properties: [
       {
         startValue: 0,
@@ -26,74 +22,20 @@ const parallaxData = [
 
 const Power = () => (
   <div>
-    <Plx
-      parallaxData={[
-        {
-          start: 0,
-          end: 1800,
-          properties: [
-            {
-              startValue: 1.3,
-              endValue: 1.8,
-              property: "scale",
-            },
-          ],
-        },
-        {
-          start: 1000,
-          end: 1800,
-          properties: [
-            {
-              startValue: 0,
-              endValue: 1,
-              property: "opacity",
-            },
-          ],
-        },
-      ]}
-      style={{
-        position: "fixed",
-        left: 0,
-        top: 0,
-        width: "100%",
-        zIndex: -1,
-      }}
-    >
-      <img style={{ width: "100%" }} src="background.jpg" alt="background" />
-    </Plx>
-
-    <Plx
-      parallaxData={[
-        {
-          start: 1000,
-          end: 1100,
-          properties: [
-            {
-              startValue: 1,
-              endValue: 1,
-              property: "opacity",
-            },
-          ],
-        },
-      ]}
-      style={{
-        position: "fixed",
-        left: 0,
-        top: 0,
-        width: "100%",
-        zIndex: -1,
-        opacity: "0",
-      }}
-    >
-      <img style={{ width: "100%" }} src="daytime.jpg" alt="background" />
-    </Plx>
-    <div style={{ height: 1000, top: "100vh", position: "relative" }}>
+    <div
+    style={{
+      background: "rgb(195, 231, 238)",
+      backgroundImage:
+        "linear-gradient(90deg, rgba(195, 231, 238, 1) 0%, rgba(213, 213, 215, 1) 28%, rgba(247, 247, 247, 0.9010197829131653) 56%, rgba(208, 247, 255, 1) 100%)",
+    }}
+  >
+    <div style={{ height: "800vh", top: "100vh", position: "relative" }}>
       <Plx parallaxData={parallaxData} className="wrapper">
         <div
           className="box"
           style={{
             height: "60vh",
-            top: "10vh",
+            top: "22vh",
             position: "relative",
             borderRadius: "20px",
             backgroundColor: "transparent",
@@ -118,7 +60,7 @@ const Power = () => (
           className="box"
           style={{
             height: "60vh",
-            top: "10vh",
+            top: "22vh",
             position: "relative",
             borderRadius: "20px",
             backgroundColor: "transparent",
@@ -143,7 +85,7 @@ const Power = () => (
           className="box"
           style={{
             height: "60vh",
-            top: "10vh",
+            top: "22vh",
             position: "relative",
             borderRadius: "20px",
             backgroundColor: "transparent",
@@ -164,12 +106,12 @@ const Power = () => (
             </MDBRipple>
           </MDBCard>
         </div>
-        
+
         <div
           className="box"
           style={{
             height: "60vh",
-            top: "10vh",
+            top: "22vh",
             position: "relative",
             borderRadius: "20px",
             backgroundColor: "transparent",
@@ -194,7 +136,7 @@ const Power = () => (
           className="box"
           style={{
             height: "60vh",
-            top: "10vh",
+            top: "22vh",
             position: "relative",
             borderRadius: "20px",
             backgroundColor: "transparent",
@@ -219,7 +161,7 @@ const Power = () => (
           className="box"
           style={{
             height: "60vh",
-            top: "10vh",
+            top: "22vh",
             position: "relative",
             borderRadius: "20px",
             backgroundColor: "transparent",
@@ -233,16 +175,102 @@ const Power = () => (
             >
               <MDBCardImage
                 style={{ borderRadius: "20px" }}
-                src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+                src="https://cloud2data.com/wp-content/uploads/2023/01/HTML-CSS-Review.png"
                 fluid
                 alt="..."
               />
             </MDBRipple>
           </MDBCard>
         </div>
+        <div
+          className="box"
+          style={{
+            height: "60vh",
+            top: "22vh",
+            position: "relative",
+            borderRadius: "20px",
+            backgroundColor: "transparent",
+          }}
+        >
+          <MDBCard style={{ borderRadius: "20px" }}>
+            <MDBRipple
+              rippleColor="light"
+              rippleTag="div"
+              className="bg-image hover-overlay"
+            >
+              <MDBCardImage
+                style={{ borderRadius: "20px" }}
+                src="https://blog.toothpickapp.com/content/images/2022/08/ts_logo.png"
+                fluid
+                alt="..."
+              />
+            </MDBRipple>
+          </MDBCard>
+        </div>
+        <div
+          className="box"
+          style={{
+            height: "60vh",
+            top: "22vh",
+            position: "relative",
+            borderRadius: "20px",
+            backgroundColor: "transparent",
+          }}
+        >
+          <MDBCard style={{ borderRadius: "20px" }}>
+            <MDBRipple
+              rippleColor="light"
+              rippleTag="div"
+              className="bg-image hover-overlay"
+            >
+              <MDBCardImage
+                style={{ borderRadius: "20px" }}
+                src="https://4.bp.blogspot.com/-ou-a_Aa1t7A/W6IhNc3Q0gI/AAAAAAAAD6Y/pwh44arKiuM_NBqB1H7Pz4-7QhUxAgZkACLcBGAs/s1600/spring-boot-logo.png"
+                fluid
+                alt="..."
+              />
+            </MDBRipple>
+          </MDBCard>
+        </div>
+        <div
+          className="box"
+          style={{
+            height: "60vh",
+            top: "22vh",
+            position: "relative",
+            borderRadius: "20px",
+            backgroundColor: "transparent",
+          }}
+        >
+          <MDBCard style={{ borderRadius: "20px" }}>
+            <MDBRipple
+              rippleColor="light"
+              rippleTag="div"
+              className="bg-image hover-overlay"
+            >
+              <MDBCardImage
+                style={{ borderRadius: "20px" }}
+                src="https://4.bp.blogspot.com/-ou-a_Aa1t7A/W6IhNc3Q0gI/AAAAAAAAD6Y/pwh44arKiuM_NBqB1H7Pz4-7QhUxAgZkACLcBGAs/s1600/spring-boot-logo.png"
+                fluid
+                alt="..."
+              />
+            </MDBRipple>
+          </MDBCard>
+        </div>
+
       </Plx>
+      <div>		<MDBCardTitle className="MDBCardTitle" style={{left:'42vw',top:'-80vh',position:'relative',fontSize:'45px',color:'white'}}>Scroll Down</MDBCardTitle>
+		<FaArrowDown  className="MDBCardTitle" style={{width:'20vh',height:'auto',left:'56vw',position:'relative',top:'-95vh',color:'wheat'}}/></div>   </div>
+  </div>
+  <div  style={{width:'100vw',height:'100vh',position:'relative',top:'0vh',margin:'auto',
+      background: "rgb(195, 231, 238)",
+      backgroundImage:
+        "linear-gradient(90deg, rgba(195, 231, 238, 1) 0%, rgba(213, 213, 215, 1) 28%, rgba(247, 247, 247, 0.9010197829131653) 56%, rgba(208, 247, 255, 1) 100%)",
+    }}>
+   <h1 style={{top:'12vh',position:'relative',left:'40vw'}}>Overall Architecture</h1>
+   <p>To be drawn</p>
+   <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210204220403/Web-Application-Architecture.png" alt="" style={{left:'18vw',position:'relative',margin:'auto',width:'60vw',height:'auto',top:'10vh'}} />
     </div>
-    
   </div>
 );
 

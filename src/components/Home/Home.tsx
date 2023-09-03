@@ -27,7 +27,6 @@ import {
 } from "mdb-react-ui-kit";
 import Plx from "react-plx";
 
-
 interface Props {
   essential: {
     name: string;
@@ -36,6 +35,8 @@ interface Props {
     title: string;
     about: string;
     images: string[];
+    backgroundimg1: string;
+    backgroundimg2: string;
   };
   interests: any;
   technicalData: {
@@ -49,7 +50,6 @@ interface Props {
 function Home(essential: Props) {
   const [scrollToBottomClicked, setScrollToBottomClicked] = useState(false);
 
-
   const essentialData = essential.essential || {
     name: "",
     image: "",
@@ -57,6 +57,8 @@ function Home(essential: Props) {
     title: "",
     about: "",
     images: [],
+    backgroundimg1: "",
+    backgroundimg2: "",
   };
 
   const skillArray = Array.isArray(essential?.technicalData.technical)
@@ -115,7 +117,7 @@ function Home(essential: Props) {
   if (essential.essential.name === undefined) {
     return <Load />;
   }
-  console.log(essential.technicalData.technical);
+
   return (
     <div>
       <div style={{ zIndex: 4, top: "30px", position: "relative" }}>
@@ -359,7 +361,11 @@ function Home(essential: Props) {
             zIndex: 0,
           }}
         >
-          <img style={{ width: "100%" }} src="bg.png" alt="foreground" />
+          <img
+            style={{ width: "100%" }}
+            src={essential.essential.backgroundimg1}
+            alt="foreground"
+          />
         </Plx>
 
         <Plx
@@ -453,7 +459,7 @@ function Home(essential: Props) {
         >
           <img
             style={{ width: "100%", opacity: 0.45 }}
-            src="lightning.jpg"
+            src={essential.essential.backgroundimg2}
             alt="background"
           />
         </Plx>

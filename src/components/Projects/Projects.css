@@ -23,4 +23,31 @@
     transform: scale(1.03); /* Increase size on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add box shadow on hover */
   }
+  .hoverable-div {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .hoverable-div::before {
+    content: "Click here";
+    visibility: hidden;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    top:'-40%';
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  
+  .hoverable-div:hover::before {
+    visibility: visible;
+    opacity: 1;
+  }
   

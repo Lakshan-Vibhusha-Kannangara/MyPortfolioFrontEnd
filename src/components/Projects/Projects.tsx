@@ -34,60 +34,24 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
     chunkedProjects.push(projects.slice(i, i + 3));
   }
 
-  return (<div>
-    <Plx
-  parallaxData={[
-    {
-      start: 0,
-      end: 1800,
-      properties: [
-        {
-          startValue: 1.1, // Start with no scaling (normal size)
-          endValue: 1.25,   // End with full scaling (normal size)
-          property: "scale",
-        },
-        {
-          startValue: 0, // Start with no horizontal shift
-          endValue: 100, // End with a 100px rightward shift
-          property: "translateY",
-        },
-      ],
-    },
-  ]}
-  style={{
-    position: "fixed",
-    left: 0,
-    top: 0,
-    width: "100%",
-    zIndex: 1,
-  }}
->
-  <img
-    style={{ width: "10%" ,opacity:1,left:'90px',position:'relative',top:'200px'}}
-    src="HiRobot.gif"
-    alt="background"
-  />
-</Plx>
-     <Plx
+  return (
+    <div >
+  
+      <Plx
         parallaxData={[
           {
             start: 0,
-            end: 500,
-            easing: [0.25, 0.1, 0.53, 3],
+            end: 1800,
             properties: [
               {
-                startValue: 1.8, // Start with no scaling (normal size)
-                endValue: 1.81, // End with full scaling (normal size)
+                startValue: 1.1, // Start with no scaling (normal size)
+                endValue: 1.25, // End with full scaling (normal size)
                 property: "scale",
-              }, {
-                startValue: 1, // Start with no scaling (normal size)
-                endValue: -1, // End with full scaling (normal size)
-                property: "opacity",
               },
               {
-                startValue: -600, // Start with no horizontal shift
+                startValue: 0, // Start with no horizontal shift
                 endValue: 100, // End with a 100px rightward shift
-                property: "translateY",
+                property: "translateX",
               },
             ],
           },
@@ -97,35 +61,32 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
           left: 0,
           top: 0,
           width: "100%",
-          zIndex: -3,
+          zIndex: 1,
         }}
       >
         <img
-          style={{ width: "100%", opacity: 1 }}
-          src="starry.jpg"
+          style={{
+            width: "10%",
+            opacity: 1,
+            left: "90px",
+            position: "relative",
+            top: "200px",
+          }}
+          src="HiRobot.gif"
           alt="background"
         />
       </Plx>
-
+   <div style={{backgroundColor:'green',zIndex:'10',width:'100vw',position:'absolute'}}></div>
       <Plx
         parallaxData={[
           {
             start: 0,
-            end: 500,
+            end: 1000,
             easing: [0.25, 0.1, 0.53, 3],
             properties: [
               {
-                startValue: 1.8, // Start with no scaling (normal size)
-                endValue: 1.81, // End with full scaling (normal size)
-                property: "scale",
-              }, {
-                startValue: -0.2, // Start with no scaling (normal size)
-                endValue: 1, // End with full scaling (normal size)
-                property: "opacity",
-              },
-              {
-                startValue: -600, // Start with no horizontal shift
-                endValue: 100, // End with a 100px rightward shift
+                startValue: 0, // Start with no horizontal shift
+                endValue: -10, // End with a 100px rightward shift
                 property: "translateY",
               },
             ],
@@ -133,124 +94,126 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
         ]}
         style={{
           position: "fixed",
-          left: 0,
-          top: 0,
-          width: "100%",
-          zIndex: -3,
+          left: "40vw",
+          top: "10vh",
+          width: "30vw",
+          height: "30vh",
+          margin: "auto",
+          scale: "1",
+          zIndex: -4,
         }}
       >
-        <img
-          style={{ width: "140%", opacity: 1 }}
-          src="daytime.jpg"
-          alt="background"
-        />
-      </Plx>
-      <Plx
-        parallaxData={[
-          {
-            start: 0,
-            end: 500,
-            properties: [
-              {
-                startValue: 1, // Start with no scaling (normal size)
-                endValue: 0.6, // End with full scaling (normal size)
-                property: "scale",
-              },   {
-                startValue: 100, // Start with no scaling (normal size)
-                endValue: 100, // End with full scaling (normal size)
-                property: "translateY",
-              },
-              {
-                startValue: 400, // Start with no horizontal shift
-                endValue: 400, // End with a 100px rightward shift
-                property: "translateX",
-              },{
-              startValue: 1, // Start with no horizontal shift
-              endValue: -1, // End with a 100px rightward shift
-              property: "opacity",
-            }
-            ],
-          },
-        ]}
-        style={{
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: "100%",
-          zIndex: -2,
-        }}
-      >
-      <div style={{width:'8%',left:'20%',position:'relative'}}>
-      <img
-          style={{ width: "100%", opacity: 1 }}
-          src="moon.png"
-          alt="background"
-        />
-      </div>
-      </Plx>
-      <Plx
-        parallaxData={[
-          {
-            start: 0,
-            end: 500,
-            properties: [
-              {
-                startValue: 1, // Start with no scaling (normal size)
-                endValue: 1, // End with full scaling (normal size)
-                property: "scale",
-              },   {
-                startValue: 400, // Start with no scaling (normal size)
-                endValue: 100, // End with full scaling (normal size)
-                property: "translateY",
-              },
-              {
-                startValue: 400, // Start with no horizontal shift
-                endValue: 340, // End with a 100px rightward shift
-                property: "translateX",
-              },{
-              startValue: 0, // Start with no horizontal shift
-              endValue: 1.2, // End with a 100px rightward shift
-              property: "opacity",
-            }
-            ],
-          },
-        ]}
-        style={{
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: "100%",
-          zIndex: -2,
-        }}
-      >
-      <div style={{width:'8%',left:'20%',position:'relative'}}>
-      <img
-          style={{ width: "100%", opacity: 1 }}
-          src="sun.png"
-          alt="background"
-        />
-      </div>
+       <div>
+        <h1 style={{fontSize:'4vw'}}>My Projects</h1>
+       </div>
       </Plx>
       <Plx
         parallaxData={[
           {
             start: 0,
             end: 1000,
+            easing: [0.25, 0.1, 0.53, 3],
             properties: [
               {
-                startValue: 1.1, // Start with no scaling (normal size)
-                endValue: 1.2, // End with full scaling (normal size)
-                property: "scale",
+                startValue: 0, // Start with no horizontal shift
+                endValue: -10, // End with a 100px rightward shift
+                property: "translateX",
               },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: "10vw",
+          top: "10vh",
+          width: "30vw",
+          height: "30vh",
+          margin: "auto",
+          scale: "1",
+          zIndex: -4,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="bg_planet01.svg"
+          alt="background"
+        />
+      </Plx>
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 1000,
+            easing: [0.25, 0.1, 0.53, 3],
+            properties: [
               {
                 startValue: 0, // Start with no horizontal shift
-                endValue: 500, // End with a 100px rightward shift
-                property: "translateY",
+                endValue: -10, // End with a 100px rightward shift
+                property: "translateX",
               },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: "70vw",
+          top: "20vh",
+          width: "8vw",
+          height: "8vh",
+          margin: "auto",
+          scale: "1",
+          zIndex: -4,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="bg_planet02.svg"
+          alt="background"
+        />
+      </Plx>
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 1000,
+            easing: [0.25, 0.1, 0.53, 3],
+            properties: [
               {
-                startValue: 1, // Start with no horizontal shift
-                endValue: 0.6, // End with a 100px rightward shift
-                property: "opacity",
+                startValue: 0, // Start with no horizontal shift
+                endValue: -30, // End with a 100px rightward shift
+                property: "translateX",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: 0,
+          top: "-25vh",
+          width: "100vw",
+          height: "2vh",
+          margin: "auto",
+          scale: "1.1",
+          zIndex: -4,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="BG-Layered_cropped-1-01.svg"
+          alt="background"
+        />
+      </Plx>
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 400,
+
+            properties: [
+              {
+                startValue: 0, // Start with no horizontal shift
+                endValue: -60, // End with a 100px rightward shift
+                property: "translateX",
               },
             ],
           },
@@ -259,42 +222,247 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
           position: "fixed",
           left: 0,
           top: 0,
-          width: "100%",
-          zIndex: -1,
+          width: "100vw",
+          height: "2vh",
+          margin: "auto",
+          scale: "1",
+          zIndex: -4,
         }}
       >
         <img
           style={{ width: "100%", opacity: 1 }}
-          src="removal.png"
+          src="BG-Layered_cropped-1-02.svg"
           alt="background"
         />
       </Plx>
-    <div className="mb-4 mb-lg-0" style={{ margin: "40px" }}>
-      <MDBCardText style={{ fontSize: "40px" ,color:'white',margin:'10px'}}>Projects</MDBCardText>
-      <div>
-        {chunkedProjects.map((projectChunk, chunkIndex) => (
-          <div key={chunkIndex} className="row mb-4">
-            {projectChunk.map((project, projectIndex) => (
-              <div
-                onClick={() => handleClick(`/project/${projectIndex+chunkIndex*3}`)} // Pass the path to handleClick
-                key={project.id} // Add a unique key here
-                className="col-lg-4 fade-in-animation"
-                style={{
-                  animationDelay: `${chunkIndex * 0.2 + projectIndex * 0.1}s`,
-                }}
-              >
-                <Post
-                  image={project.image}
-                  name={project.name}
-                  information={project.information}
-                />
-              </div>
-            ))}
-          </div>
-        ))}
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 400,
+
+            properties: [
+              {
+                startValue: 0, // Start with no horizontal shift
+                endValue: -80, // End with a 100px rightward shift
+                property: "translateX",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: "20vw",
+          top: 0,
+          width: "100vw",
+          height: "2vh",
+          margin: "auto",
+          scale: "1",
+          zIndex: -4,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="BG-Layered_cropped-1-03.svg"
+          alt="background"
+        />
+      </Plx>
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 400,
+
+            properties: [
+              {
+                startValue: 0, // Start with no horizontal shift
+                endValue: -100, // End with a 100px rightward shift
+                property: "translateX",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: "2vw",
+          top: 0,
+          width: "110vw",
+          height: "12vh",
+          margin: "auto",
+          scale: "1",
+          zIndex: -4,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="BG-Layered_cropped-1-04.svg"
+          alt="background"
+        />
+      </Plx>
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 400,
+
+            properties: [
+              {
+                startValue: 0, // Start with no horizontal shift
+                endValue: -120, // End with a 100px rightward shift
+                property: "translateX",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: "40vw",
+          top: 0,
+          width: "100vw",
+          height: "2vh",
+          margin: "auto",
+          scale: "1",
+          zIndex: -4,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="BG-Layered_cropped-1-05.svg"
+          alt="background"
+        />
+      </Plx>
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end:1000,
+
+            properties: [
+              {
+                startValue: 0, // Start with no horizontal shift
+                endValue: -140, // End with a 100px rightward shift
+                property: "translateX",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: "10vw",
+          top: "50vh",
+          width: "100vw",
+          height: "2vh",
+          margin: "auto",
+          scale: "1",
+          zIndex: -4,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="fg-02.svg"
+          alt="background"
+        />
+      </Plx>
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 400,
+
+            properties: [
+              {
+                startValue: 0, // Start with no horizontal shift
+                endValue: -140, // End with a 100px rightward shift
+                property: "translateX",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: "10vw",
+          top: "50vh",
+          width: "100vw",
+          height: "2vh",
+          margin: "auto",
+          scale: "1",
+          zIndex: -4,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="fg-03.svg"
+          alt="background"
+        />
+      </Plx>
+      <Plx
+        parallaxData={[
+          {
+            start: 0,
+            end: 400,
+
+            properties: [
+              {
+                startValue: 0, // Start with no horizontal shift
+                endValue: -180, // End with a 100px rightward shift
+                property: "translateX",
+              },
+            ],
+          },
+        ]}
+        style={{
+          position: "fixed",
+          left: "25vw",
+          top: "50vh",
+          width: "100vw",
+          height: "2vh",
+          margin: "auto",
+          scale: "1",
+          zIndex: -4,
+        }}
+      >
+        <img
+          style={{ width: "100%", opacity: 1 }}
+          src="fg-04.svg"
+          alt="background"
+        />
+      </Plx>
+      <div className="mb-4 mb-lg-0" style={{ margin: "40px" }}>
+        <MDBCardText
+          style={{ fontSize: "40px", color: "white", margin: "10px" }}
+        >
+          Projects
+        </MDBCardText>
+        <div>
+          {chunkedProjects.map((projectChunk, chunkIndex) => (
+            <div key={chunkIndex} className="row mb-4">
+              {projectChunk.map((project, projectIndex) => (
+                <div 
+                  onClick={() =>
+                    handleClick(`/project/${projectIndex + chunkIndex * 3}`)
+                  } // Pass the path to handleClick
+                  key={project.id} // Add a unique key here
+                  className="col-lg-4 fade-in-animation hoverable-div"
+                  style={{
+                    animationDelay: `${chunkIndex * 0.2 + projectIndex * 0.1}s`,
+                  }}
+                >
+                  <Post
+                    image={project.image}
+                    name={project.name}
+                    information={project.information}
+                  />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
-    </div></div>
+    </div>
   );
 }
 
 export default withRouter(Projects); // Use withRouter to access the history object
+
+
+

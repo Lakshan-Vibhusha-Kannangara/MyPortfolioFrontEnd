@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from "react";
+import * as React from "react";
+import { useEffect, useState } from "react";
+import "./Screens.css";
+import Plx from "react-plx";
 import {
-  MDBCol,
-  MDBRow,
-  MDBCard,
-  MDBCardBody,
-  MDBCardHeader,
-  MDBListGroup,
-  MDBListGroupItem,
   MDBIcon,
   MDBTabs,
   MDBTabsItem,
@@ -14,49 +10,11 @@ import {
   MDBTabsContent,
   MDBTabsPane,
 } from "mdb-react-ui-kit";
-import { FaGithub, FaSnowflake } from "react-icons/fa";
-import "./ProjectInfo.css";
-import { GlassMagnifier } from "react-image-magnifiers";
-import Load from "../Home/Load";
-import "./Screens.css";
-import Plx from "react-plx";
 
-interface ProjectInfoItem {
-  _id: string;
-  imageUrls: string[]; 
-  altText: string;
-  description: string[];
-  text: string[];
-  projectNo: number;
-  github: string;
-  content:string;
-  video:string;
-}
-
-interface ProjectInfoResponse {
-  success: boolean;
-  projectInfo: ProjectInfoItem;
-}
-
-export default function ProjectInfo() {
+export default function Screens() {
   const [offset, setOffset] = useState(0);
   const [iconsActive, setIconsActive] = useState("tab1");
-  const [item, setItem] = useState<ProjectInfoResponse | null>(null);
 
-  // Parse the projectNo from the URL manually
-  const pathnameParts = window.location.pathname.split("/");
-  const projectNo = pathnameParts[pathnameParts.length - 1];
-
-  useEffect(() => {
-    fetch(`http://52.65.35.114:4002/projectinfo/${projectNo}`)
-      .then((response) => response.json())
-      .then((data: ProjectInfoResponse) => {
-        setItem(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, [projectNo]);
   const handleIconsClick = (value: string) => {
     if (value === iconsActive) {
       return;
@@ -77,7 +35,7 @@ export default function ProjectInfo() {
   }, [offset]);
 
   return (
-    <div className="application" style={{width:'100vw',height:'auto',position:'relative'}}>
+    <div className="App">
       <section className="hero">
         <div>
           <Plx
@@ -108,7 +66,7 @@ export default function ProjectInfo() {
           >
             <img
               style={{ width: "100%", opacity: 1 }}
-              src="/bg_planet01.svg"
+              src="bg_planet01.svg"
               alt="background"
             />
           </Plx>
@@ -140,7 +98,7 @@ export default function ProjectInfo() {
           >
             <img
               style={{ width: "100%", opacity: 1 }}
-              src="/bg_planet02.svg"
+              src="bg_planet02.svg"
               alt="background"
             />
           </Plx>
@@ -172,7 +130,7 @@ export default function ProjectInfo() {
           >
             <img
               style={{ width: "100%", opacity: 1 }}
-              src="/BG-Layered_cropped-1-01.svg"
+              src="BG-Layered_cropped-1-01.svg"
               alt="background"
             />
           </Plx>
@@ -204,7 +162,7 @@ export default function ProjectInfo() {
           >
             <img
               style={{ width: "100%", opacity: 1 }}
-              src="/BG-Layered_cropped-1-02.svg"
+              src="BG-Layered_cropped-1-02.svg"
               alt="background"
             />
           </Plx>
@@ -236,7 +194,7 @@ export default function ProjectInfo() {
           >
             <img
               style={{ width: "100%", opacity: 1 }}
-              src="/BG-Layered_cropped-1-03.svg"
+              src="BG-Layered_cropped-1-03.svg"
               alt="background"
             />
           </Plx>
@@ -268,7 +226,7 @@ export default function ProjectInfo() {
           >
             <img
               style={{ width: "100%", opacity: 1 }}
-              src="/BG-Layered_cropped-1-04.svg"
+              src="BG-Layered_cropped-1-04.svg"
               alt="background"
             />
           </Plx>
@@ -300,7 +258,7 @@ export default function ProjectInfo() {
           >
             <img
               style={{ width: "100%", opacity: 1 }}
-              src="/BG-Layered_cropped-1-05.svg"
+              src="BG-Layered_cropped-1-05.svg"
               alt="background"
             />
           </Plx>
@@ -332,7 +290,7 @@ export default function ProjectInfo() {
           >
             <img
               style={{ width: "100%", opacity: 1 }}
-              src="/fg-02.svg"
+              src="fg-02.svg"
               alt="background"
             />
           </Plx>
@@ -364,7 +322,7 @@ export default function ProjectInfo() {
           >
             <img
               style={{ width: "100%", opacity: 1 }}
-              src="/fg-03.svg"
+              src="fg-03.svg"
               alt="background"
             />
           </Plx>
@@ -396,188 +354,54 @@ export default function ProjectInfo() {
           >
             <img
               style={{ width: "100%", opacity: 1 }}
-              src="/fg-04.svg"
+              src="fg-04.svg"
               alt="background"
             />
           </Plx>
         </div>
-        <div style={{height:'40vh',top:"-20vh",position:'relative'}}>
-        {item ? (
-                <div>
-                  <MDBCard alignment="center"   style={{backgroundColor:'transparent'}}>
-                    <MDBCardHeader style={{ fontSize: "30px" }}>
-                      <div className="col">
-                        <p>{item.projectInfo.altText}</p>
-                        <div style={{ marginTop: "-20px" }}>
-                          <a
-                            className="nav-link"
-                            href={item.projectInfo.github}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <FaGithub></FaGithub>
-                          </a>
-                        </div>
-                      </div>
-                    </MDBCardHeader>
-
-                    <MDBCardBody>
-                      <MDBRow
-                        style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          alignContent: "center",containerType:'normal'
-                        }}
-                      >
-                        {item.projectInfo.imageUrls.map((item, index) => (
-                          <MDBCol
-                            key={index}
-                            className="mb-4 mb-lg-0"
-                            style={{ margin: "10px" }}
-                          >
-                            <div
-                              className="image-container"
-                              style={{
-                                borderRadius: "10px",
-                                maxHeight: "400px",
-                                width: "auto",
-                                fill: "Background",overflow: "hidden"
-                              }}
-                            >
-                              {" "}
-                              <GlassMagnifier
-                                imageSrc={item}
-                                imageAlt="Example"
-                                largeImageSrc={item} // Optional
-                                magnifierSize={200}
-                                allowOverflow
-                              />
-                            </div>
-                          </MDBCol>
-                        ))}
-                      </MDBRow>
-                    </MDBCardBody>
-                  </MDBCard>
-
-              
-                </div>
-              ) : (
-                <Load />
-              )}
+        <div className="text-wrapper">
+          <h1 className="headline">Parallax</h1>
+          <h2 className="sub-headline">Scrolling effect</h2>
         </div>
       </section>
-      <div style={{ margin: "10vw",top:'-25vh',position:'relative' }}>
-        <MDBTabs className="mb-3">
-          <MDBTabsItem>
-            <MDBTabsLink
-              onClick={() => handleIconsClick("tab1")}
-              active={iconsActive === "tab1"}
-            >
-              <MDBIcon fas icon="chart-pie" className="me-2" /> Description
-            </MDBTabsLink>
-          </MDBTabsItem>
-          <MDBTabsItem>
-            <MDBTabsLink
-              onClick={() => handleIconsClick("tab2")}
-              active={iconsActive === "tab2"}
-            >
-              <MDBIcon fas icon="chart-line" className="me-2" /> Info
-            </MDBTabsLink>
-          </MDBTabsItem>
-          <MDBTabsItem>
-            <MDBTabsLink
-              onClick={() => handleIconsClick("tab3")}
-              active={iconsActive === "tab3"}
-            >
-              <MDBIcon fas icon="cogs" className="me-2" /> Videos
-            </MDBTabsLink>
-          </MDBTabsItem>
-        </MDBTabs>
+    <div style={{margin:'10vw'}}>
+    <MDBTabs className="mb-3">
+        <MDBTabsItem>
+          <MDBTabsLink
+            onClick={() => handleIconsClick("tab1")}
+            active={iconsActive === "tab1"}
+          >
+            <MDBIcon fas icon="chart-pie" className="me-2" /> Sales
+          </MDBTabsLink>
+        </MDBTabsItem>
+        <MDBTabsItem>
+          <MDBTabsLink
+            onClick={() => handleIconsClick("tab2")}
+            active={iconsActive === "tab2"}
+          >
+            <MDBIcon fas icon="chart-line" className="me-2" /> Subscriptions
+          </MDBTabsLink>
+        </MDBTabsItem>
+        <MDBTabsItem>
+          <MDBTabsLink
+            onClick={() => handleIconsClick("tab3")}
+            active={iconsActive === "tab3"}
+          >
+            <MDBIcon fas icon="cogs" className="me-2" /> Settings
+          </MDBTabsLink>
+        </MDBTabsItem>
+      </MDBTabs>
 
-        <MDBTabsContent>
-     
-        <MDBTabsPane show={iconsActive === "tab1"}>
-            <div
-              style={{
-                margin: "40px",
-                width: "90%",
-                left: "2%",
-                position: "relative",
-              }}
-            >
-              {item ? (
-                <div>
-           
-<h1>{item.projectInfo.content}</h1>
-                </div>
-              ) : (
-                <Load />
-              )}
-            </div>
-          </MDBTabsPane>
-        <MDBTabsPane show={iconsActive === "tab2"}>
-            <div
-              style={{
-                margin: "40px",
-                width: "90%",
-                left: "2%",
-                position: "relative",
-              }}
-            >
-              {item ? (
-                <div>
-           
-
-                  <MDBRow style={{ margin: "10px" }}>
-                    <MDBListGroup light style={{ minWidth: "22rem" }}>
-                      {item.projectInfo.text.map((info, index) => (
-                        <MDBListGroupItem
-                          key={index} // Use a unique key for each item
-                          className="d-flex justify-content-between align-items-start"
-                        >
-                          <div className="ms-2 me-auto">
-                            <div className="fw-bold">
-                              <FaSnowflake
-                                style={{
-                                  color: "green",
-                                  marginBottom: "3px",
-                                  marginRight: "5px",
-                                }}
-                              />
-                              {info}
-                            </div>
-                            {item.projectInfo.description[index]}
-                          </div>
-                        </MDBListGroupItem>
-                      ))}
-                    </MDBListGroup>
-                  </MDBRow>
-                </div>
-              ) : (
-                <Load />
-              )}
-            </div>
-          </MDBTabsPane>
-          <MDBTabsPane show={iconsActive === "tab3"}>     <section className="text-center">
-          <h5 className="mb-4">Project Video</h5>
-
-          <div className="embed-responsive embed-responsive-16by9 shadow-4-strong">
-            <iframe
-              width="500px"
-              height="320px" // Increased height for larger video
-              src={item?.projectInfo.video}
-              title="How AI Could Empower Any Business | Andrew Ng | TED"
-             
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </section></MDBTabsPane>
-        </MDBTabsContent>
-      </div>
+      <MDBTabsContent >
+        <MDBTabsPane show={iconsActive === "tab1"}>Tab 1 content</MDBTabsPane>
+        <MDBTabsPane show={iconsActive === "tab2"}>Tab 2 content</MDBTabsPane>
+        <MDBTabsPane show={iconsActive === "tab3"}>Tab 3 content</MDBTabsPane>
+      </MDBTabsContent>
+    </div>
 
       {/* Make space to scroll */}
       <section className="overflow" />
     </div>
   );
 }
+

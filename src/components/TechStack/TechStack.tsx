@@ -35,16 +35,17 @@ function TechStack(technologyData: any) {
   return (
     <div
       style={{
-        margin: "10px",
+        margin: "--4vh",
         width: "105vw",
         height: "100vh",
+        top:'0vh',
         left: "-5vh",
         position: "relative",
         background:
           "linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)",
       }}
     >
-      <div style={{ top: "10vh", position: "relative" }}>
+      <div style={{ top: "15vh", position: "relative" }}>
         <Wrapper>
           <MDBCard
             background="dark"
