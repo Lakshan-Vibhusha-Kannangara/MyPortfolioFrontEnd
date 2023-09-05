@@ -36,7 +36,7 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
 
   return (
     <div >
-  
+       <div  style={{backgroundColor:'green',zIndex:1}}></div>
       <Plx
         parallaxData={[
           {
@@ -50,7 +50,7 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
               },
               {
                 startValue: 0, // Start with no horizontal shift
-                endValue: 100, // End with a 100px rightward shift
+                endValue: 140, // End with a 100px rightward shift
                 property: "translateX",
               },
             ],
@@ -76,13 +76,13 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
           alt="background"
         />
       </Plx>
-   <div style={{backgroundColor:'green',zIndex:'10',width:'100vw',position:'absolute'}}></div>
+          
       <Plx
         parallaxData={[
           {
             start: 0,
             end: 1000,
-            easing: [0.25, 0.1, 0.53, 3],
+            easing: [0.25, 0.6, 0.8, 3],
             properties: [
               {
                 startValue: 0, // Start with no horizontal shift

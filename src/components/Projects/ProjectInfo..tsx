@@ -23,14 +23,14 @@ import Plx from "react-plx";
 
 interface ProjectInfoItem {
   _id: string;
-  imageUrls: string[]; 
+  imageUrls: string[];
   altText: string;
   description: string[];
   text: string[];
   projectNo: number;
   github: string;
-  content:string;
-  video:string;
+  content: string;
+  videos: string[];
 }
 
 interface ProjectInfoResponse {
@@ -76,8 +76,22 @@ export default function ProjectInfo() {
     };
   }, [offset]);
 
+  if (!item) {
+    return (
+      <div>
+        <Load />
+      </div>
+    );
+  }
   return (
-    <div className="application" style={{width:'100vw',height:'auto',position:'relative'}}>
+    <div
+      style={{
+        width: "100vw",
+        height: "auto",
+        position: "relative",
+        top: "-60vh",
+      }}
+    >
       <section className="hero">
         <div>
           <Plx
@@ -401,182 +415,183 @@ export default function ProjectInfo() {
             />
           </Plx>
         </div>
-        <div style={{height:'40vh',top:"-20vh",position:'relative'}}>
-        {item ? (
-                <div>
-                  <MDBCard alignment="center"   style={{backgroundColor:'transparent'}}>
-                    <MDBCardHeader style={{ fontSize: "30px" }}>
-                      <div className="col">
-                        <p>{item.projectInfo.altText}</p>
-                        <div style={{ marginTop: "-20px" }}>
-                          <a
-                            className="nav-link"
-                            href={item.projectInfo.github}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <FaGithub></FaGithub>
-                          </a>
-                        </div>
-                      </div>
-                    </MDBCardHeader>
-
-                    <MDBCardBody>
-                      <MDBRow
-                        style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          alignContent: "center",containerType:'normal'
-                        }}
-                      >
-                        {item.projectInfo.imageUrls.map((item, index) => (
-                          <MDBCol
-                            key={index}
-                            className="mb-4 mb-lg-0"
-                            style={{ margin: "10px" }}
-                          >
-                            <div
-                              className="image-container"
-                              style={{
-                                borderRadius: "10px",
-                                maxHeight: "400px",
-                                width: "auto",
-                                fill: "Background",overflow: "hidden"
-                              }}
-                            >
-                              {" "}
-                              <GlassMagnifier
-                                imageSrc={item}
-                                imageAlt="Example"
-                                largeImageSrc={item} // Optional
-                                magnifierSize={200}
-                                allowOverflow
-                              />
-                            </div>
-                          </MDBCol>
-                        ))}
-                      </MDBRow>
-                    </MDBCardBody>
-                  </MDBCard>
-
-              
-                </div>
-              ) : (
-                <Load />
-              )}
-        </div>
       </section>
-      <div style={{ margin: "10vw",top:'-25vh',position:'relative' }}>
-        <MDBTabs className="mb-3">
-          <MDBTabsItem>
-            <MDBTabsLink
-              onClick={() => handleIconsClick("tab1")}
-              active={iconsActive === "tab1"}
-            >
-              <MDBIcon fas icon="chart-pie" className="me-2" /> Description
-            </MDBTabsLink>
-          </MDBTabsItem>
-          <MDBTabsItem>
-            <MDBTabsLink
-              onClick={() => handleIconsClick("tab2")}
-              active={iconsActive === "tab2"}
-            >
-              <MDBIcon fas icon="chart-line" className="me-2" /> Info
-            </MDBTabsLink>
-          </MDBTabsItem>
-          <MDBTabsItem>
-            <MDBTabsLink
-              onClick={() => handleIconsClick("tab3")}
-              active={iconsActive === "tab3"}
-            >
-              <MDBIcon fas icon="cogs" className="me-2" /> Videos
-            </MDBTabsLink>
-          </MDBTabsItem>
-        </MDBTabs>
-
-        <MDBTabsContent>
-     
-        <MDBTabsPane show={iconsActive === "tab1"}>
-            <div
+      <div style={{ height: "40vh", top: "-20vh", position: "relative" }}>
+        <div>
+          <MDBCard
+            alignment="center"
+            style={{ backgroundColor: "transparent" }}
+          >
+            <MDBCardHeader
               style={{
-                margin: "40px",
-                width: "90%",
-                left: "2%",
-                position: "relative",
+                fontSize: "30px",
+                opacity: "0.7",
+                backgroundColor: "white",
               }}
             >
-              {item ? (
-                <div>
-           
-<h1>{item.projectInfo.content}</h1>
+              <div className="col">
+                <p>{item.projectInfo.altText}</p>
+                <div style={{ marginTop: "-20px" }}>
+                  <a
+                    className="nav-link"
+                    href={item.projectInfo.github}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaGithub></FaGithub>
+                  </a>
                 </div>
-              ) : (
-                <Load />
-              )}
-            </div>
-          </MDBTabsPane>
-        <MDBTabsPane show={iconsActive === "tab2"}>
-            <div
-              style={{
-                margin: "40px",
-                width: "90%",
-                left: "2%",
-                position: "relative",
-              }}
-            >
-              {item ? (
-                <div>
-           
+              </div>
+            </MDBCardHeader>
 
-                  <MDBRow style={{ margin: "10px" }}>
-                    <MDBListGroup light style={{ minWidth: "22rem" }}>
-                      {item.projectInfo.text.map((info, index) => (
-                        <MDBListGroupItem
-                          key={index} // Use a unique key for each item
-                          className="d-flex justify-content-between align-items-start"
-                        >
-                          <div className="ms-2 me-auto">
-                            <div className="fw-bold">
-                              <FaSnowflake
-                                style={{
-                                  color: "green",
-                                  marginBottom: "3px",
-                                  marginRight: "5px",
-                                }}
-                              />
-                              {info}
+            <MDBCardBody>
+              <MDBRow
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignContent: "center",
+                  containerType: "normal",
+                }}
+              >
+                {item.projectInfo.imageUrls.map((item, index) => (
+                  <MDBCol
+                    key={index}
+                    className="mb-4 mb-lg-0"
+                    style={{ margin: "10px" }}
+                  >
+                    <div
+                      className="image-container"
+                      style={{
+                        borderRadius: "10px",
+                        maxHeight: "400px",
+                        width: "auto",
+                        fill: "Background",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {" "}
+                      <GlassMagnifier
+                        imageSrc={item}
+                        imageAlt="Example"
+                        largeImageSrc={item} // Optional
+                        magnifierSize={200}
+                        allowOverflow
+                      />
+                    </div>
+                  </MDBCol>
+                ))}
+              </MDBRow>
+            </MDBCardBody>
+          </MDBCard>
+
+          <div style={{ margin: "10vw", top: "0vh", position: "relative" }}>
+            <MDBTabs className="mb-3" style={{ opacity: "0.9" }}>
+              <MDBTabsItem>
+                <MDBTabsLink
+                  onClick={() => handleIconsClick("tab1")}
+                  active={iconsActive === "tab1"}
+                >
+                  <MDBIcon fas icon="chart-pie" className="me-2" /> Description
+                </MDBTabsLink>
+              </MDBTabsItem>
+              <MDBTabsItem>
+                <MDBTabsLink
+                  onClick={() => handleIconsClick("tab2")}
+                  active={iconsActive === "tab2"}
+                >
+                  <MDBIcon fas icon="chart-line" className="me-2" /> Info
+                </MDBTabsLink>
+              </MDBTabsItem>
+              <MDBTabsItem>
+                <MDBTabsLink
+                  onClick={() => handleIconsClick("tab3")}
+                  active={iconsActive === "tab3"}
+                >
+                  <MDBIcon fas icon="cogs" className="me-2" /> Videos
+                </MDBTabsLink>
+              </MDBTabsItem>
+            </MDBTabs>
+
+            <MDBTabsContent style={{ opacity: "0.8" }}>
+              <MDBTabsPane show={iconsActive === "tab1"}>
+                <MDBCard>
+                  <div
+                    style={{
+                      margin: "40px",
+                      width: "90%",
+                      left: "2%",
+                      position: "relative",
+                    }}
+                  >
+                    <p>{item.projectInfo.content}</p>
+                  </div>
+                </MDBCard>
+              </MDBTabsPane>
+              <MDBTabsPane show={iconsActive === "tab2"}>
+                <div
+                  style={{
+                    margin: "40px",
+                    width: "90%",
+                    left: "2%",
+                    position: "relative",
+                  }}
+                >
+                  <div>
+                    <MDBRow style={{ margin: "10px" }}>
+                      <MDBListGroup light style={{ minWidth: "22rem" }}>
+                        {item.projectInfo.text.map((info, index) => (
+                          <MDBListGroupItem
+                            key={index} // Use a unique key for each item
+                            className="d-flex justify-content-between align-items-start"
+                          >
+                            <div className="ms-2 me-auto">
+                              <div className="fw-bold">
+                                <FaSnowflake
+                                  style={{
+                                    color: "green",
+                                    marginBottom: "3px",
+                                    marginRight: "5px",
+                                  }}
+                                />
+                                {info}
+                              </div>
+                              {item.projectInfo.description[index]}
                             </div>
-                            {item.projectInfo.description[index]}
-                          </div>
-                        </MDBListGroupItem>
-                      ))}
-                    </MDBListGroup>
-                  </MDBRow>
+                          </MDBListGroupItem>
+                        ))}
+                      </MDBListGroup>
+                    </MDBRow>
+                  </div>
                 </div>
-              ) : (
-                <Load />
-              )}
-            </div>
-          </MDBTabsPane>
-          <MDBTabsPane show={iconsActive === "tab3"}>     <section className="text-center">
-          <h5 className="mb-4">Project Video</h5>
-
-          <div className="embed-responsive embed-responsive-16by9 shadow-4-strong">
-            <iframe
-              width="500px"
-              height="320px" // Increased height for larger video
-              src={item?.projectInfo.video}
-              title="How AI Could Empower Any Business | Andrew Ng | TED"
-             
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
+              </MDBTabsPane>
+              <MDBTabsPane show={iconsActive === "tab3"}>
+                {" "}
+                <section className="text-center">
+                  <h5 className="mb-4">Project Video</h5>
+                  <div className="d-flex justify-content-evenly">
+                    {" "}
+                    {item?.projectInfo.videos.map((video, index) => (
+                      <div
+                        key={index}
+                        className="embed-responsive embed-responsive-16by9 shadow-4-strong"
+                      >
+                        <iframe
+                          width="500px"
+                          height="320px" // Increased height for larger video
+                          src={video}
+                          title={`Video ${index}`} // Use a unique title for each video
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              </MDBTabsPane>
+            </MDBTabsContent>
           </div>
-        </section></MDBTabsPane>
-        </MDBTabsContent>
+        </div>
       </div>
-
-      {/* Make space to scroll */}
       <section className="overflow" />
     </div>
   );

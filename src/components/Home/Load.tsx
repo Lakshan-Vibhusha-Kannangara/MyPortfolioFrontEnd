@@ -31,7 +31,7 @@ function Load() {
       >
         <img
           style={{ width: "100%", opacity: 1 }}
-          src="https://i.gifer.com/PSc.gif"
+          src="https://s11.gifyu.com/images/Sg54H.gif"
           alt="background"
         />
       </Plx>
