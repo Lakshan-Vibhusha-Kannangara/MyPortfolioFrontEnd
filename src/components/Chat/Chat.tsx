@@ -246,42 +246,11 @@ export default function Chat() {
       >
         <img
           style={{ width: "120vw", opacity: 1 ,right:'20vw',position:'relative',top:'-10vh'}}
-          src="backgroung.png"
+          src="backgroung.jpg"
           alt="background"
         />
       </Plx>
-      <Plx
-        parallaxData={[
-          {
-            start: 0,
-            end: 1000,
-            easing: [0.25, 0.1, 0.53, 3],
-            properties: [
-              {
-                startValue: 0, // Start with no horizontal shift
-                endValue: -10, // End with a 100px rightward shift
-                property: "translateX",
-              },
-            ],
-          },
-        ]}
-        style={{
-          position: "fixed",
-          left: "70vw",
-          top: "20vh",
-          width: "8vw",
-          height: "8vh",
-          margin: "auto",
-          scale: "1",
-          zIndex: -4,
-        }}
-      >
-        <img
-          style={{ width: "10vw",height:'auto', opacity: 0.2,right:'-22vw',position:'relative',top:'-10vh' }}
-          src="glow.gif"
-          alt="background"
-        />
-      </Plx>
+   
       <Plx
         parallaxData={[
           {
