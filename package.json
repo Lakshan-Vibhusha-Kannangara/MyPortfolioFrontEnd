@@ -6,7 +6,6 @@
     "@babel/core": "^7.16.0",
     "@datobs/react-image-magnifiers": "^1.4.6",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
-    "@react-spring/parallax": "^9.7.3",
     "@stomp/stompjs": "^7.0.0",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^5.17.0",
