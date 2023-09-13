@@ -100,7 +100,7 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
           height: "30vh",
           margin: "auto",
           scale: "1",
-          zIndex: -4,
+          zIndex: -4,backgroundColor:`linear-gradient(180deg, rgba(54,42,88,1) 0%, rgba(107,69,116,1) 12%, rgba(183,119,152,1) 30%, rgba(255,202,172,1) 67%)`
         }}
       >
        <div>

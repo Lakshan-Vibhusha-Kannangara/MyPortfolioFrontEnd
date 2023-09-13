@@ -8,15 +8,17 @@ import Projects from "./components/Projects/Projects";
 import TopNavbar from "./components/TopNavBar/TopNavBar";
 import Courses from "./components/Courses/Courses.tsx";
 import React, { useState, useEffect } from "react";
-import PdfViewer from "./components/PdfViewer/PdfViewer";
+import Resume from "./components/Resume/Resume";
 import TechStack from "./components/TechStack/TechStack";
 import Powered from "./components/Powered/Powered";
 import Blog from "./components/Blog/Blog.tsx";
 import Research from "./components/Research/Research";
 import axios from "axios";
 import Login from "./components/Login/Login";
+import Register from './components/Register/Register'
 import Chat from "./components/Chat/Chat";
 import ProjectInfo from "./components/Projects/ProjectInfo.";
+
 function App() {
   const [data, setData] = useState(null);
   const [essentialData, setEssentialData] = useState({});
@@ -82,7 +84,7 @@ function App() {
             )}
           ></Route>
 
-          <Route path="/pdfviewer" component={PdfViewer}></Route>
+          <Route path="/resume" component={Resume}></Route>
           <Route path="/researchr" component={Research}></Route>
 
           <Route
@@ -93,6 +95,7 @@ function App() {
           ></Route>
 
           <Route path="/powered" component={Powered}></Route>
+          <Route path="/register" component={Register}></Route>
           <Route path="/chat" component={Chat} />
           <Route path="/project/:projectId" component={ProjectInfo} />
           <Route

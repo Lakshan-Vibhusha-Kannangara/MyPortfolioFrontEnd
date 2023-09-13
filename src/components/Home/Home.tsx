@@ -13,6 +13,7 @@ import {
   FaServer,
   FaReact,
   FaNodeJs,
+  FaJava,
 } from "react-icons/fa";
 import "./Home.css";
 import {
@@ -134,7 +135,7 @@ function Home(essential: Props) {
                     <h1 className="mb-3">Hello There!</h1>
                     <h5 className="mb-4">
                       Welcome to my Professional Portfolio. I created this
-                      personal web app from scratch using MERN Stack. If you
+                      personal web app from scratch using MERN Stack and Spring Boot+MySQL. If you
                       want to get to know me more please don't hesitate to reach
                       out to me.
                     </h5>
@@ -143,6 +144,8 @@ function Home(essential: Props) {
                       <FaServer /> Express.js (Server)
                       <FaReact /> React (Frontend)
                       <FaNodeJs /> Node.js (Server)
+                      <FaJava /> Spring Boot (Server)
+                      <FaDatabase /> MySQL (Database)
                     </div>
                     <button
                       style={{ color: "white", backgroundColor: "" }}

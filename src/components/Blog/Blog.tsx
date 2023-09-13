@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "./Header";
+
 import BlogPost from "./BlogPost";
 import Sidebar from "./SideBar";
 import Plx from "react-plx";
@@ -33,12 +33,38 @@ function Blog(props: BlogProps) {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = props.blogPosts.slice(indexOfFirstPost, indexOfLastPost);
-
+  const totalPages = Math.ceil(props.blogPosts.length / postsPerPage);
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
     <main className="mt-4 mb-5">
-       <Plx
+      <div style={{ left: "20%", position: "relative", top: "40px" }}>
+        <h1>My Blog Space</h1>
+       <div style={{marginBottom:'3vh'}}> <ul className="pagination">
+          {Array.from(
+            { length: totalPages - 1 },
+            (
+              _,
+              index // Subtract 1 from totalPages
+            ) => (
+              <li
+                key={index}
+                className={`page-item ${
+                  currentPage === index + 1 ? "active" : ""
+                }`}
+              >
+                <button
+                  onClick={() => paginate(index + 1)}
+                  className="page-link"
+                >
+                  {index + 1}
+                </button>
+              </li>
+            )
+          )}
+        </ul></div>
+      </div>
+      <Plx
         parallaxData={[
           {
             start: 0,
@@ -70,30 +96,10 @@ function Blog(props: BlogProps) {
           alt="background"
         />
       </Plx>
-       <div style={{ left: "40%", position: "relative",top:'40px' }}>
-              {" "}
-              <ul className="pagination">
-                {props.blogPosts.map((_, index) => (
-                  <li
-                    key={index}
-                    className={`page-item ${
-                      currentPage === index + 1 ? "active" : ""
-                    }`}
-                  >
-                    <button
-                      onClick={() => paginate(index + 1)}
-                      className="page-link"
-                    >
-                      {index + 1}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
       <div className="container">
         <div className="row">
           <div className="col-md-8">
-            <Header />
             {currentPosts.map((post, index) => (
               <BlogPost
                 key={index}
@@ -110,28 +116,42 @@ function Blog(props: BlogProps) {
             <div style={{ left: "40%", position: "relative" }}>
               {" "}
               <ul className="pagination">
-                {props.blogPosts.map((_, index) => (
-                  <li
-                    key={index}
-                    className={`page-item ${
-                      currentPage === index + 1 ? "active" : ""
-                    }`}
-                  >
-                    <button
-                      onClick={() => paginate(index + 1)}
-                      className="page-link"
+                {Array.from(
+                  { length: totalPages - 1 },
+                  (
+                    _,
+                    index // Subtract 1 from totalPages
+                  ) => (
+                    <li
+                      key={index}
+                      className={`page-item ${
+                        currentPage === index + 1 ? "active" : ""
+                      }`}
                     >
-                      {index + 1}
-                    </button>
-                  </li>
-                ))}
+                      <button
+                        onClick={() => paginate(index + 1)}
+                        className="page-link"
+                      >
+                        {index + 1}
+                      </button>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
           <div className="col-md-4">
-          <div className="sidebar" style={{ position: "fixed", top: "14%", right: "15%", width: "20%" }}>
-      {/* Sidebar content */}
-            <Sidebar />
+            <div
+              className="sidebar"
+              style={{
+                position: "fixed",
+                top: "14%",
+                right: "15%",
+                width: "20%",
+              }}
+            >
+              {/* Sidebar content */}
+              <Sidebar />
             </div>
           </div>
         </div>
