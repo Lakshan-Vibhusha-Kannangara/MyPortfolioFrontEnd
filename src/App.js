@@ -14,7 +14,7 @@ import Powered from "./components/Powered/Powered";
 import Blog from "./components/Blog/Blog.tsx";
 import Research from "./components/Research/Research";
 import axios from "axios";
-import Login from "./components/Login/Login";
+
 
 
 import ProjectInfo from "./components/Projects/ProjectInfo.";
@@ -106,7 +106,7 @@ function App() {
             path="/projects"
             render={(props) => <Projects {...props} data={data} />}
           ></Route>
-          <Route path="/login" render={(props) => <Login />}></Route>
+         
 
           <Route
             path="/blog"
