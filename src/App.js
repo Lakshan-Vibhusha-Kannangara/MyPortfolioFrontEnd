@@ -15,8 +15,8 @@ import Blog from "./components/Blog/Blog.tsx";
 import Research from "./components/Research/Research";
 import axios from "axios";
 import Login from "./components/Login/Login";
-import Register from './components/Register/Register'
-import Chat from "./components/Chat/Chat";
+
+
 import ProjectInfo from "./components/Projects/ProjectInfo.";
 
 function App() {
@@ -95,8 +95,8 @@ function App() {
           ></Route>
 
           <Route path="/powered" component={Powered}></Route>
-          <Route path="/register" component={Register}></Route>
-          <Route path="/chat" component={Chat} />
+         
+      
           <Route path="/project/:projectId" component={ProjectInfo} />
           <Route
             path="/courses"

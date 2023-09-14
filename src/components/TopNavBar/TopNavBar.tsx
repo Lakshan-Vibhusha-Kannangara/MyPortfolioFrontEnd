@@ -172,22 +172,7 @@ const TopNavbar = () => {
               </li>
 
           
-              <li
-                className={navItemClass}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <div style={containerStyle}>
-                  <Link
-                    to="/login"
-                    style={{ textDecoration: "none", color: "black" }}
-                  >
-                    <a className="nav-link" href="##">
-                      Login
-                    </a>
-                  </Link>
-                </div>
-              </li>
+  
               <li
                 className={navItemClass}
                 onMouseEnter={handleMouseEnter}
