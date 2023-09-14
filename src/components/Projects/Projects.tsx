@@ -437,7 +437,7 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
           {chunkedProjects.map((projectChunk, chunkIndex) => (
             <div key={chunkIndex} className="row mb-4">
               {projectChunk.map((project, projectIndex) => (
-                <div 
+                <div  
                   onClick={() =>
                     handleClick(`/project/${projectIndex + chunkIndex * 3}`)
                   } // Pass the path to handleClick
