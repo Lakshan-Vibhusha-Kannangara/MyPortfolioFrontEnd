@@ -87,7 +87,7 @@ const Courses: React.FC<{ courses: any[] }> = ({ courses }) => {
           scale:'1.1'
         }}
       >
-        <img style={{ width: "100%" ,opacity:'0.92'}} src="lap.jpg" alt="background" />
+        <img style={{ width: "100%" ,opacity:'0.92'}} src="laps.jpg" alt="background" />
       </Plx>
 
       <Plx
