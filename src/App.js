@@ -17,7 +17,7 @@ import axios from "axios";
 
 
 
-import ProjectInfo from "./components/Projects/ProjectInfo.";
+import ProjectInfo from "./components/Projects/ProjectInfo";
 
 function App() {
   const [data, setData] = useState(null);
