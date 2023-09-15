@@ -59,6 +59,7 @@ function App() {
   // This will log the fetched technologyData to the console
 
   return (
+    <Switch>
     <div
       style={{
         width: "100%",
@@ -70,7 +71,7 @@ function App() {
     >
       <TopNavbar></TopNavbar>
       <div style={{ top: "30px", position: "relative" }}>
-        <Switch>
+     
           <Route
             path="/home"
             render={(props) => (
@@ -112,9 +113,10 @@ function App() {
             path="/blog"
             render={(props) => <Blog blogPosts={blogPosts.blogPosts} />}
           ></Route>
-        </Switch>
+
       </div>
     </div>
+    </Switch>
   );
 }
 

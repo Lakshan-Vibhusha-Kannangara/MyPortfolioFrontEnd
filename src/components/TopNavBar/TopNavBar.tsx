@@ -81,9 +81,7 @@ const TopNavbar = () => {
                     to="/home"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    <a className="nav-link" href="##">
-                      Home
-                    </a>
+                    <div className="nav-link"> Home</div>
                   </NavLink>
                 </div>
               </li>
@@ -98,9 +96,7 @@ const TopNavbar = () => {
                     to="/projects"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    <a className="nav-link" href="##">
-                      Projects
-                    </a>
+                    <div className="nav-link"> Projects</div>
                   </NavLink>
                 </div>
               </li>
@@ -115,9 +111,7 @@ const TopNavbar = () => {
                     to="/techstack"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    <a className="nav-link" href="##">
-                      Tech-Stack
-                    </a>
+                    <div className="nav-link"> Tech-Stack</div>
                   </NavLink>
                 </div>
               </li>
@@ -131,9 +125,7 @@ const TopNavbar = () => {
                     to="/resume"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    <a className="nav-link" href="##">
-                    Résumé
-                    </a>
+                    <div className="nav-link"> Résumé</div>
                   </NavLink>
                 </div>
               </li>
@@ -147,9 +139,7 @@ const TopNavbar = () => {
                     to="/courses"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    <a className="nav-link" href="##">
-                      Courses
-                    </a>
+                    <div className="nav-link"> Courses</div>
                   </NavLink>
                 </div>
               </li>
@@ -164,15 +154,11 @@ const TopNavbar = () => {
                     to="/blog"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    <a className="nav-link" href="##">
-                      Blog
-                    </a>
+                    <div className="nav-link"> Blog</div>
                   </NavLink>
                 </div>
               </li>
 
-          
-  
               <li
                 className={navItemClass}
                 onMouseEnter={handleMouseEnter}
@@ -183,14 +169,11 @@ const TopNavbar = () => {
                     to="/powered"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    <a className="nav-link" href="##">
-                      Powered By
-                    </a>
+                    <div className="nav-link"> Powered By</div>
                   </NavLink>
                 </div>
               </li>
-           
-           
+
               <li
                 className={navItemClass}
                 onMouseEnter={handleMouseEnter}
