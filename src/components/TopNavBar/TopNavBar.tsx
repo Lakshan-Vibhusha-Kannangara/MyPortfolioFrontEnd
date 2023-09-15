@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Plx from "react-plx";
 const TopNavbar = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -77,14 +77,14 @@ const TopNavbar = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <div style={containerStyle}>
-                  <Link
+                  <NavLink
                     to="/home"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <a className="nav-link" href="##">
                       Home
                     </a>
-                  </Link>
+                  </NavLink>
                 </div>
               </li>
 
@@ -94,14 +94,14 @@ const TopNavbar = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <div style={containerStyle}>
-                  <Link
+                  <NavLink
                     to="/projects"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <a className="nav-link" href="##">
                       Projects
                     </a>
-                  </Link>
+                  </NavLink>
                 </div>
               </li>
 
@@ -111,14 +111,14 @@ const TopNavbar = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <div style={containerStyle}>
-                  <Link
+                  <NavLink
                     to="/techstack"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <a className="nav-link" href="##">
                       Tech-Stack
                     </a>
-                  </Link>
+                  </NavLink>
                 </div>
               </li>
               <li
@@ -127,14 +127,14 @@ const TopNavbar = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <div style={containerStyle}>
-                  <Link
+                  <NavLink
                     to="/resume"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <a className="nav-link" href="##">
                     Résumé
                     </a>
-                  </Link>
+                  </NavLink>
                 </div>
               </li>
               <li
@@ -143,14 +143,14 @@ const TopNavbar = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <div style={containerStyle}>
-                  <Link
+                  <NavLink
                     to="/courses"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <a className="nav-link" href="##">
                       Courses
                     </a>
-                  </Link>
+                  </NavLink>
                 </div>
               </li>
 
@@ -160,14 +160,14 @@ const TopNavbar = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <div style={containerStyle}>
-                  <Link
+                  <NavLink
                     to="/blog"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <a className="nav-link" href="##">
                       Blog
                     </a>
-                  </Link>
+                  </NavLink>
                 </div>
               </li>
 
@@ -179,14 +179,14 @@ const TopNavbar = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <div style={containerStyle}>
-                  <Link
+                  <NavLink
                     to="/powered"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <a className="nav-link" href="##">
                       Powered By
                     </a>
-                  </Link>
+                  </NavLink>
                 </div>
               </li>
            

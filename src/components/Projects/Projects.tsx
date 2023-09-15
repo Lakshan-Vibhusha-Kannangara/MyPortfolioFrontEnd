@@ -434,28 +434,28 @@ function Projects({ data, history }: ProjectsProps & RouteComponentProps) {
           Projects
         </MDBCardText>
         <div>
-          {chunkedProjects.map((projectChunk, chunkIndex) => (
-            <div key={chunkIndex} className="row mb-4">
-              {projectChunk.map((project, projectIndex) => (
-                <div  
-                  onClick={() =>
-                    handleClick(`/project/${projectIndex + chunkIndex * 3}`)
-                  } // Pass the path to handleClick
-                  key={project.id} // Add a unique key here
-                  className="col-lg-4 fade-in-animation hoverable-div"
-                  style={{
-                    animationDelay: `${chunkIndex * 0.2 + projectIndex * 0.1}s`,
-                  }}
-                >
-                  <Post
-                    image={project.image}
-                    name={project.name}
-                    information={project.information}
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
+        {chunkedProjects.map((projectChunk, chunkIndex) => (
+  <div key={chunkIndex} className="row mb-4">
+    {projectChunk.map((project, projectIndex) => (
+      <div
+        key={project.id} // Add a unique key prop for each project
+        onClick={() => handleClick(`/project/${projectIndex + chunkIndex * 3}`)}
+        className="col-lg-4 fade-in-animation hoverable-div"
+        style={{
+          animationDelay: `${chunkIndex * 0.2 + projectIndex * 0.1}s`,
+        }}
+      >
+        <Post
+          image={project.image}
+          name={project.name}
+          information={project.information}
+        />
+      </div>
+    ))}
+  </div>
+))}
+
+
         </div>
       </div>
     </div>

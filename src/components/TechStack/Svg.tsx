@@ -3460,8 +3460,8 @@ const Svg = () => {
             y2="437.561"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint1_linear_2_2"
@@ -3471,8 +3471,8 @@ const Svg = () => {
             y2="452.99"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint2_linear_2_2"
@@ -3482,8 +3482,8 @@ const Svg = () => {
             y2="468.42"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint3_linear_2_2"
@@ -3493,8 +3493,8 @@ const Svg = () => {
             y2="483.849"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint4_linear_2_2"
@@ -3504,8 +3504,8 @@ const Svg = () => {
             y2="160.004"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint5_linear_2_2"
@@ -3515,8 +3515,8 @@ const Svg = () => {
             y2="176.543"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint6_linear_2_2"
@@ -3526,8 +3526,8 @@ const Svg = () => {
             y2="193.081"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint7_linear_2_2"
@@ -3537,8 +3537,8 @@ const Svg = () => {
             y2="209.622"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint8_linear_2_2"
@@ -3548,8 +3548,8 @@ const Svg = () => {
             y2="214.248"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint9_linear_2_2"
@@ -3559,8 +3559,8 @@ const Svg = () => {
             y2="230.41"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint10_linear_2_2"
@@ -3570,8 +3570,8 @@ const Svg = () => {
             y2="246.572"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint11_linear_2_2"
@@ -3581,8 +3581,8 @@ const Svg = () => {
             y2="262.736"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FF9CC4" />
-            <stop offset="1" stop-color="#CE19DD" />
+            <stop stopColor="#FF9CC4" />
+            <stop offset="1" stopColor="#CE19DD" />
           </linearGradient>
           <linearGradient
             id="paint12_linear_2_2"
@@ -3592,8 +3592,8 @@ const Svg = () => {
             y2="399.972"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#50C5FF" />
-            <stop offset="1" stop-color="#0EC2BC" />
+            <stop stopColor="#50C5FF" />
+            <stop offset="1" stopColor="#0EC2BC" />
           </linearGradient>
           <linearGradient
             id="paint13_linear_2_2"
@@ -3603,8 +3603,8 @@ const Svg = () => {
             y2="402.626"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#50C5FF" />
-            <stop offset="1" stop-color="#0EC2BC" />
+            <stop stopColor="#50C5FF" />
+            <stop offset="1" stopColor="#0EC2BC" />
           </linearGradient>
           <linearGradient
             id="paint14_linear_2_2"
@@ -3614,8 +3614,8 @@ const Svg = () => {
             y2="405.282"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint15_linear_2_2"
@@ -3625,8 +3625,8 @@ const Svg = () => {
             y2="407.936"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#50C5FF" />
-            <stop offset="1" stop-color="#0EC2BC" />
+            <stop stopColor="#50C5FF" />
+            <stop offset="1" stopColor="#0EC2BC" />
           </linearGradient>
           <linearGradient
             id="paint16_linear_2_2"
@@ -3636,8 +3636,8 @@ const Svg = () => {
             y2="406.099"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#37A6FF" />
-            <stop offset="1" stop-color="#0EC2BC" />
+            <stop stopColor="#37A6FF" />
+            <stop offset="1" stopColor="#0EC2BC" />
           </linearGradient>
           <linearGradient
             id="paint17_linear_2_2"
@@ -3647,8 +3647,8 @@ const Svg = () => {
             y2="487.568"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint18_linear_2_2"
@@ -3658,8 +3658,8 @@ const Svg = () => {
             y2="481.641"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint19_linear_2_2"
@@ -3669,8 +3669,8 @@ const Svg = () => {
             y2="484.605"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint20_linear_2_2"
@@ -3680,8 +3680,8 @@ const Svg = () => {
             y2="491.319"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint21_linear_2_2"
@@ -3691,8 +3691,8 @@ const Svg = () => {
             y2="215.955"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint22_linear_2_2"
@@ -3702,8 +3702,8 @@ const Svg = () => {
             y2="276.331"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint23_linear_2_2"
@@ -3713,10 +3713,10 @@ const Svg = () => {
             y2="336.85"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1355B7" />
-            <stop offset="0.4733" stop-color="#030F42" />
-            <stop offset="0.5604" stop-color="#2C4EDD" />
-            <stop offset="0.651" stop-color="#50C5FF" />
+            <stop stopColor="#1355B7" />
+            <stop offset="0.4733" stopColor="#030F42" />
+            <stop offset="0.5604" stopColor="#2C4EDD" />
+            <stop offset="0.651" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint24_linear_2_2"
@@ -3726,10 +3726,10 @@ const Svg = () => {
             y2="381.185"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.00770932" stop-color="#1355B7" />
-            <stop offset="0.243" stop-color="#50C5FF" />
-            <stop offset="0.514" stop-color="#50C5FF" />
-            <stop offset="1" stop-color="#1355B7" />
+            <stop offset="0.00770932" stopColor="#1355B7" />
+            <stop offset="0.243" stopColor="#50C5FF" />
+            <stop offset="0.514" stopColor="#50C5FF" />
+            <stop offset="1" stopColor="#1355B7" />
           </linearGradient>
           <linearGradient
             id="paint25_linear_2_2"
@@ -3739,11 +3739,11 @@ const Svg = () => {
             y2="68.8559"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1355B7" />
-            <stop offset="0.1278" stop-color="#030F42" />
-            <stop offset="0.6259" stop-color="#030F42" />
-            <stop offset="0.8316" stop-color="#2C4EDD" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#1355B7" />
+            <stop offset="0.1278" stopColor="#030F42" />
+            <stop offset="0.6259" stopColor="#030F42" />
+            <stop offset="0.8316" stopColor="#2C4EDD" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint26_linear_2_2"
@@ -3753,13 +3753,13 @@ const Svg = () => {
             y2="65.723"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.00770932" stop-color="#1355B7" />
-            <stop offset="0.1091" stop-color="#0B2155" />
-            <stop offset="0.2438" stop-color="#1355B7" />
-            <stop offset="0.5674" stop-color="#50C5FF" />
-            <stop offset="0.8517" stop-color="#1355B7" />
-            <stop offset="0.9419" stop-color="#030F42" />
-            <stop offset="1" stop-color="#1355B7" />
+            <stop offset="0.00770932" stopColor="#1355B7" />
+            <stop offset="0.1091" stopColor="#0B2155" />
+            <stop offset="0.2438" stopColor="#1355B7" />
+            <stop offset="0.5674" stopColor="#50C5FF" />
+            <stop offset="0.8517" stopColor="#1355B7" />
+            <stop offset="0.9419" stopColor="#030F42" />
+            <stop offset="1" stopColor="#1355B7" />
           </linearGradient>
           <linearGradient
             id="paint27_linear_2_2"
@@ -3769,10 +3769,10 @@ const Svg = () => {
             y2="329.865"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#50C5FF" />
-            <stop offset="0.2745" stop-color="#1251B0" />
-            <stop offset="0.4391" stop-color="#030F42" />
-            <stop offset="1" stop-color="#030F42" />
+            <stop stopColor="#50C5FF" />
+            <stop offset="0.2745" stopColor="#1251B0" />
+            <stop offset="0.4391" stopColor="#030F42" />
+            <stop offset="1" stopColor="#030F42" />
           </linearGradient>
           <linearGradient
             id="paint28_linear_2_2"
@@ -3782,8 +3782,8 @@ const Svg = () => {
             y2="196.416"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.2914" stop-color="#030F42" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop offset="0.2914" stopColor="#030F42" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint29_linear_2_2"
@@ -3793,8 +3793,8 @@ const Svg = () => {
             y2="54.5598"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#35E4FC" />
-            <stop offset="0.5851" stop-color="#1B1464" />
+            <stop stopColor="#35E4FC" />
+            <stop offset="0.5851" stopColor="#1B1464" />
             <stop offset="0.9998" />
           </linearGradient>
           <linearGradient
@@ -3805,8 +3805,8 @@ const Svg = () => {
             y2="219.623"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.2914" stop-color="#030F42" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop offset="0.2914" stopColor="#030F42" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint31_linear_2_2"
@@ -3816,8 +3816,8 @@ const Svg = () => {
             y2="84.7849"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#35E4FC" />
-            <stop offset="0.5851" stop-color="#1B1464" />
+            <stop stopColor="#35E4FC" />
+            <stop offset="0.5851" stopColor="#1B1464" />
             <stop offset="0.9998" />
           </linearGradient>
           <linearGradient
@@ -3828,8 +3828,8 @@ const Svg = () => {
             y2="339.309"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.2914" stop-color="#030F42" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop offset="0.2914" stopColor="#030F42" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint33_linear_2_2"
@@ -3839,8 +3839,8 @@ const Svg = () => {
             y2="195.172"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#35E4FC" />
-            <stop offset="0.5851" stop-color="#1B1464" />
+            <stop stopColor="#35E4FC" />
+            <stop offset="0.5851" stopColor="#1B1464" />
             <stop offset="0.9998" />
           </linearGradient>
           <linearGradient
@@ -3851,8 +3851,8 @@ const Svg = () => {
             y2="155.528"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint35_linear_2_2"
@@ -3862,8 +3862,8 @@ const Svg = () => {
             y2="173.877"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint36_linear_2_2"
@@ -3873,8 +3873,8 @@ const Svg = () => {
             y2="158.365"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint37_linear_2_2"
@@ -3884,8 +3884,8 @@ const Svg = () => {
             y2="161.637"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#50C5FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#50C5FF" />
           </linearGradient>
           <linearGradient
             id="paint38_linear_2_2"
@@ -3895,8 +3895,8 @@ const Svg = () => {
             y2="193.305"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#37A6FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#37A6FF" />
           </linearGradient>
           <linearGradient
             id="paint39_linear_2_2"
@@ -3906,8 +3906,8 @@ const Svg = () => {
             y2="305.856"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#37A6FF" />
-            <stop offset="1" stop-color="#0EC2BC" />
+            <stop stopColor="#37A6FF" />
+            <stop offset="1" stopColor="#0EC2BC" />
           </linearGradient>
           <linearGradient
             id="paint40_linear_2_2"
@@ -3917,8 +3917,8 @@ const Svg = () => {
             y2="333.667"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#002E53" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#002E53" />
           </linearGradient>
           <linearGradient
             id="paint41_linear_2_2"
@@ -3928,8 +3928,8 @@ const Svg = () => {
             y2="369.057"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#37A6FF" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#37A6FF" />
           </linearGradient>
           <linearGradient
             id="paint42_linear_2_2"
@@ -3939,8 +3939,8 @@ const Svg = () => {
             y2="430.48"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#A7CAEC" />
-            <stop offset="1" stop-color="#5B8CD3" />
+            <stop stopColor="#A7CAEC" />
+            <stop offset="1" stopColor="#5B8CD3" />
           </linearGradient>
           <linearGradient
             id="paint43_linear_2_2"
@@ -3950,8 +3950,8 @@ const Svg = () => {
             y2="361.901"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0EC2BC" />
-            <stop offset="1" stop-color="#002E53" />
+            <stop stopColor="#0EC2BC" />
+            <stop offset="1" stopColor="#002E53" />
           </linearGradient>
         </defs>
       </svg>

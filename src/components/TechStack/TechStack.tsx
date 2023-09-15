@@ -49,20 +49,21 @@ function TechStack(technologyData: any) {
      
           <Note style={{fontSize:'2vw',fontWeight:'bold'}}>My Tech Stack</Note>
           <Marquee>
-            <MarqueeGroup>
-              {row1.map((el) => (
-                <ImageGroup>
-                  <Image src={el} />
-                </ImageGroup>
-              ))}
-            </MarqueeGroup>
-            <MarqueeGroup>
-              {row1.map((el) => (
-                <ImageGroup>
-                  <Image src={el} />
-                </ImageGroup>
-              ))}
-            </MarqueeGroup>
+          <MarqueeGroup>
+  {row1.map((el, index) => ( // Add an index as the key
+    <ImageGroup key={index}>
+      <Image src={el} />
+    </ImageGroup>
+  ))}
+</MarqueeGroup>
+<MarqueeGroup>
+  {row1.map((el, index) => ( // Add an index as the key
+    <ImageGroup key={index}>
+      <Image src={el} />
+    </ImageGroup>
+  ))}
+</MarqueeGroup>
+
           </Marquee>
           <Marquee>
             <MarqueeGroup2>
