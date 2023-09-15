@@ -1,7 +1,11 @@
 import React from "react";
 import "./TechStack.css";
-import Svg from "./Svg";
-
+import {
+  MDBCard,
+  MDBCardTitle,
+  MDBCardOverlay,
+  MDBCardImage,
+} from "mdb-react-ui-kit";
 
 import styled, { keyframes, css } from "styled-components";
 
@@ -31,39 +35,57 @@ function TechStack(technologyData: any) {
   return (
     <div
       style={{
-        margin: "0vh",
-        width: "100vw",
+        margin: "--4vh",
+        width: "105vw",
         height: "100vh",
-        top:'-4vh',
-        left: "0vh",
-        position: "absolute",
+        top:'0vh',
+        left: "-5vh",
+        position: "relative",
         background:
           "linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)",
       }}
     >
-  <div style={{width:'30vw',height:'40vh',margin:'auto',position:'relative',top:'10vh'}}>
-       <Svg/>
-       </div>
       <div style={{ top: "15vh", position: "relative" }}>
         <Wrapper>
-     
-          <Note style={{fontSize:'2vw',fontWeight:'bold'}}>My Tech Stack</Note>
+          <MDBCard
+            background="dark"
+            className="text-white"
+            style={{ width: "25vw" }}
+          >
+            <MDBCardImage
+              overlay
+              src="https://tectera.com/wp-content/uploads/2021/06/technology-stack-for-web-application-main.jpg"
+              alt="..."
+            />
+            <MDBCardOverlay
+              style={{
+                top: "20vh",
+                left: "8vw",
+                fontSize: "50px",
+                color: "black",
+              }}
+            >
+              <MDBCardTitle style={{ color: "black" }}>
+                My Tech-Stack
+              </MDBCardTitle>
+            </MDBCardOverlay>
+          </MDBCard>
+          <Note></Note>
           <Marquee>
-          <MarqueeGroup>
-  {row1.map((el, index) => ( // Add an index as the key
-    <ImageGroup key={index}>
-      <Image src={el} />
-    </ImageGroup>
-  ))}
-</MarqueeGroup>
-<MarqueeGroup>
-  {row1.map((el, index) => ( // Add an index as the key
-    <ImageGroup key={index}>
-      <Image src={el} />
-    </ImageGroup>
-  ))}
-</MarqueeGroup>
-
+            <MarqueeGroup>
+              {row1.map((el) => (
+                <ImageGroup>
+                  <Image src={el} />
+                </ImageGroup>
+              ))}
+            </MarqueeGroup>
+            <MarqueeGroup>
+              {row1.map((el) => (
+                <ImageGroup>
+                  <Image src={el} />
+                </ImageGroup>
+              ))}
+            </MarqueeGroup>
           </Marquee>
           <Marquee>
             <MarqueeGroup2>
