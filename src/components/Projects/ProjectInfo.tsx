@@ -48,7 +48,7 @@ export default function ProjectInfo() {
   const projectNo = pathnameParts[pathnameParts.length - 1];
 
   useEffect(() => {
-    fetch(`http://localhost:4002/projectinfo/${projectNo}`)
+    fetch(`http://172.232.122.108:4002/projectinfo/${projectNo}`)
       .then((response) => response.json())
       .then((data: ProjectInfoResponse) => {
         setItem(data);
